@@ -1,13 +1,15 @@
-# `zero-one-xxx`
+# `zero-one-healthy-check`
 
-xxx相关概念参考：
+系统相关概念参考：
 
-- 
-- 
+- https://baike.baidu.com/item/%E4%BD%93%E6%A3%80%E7%B3%BB%E7%BB%9F/1805213
+- https://www.sohu.com/a/562837673_121262714
 
 ## 项目简介
 
+`zero-one-healthy-check`是一套高度定制的开源健康体检管理系统，为互联网企业度身打造。它不仅适用于各类体检场景，还能满足职业体检和从业人员的健康评估需求。此系统专为个体体检中心精心打造，能够与医院的各种设备、`LIS、PACS、HIS`等系统完美对接，轻松实现数据录入和生成精准详尽的体检报告。
 
+涵盖了丰富的业务页面功能，包括但不限于：基础数据（科室管理、体检项目、体检套餐等）、系统管理（用户、角色、菜单、数据字典等）、体检单位与订单管理、体检人员记录、体检审核与登记、台账记录与分诊台管理、医生问诊及总检、报告打印、单位报告和数据网报、`LIS`管理、`PACS`管理等。这些功能丰富而全面，为健康体检管理提供了多维度的支持和便捷操作。
 
 ## 系统架构图
 
@@ -16,7 +18,7 @@ xxx相关概念参考：
 ![architecture](./documents/00、preview-pic/architecture.jpg)
 
 ## 项目结构说明
-> `zero-one-xxx`  
+> `zero-one-healthy-check`  
 >
 > > `.gitignore` -- 忽略提交配置
 > >
@@ -24,11 +26,11 @@ xxx相关概念参考：
 > >
 > > `documents` -- 环境搭建、编码规范、项目需求等等文档资源
 > >
-> > `xxx-java` -- `Java`项目主体
+> > `healthy-java` -- `Java`项目主体
 > >
-> > `xxx-cpp` -- `C++`项目主体
+> > `healthy-cpp` -- `C++`项目主体
 > >
-> > `xxx-frontend` -- 前端项目主体
+> > `healthy-frontend` -- 前端项目主体
 
 ## 软件架构
 
@@ -83,6 +85,7 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 | `EasyEs`                   | `ES ORM`开发框架       | 1.0.3  | https://www.easy-es.cn/                                      |
 | `spring-data-mongodb`      | `Spring`集成`MongoDB`  | 3.0.9  | https://docs.spring.io/spring-data/mongodb/docs/3.0.9.RELEASE/reference/html/#preface |
 | `AJ-Captcha`               | 验证码插件             | 1.3.0  | https://ajcaptcha.beliefteam.cn/captcha-doc/                 |
+| `x-easypdf`                | `pdf`插件              | 2.12.2 | https://gitee.com/dromara/x-easypdf                          |
 
 ### 前端技术栈
 
@@ -106,6 +109,8 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 | `SheetJS`            | 电子表格插件            | 0.19.2   | https://docs.sheetjs.com/docs/<br>https://docs.sheetjs.com/docs/demos/frontend/vue |
 | `vue-plugin-hiprint` | 打印插件                | 0.0.48   | https://gitee.com/CcSimple/vue-plugin-hiprint                |
 | `wangEditor`         | 富文本编辑器            | v5       | https://www.wangeditor.com/v5/                               |
+| `pdfobject`          | `pdf`预览插件           | 2.2.12   | https://github.com/pipwerks/PDFObject                        |
+| 高德地图             | 查询行政区域            | latest   | https://developer.amap.com/api/webservice/guide/api/district |
 
 ### `CPP`技术栈
 
@@ -120,15 +125,17 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 
 #### 后端扩展技术栈
 
-| 技术       | 说明              | 版本     | 备注                                          |
-| ---------- | ----------------- | -------- | --------------------------------------------- |
-| `xlnt`     | excel报表         | 1.5.0    | https://github.com/tfussell/xlnt              |
-| `fastdfs`  | 文件存储客户端    | latest   | https://gitee.com/fastdfs100                  |
-| `yaml-cpp` | 解析`yaml`数据    | 0.7.0    | https://github.com/jbeder/yaml-cpp            |
-| `nacos`    | `nacos`客户端     | `v1.1.0` | https://github.com/nacos-group/nacos-sdk-cpp  |
-| `redis++`  | `redis`连接客户端 | 1.3.2    | https://github.com/sewenew/redis-plus-plus    |
-| `rocketmq` | `rokcetmq`客户端  | 2.1.0    | https://github.com/apache/rocketmq-client-cpp |
-| `mongo`    | `mongodb`客户端   | 3.6.5    | https://www.mongodb.com/docs/drivers/cxx/     |
+| 技术       | 说明              | 版本     | 备注                                               |
+| ---------- | ----------------- | -------- | -------------------------------------------------- |
+| `xlnt`     | excel报表         | 1.5.0    | https://github.com/tfussell/xlnt                   |
+| `fastdfs`  | 文件存储客户端    | latest   | https://gitee.com/fastdfs100                       |
+| `yaml-cpp` | 解析`yaml`数据    | 0.7.0    | https://github.com/jbeder/yaml-cpp                 |
+| `nacos`    | `nacos`客户端     | `v1.1.0` | https://github.com/nacos-group/nacos-sdk-cpp       |
+| `redis++`  | `redis`连接客户端 | 1.3.2    | https://github.com/sewenew/redis-plus-plus         |
+| `rocketmq` | `rokcetmq`客户端  | 2.1.0    | https://github.com/apache/rocketmq-client-cpp      |
+| `mongo`    | `mongodb`客户端   | 3.6.5    | https://www.mongodb.com/docs/drivers/cxx/          |
+| `libharu`  | `pdf`库           | 2.4.3    | https://github.com/libharu/libharu/tree/v2.4.3     |
+| `zxing`    | 用于绘制各种码    | 2.1.0    | https://github.com/zxing-cpp/zxing-cpp/tree/v2.1.0 |
 
 #### 测试前端技术栈
 
@@ -191,7 +198,7 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 
 ## 特别鸣谢
 
-`zero-one-xxx`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
+`zero-one-healthy-check`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
 
 - `spring`：https://github.com/spring-projects
 - `alibaba`：https://github.com/alibaba
@@ -201,7 +208,7 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 - `vue`：https://github.com/vuejs
 - `ui`：https://github.com/ElemeFE
 - `oatpp`：https://github.com/oatpp/oatpp
-- `业务参考项目`：
+- `业务参考项目`：https://gitee.com/scmt1/healthyCheck-backend
 
 同时也感谢其他没有明确写出来的开源组件提供给与维护者。
 
