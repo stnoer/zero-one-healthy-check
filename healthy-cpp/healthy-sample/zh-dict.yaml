@@ -1,0 +1,6 @@
+test:
+ get:
+  summary: 测试查询
+ field:
+  succ: 查询成功
+  fail: 查询失败
