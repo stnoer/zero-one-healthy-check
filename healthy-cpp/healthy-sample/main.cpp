@@ -30,6 +30,9 @@
 #ifdef LINUX
 #include "NacosClient.h"
 #endif
+#include "ServerInfo.h"
+#include "NacosClient.h"
+#include "FastDfsClient.h"
 
 // 是否是发布Swagger文档包
 #ifndef _RELEASE_DOC_
@@ -132,6 +135,42 @@ bool getStartArg(int argc, char* argv[]) {
 	return isSetDb;
 }
 
+void testDfs(string fileName)
+{
+	// 定义DFS客户端对象和URL前缀
+	ZO_CREATE_DFS_CLIENT_URL(client, urlPrefix);
+	// 开始上传文件
+	std::string fieldName = client.uploadFile(fileName);
+	// 构建下载路径
+	std::string downloadUrl = urlPrefix + fieldName;
+	// 输出下载路径
+	std::cout << "download url: " << downloadUrl << std::endl;
+
+// #ifdef LINUX
+// 	//定义客户端对象
+// 	FastDfsClient client("conf/client.conf");
+// #else
+// 	//定义客户端对象
+// 	FastDfsClient client("192.168.220.128");
+// #endif
+// 
+// 	//测试上传
+// 	std::string fieldName = client.uploadFile(fileName);
+// 	std::cout << "upload fieldname is : " << fieldName << std::endl;
+// 	//测试下载
+// 	if (!fieldName.empty())
+// 	{
+// 		std::string path = "./public/fastdfs";
+// 		fileName = client.downloadFile(fieldName, &path);
+// 		std::cout << "download savepath is : " << fileName << std::endl;
+// 	}
+// 	//测试删除文件
+// 	if (!fieldName.empty())
+// 	{
+// 		std::cout << "delete file result is : " << client.deleteFile(fieldName) << std::endl;
+// 	}
+}
+
 int main(int argc, char* argv[]) {
 #ifdef HTTP_SERVER_DEMO
 	// 测试生成 JWT Token
@@ -140,7 +179,7 @@ int main(int argc, char* argv[]) {
 
 	// 服务器参数初始化
 	bool isSetDb = getStartArg(argc, argv);
-
+	testDfs("E:\\Images\\20141011112404344.jpg.source.jpg");
 #ifdef LINUX
 	// 创建Nacos客户端对象
 	NacosClient nacosClient(
