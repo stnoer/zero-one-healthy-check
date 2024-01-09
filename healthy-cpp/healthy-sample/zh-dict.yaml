@@ -4,3 +4,13 @@ test:
  field:
   succ: 查询成功
   fail: 查询失败
+excel:
+ sheet:
+  s1: 数据表1
+  s2: 数据表2
+ header:
+  h1: 表头1
+  h2: 表头2
+  h3: 表头3
+  h4: 表头4
+  h5: 表头5
