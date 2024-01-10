@@ -34,6 +34,7 @@
 #include "NacosClient.h"
 #include "FastDfsClient.h"
 #include "ExcelComponent.h"
+#include "uselib/rocketmq/TestRocket.h"
 
 // 是否是发布Swagger文档包
 #ifndef _RELEASE_DOC_
@@ -236,7 +237,9 @@ int main(int argc, char* argv[]) {
 	// 服务器参数初始化
 	bool isSetDb = getStartArg(argc, argv);
 	//testDfs("E:\\Images\\20141011112404344.jpg.source.jpg");
-	testExcel();
+	//testExcel();
+	TestRocket tr;
+	tr.testRocket();
 #ifdef LINUX
 	// 创建Nacos客户端对象
 	NacosClient nacosClient(
