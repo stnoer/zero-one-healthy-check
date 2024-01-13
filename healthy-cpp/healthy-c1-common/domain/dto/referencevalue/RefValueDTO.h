@@ -28,26 +28,26 @@
 class RefValueDTO : public oatpp::DTO
 {
 	DTO_INIT(RefValueDTO, DTO);
-	// record_id 单号
-	API_DTO_FIELD_DEFAULT(UInt64, record_id, ZH_WORDS_GETTER("fin_capital_record.field.record_id"));
-	// type支出类型
-	API_DTO_FIELD_DEFAULT(String, type, ZH_WORDS_GETTER("fin_capital_record.field.type"));
-	// create_user 创建人
-	API_DTO_FIELD_DEFAULT(String, create_user, ZH_WORDS_GETTER("fin_capital_record.field.create_user"));
-	// bank_id 银行账户id
-	API_DTO_FIELD_DEFAULT(UInt64, bank_id, ZH_WORDS_GETTER("fin_capital_record.field.bank_id"));
-	// bank_name 开户银行名称
-	API_DTO_FIELD_DEFAULT(String, bank_name, ZH_WORDS_GETTER("fin_capital_record.field.bank_name"));
-	// bank_card 银行卡号
-	API_DTO_FIELD_DEFAULT(String, bank_card, ZH_WORDS_GETTER("fin_capital_record.field.bank_card"));
-	// money 金额
-	API_DTO_FIELD_DEFAULT(Int64, money, ZH_WORDS_GETTER("fin_capital_record.field.money"));
-	// intro 备注
-	API_DTO_FIELD_DEFAULT(String, intro, ZH_WORDS_GETTER("fin_capital_record.field.intro"));
+	// id 主键
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("common.reference_value.field.id"));
+	// base_project_id 项目id
+	API_DTO_FIELD_DEFAULT(String, type, ZH_WORDS_GETTER("common.reference_value.field.base_project_id"));
+	// allow_sex 适合性别
+	API_DTO_FIELD_DEFAULT(String, allow_sex, ZH_WORDS_GETTER("common.reference_value.field.allow_sex"));
+	// min_age 年龄最低值
+	API_DTO_FIELD_DEFAULT(Int64, min_age, ZH_WORDS_GETTER("common.reference_value.field.min_age"));
+	// max_age 年龄最高值
+	API_DTO_FIELD_DEFAULT(Int64, max_age, ZH_WORDS_GETTER("common.reference_value.field.max_age"));
+	// healthy_value 健康参考值
+	API_DTO_FIELD_DEFAULT(String, healthy_value, ZH_WORDS_GETTER("common.reference_value.field.healthy_value"));
+	// occupation_value 职业参考值
+	API_DTO_FIELD_DEFAULT(String, occupation_value, ZH_WORDS_GETTER("common.reference_value.field.occupation_value"));
+	// department_id 所属部门
+	API_DTO_FIELD_DEFAULT(String, department_id, ZH_WORDS_GETTER("common.reference_value.department_id"));
+	// create_id 创建人
+	API_DTO_FIELD_DEFAULT(String, create_id, ZH_WORDS_GETTER("common.reference_value.field.create_id"));
 	// create_time 创建时间
-	API_DTO_FIELD_DEFAULT(String, create_time, ZH_WORDS_GETTER("fin_capital_record.field.create_time"));
-	// happen_date 产生日期
-	API_DTO_FIELD_DEFAULT(String, happen_date, ZH_WORDS_GETTER("fin_capital_record.field.happen_date"));
+	API_DTO_FIELD_DEFAULT(String, create_time, ZH_WORDS_GETTER("common.reference_value.field.create_time"));
 
 public:
 
