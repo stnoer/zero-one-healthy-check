@@ -26,6 +26,7 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
+#include "./referencevalue/addrefvalue/AddRefValueController.h"
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
@@ -51,7 +52,8 @@ void Router::initRouter()
 #endif
 
 	//#TIP :系统扩展路由定义，写在这个后面
-
+	// 基础数据-基础项目-配置指定项目-新增指定项目危急值 负责人：超能
+	ROUTER_SIMPLE_BIND(AddRefValueController);
 }
 
 #ifdef HTTP_SERVER_DEMO
