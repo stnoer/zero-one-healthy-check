@@ -66,7 +66,7 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES})
+add_executable (${appName} ${SC_FILES}   "controller/referencevalue/addrefvalue/AddRefValueController.cpp" "controller/referencevalue/addrefvalue/AddRefValueController.h" "dao/referencevalue/addrefvalue/AddRefValueDAO.cpp" "dao/referencevalue/addrefvalue/AddRefValueDAO.h" "dao/referencevalue/addrefvalue/AddRefValueMapper.h" "domain/do/referencevalue/AddRefValueDO.h" "domain/dto/referencevalue/AddRefValueDTO.h" "domain/dto/referencevalue/QueryRefValueDTO.h" "domain/do/referencevalue/QueryRefValueDO.h" "domain/query/referencevalue/RefValuePageQuery.h" "domain/query/referencevalue/RefValueQuery.h" "domain/vo/referencevalue/RefValueJsonVO.h" "domain/vo/referencevalue/RefValuePageJsonVO.h" "controller/referencevalue/queryrefvalue/QueryRefValueController.cpp" "controller/referencevalue/queryrefvalue/QueryRefValueController.h" "dao/referencevalue/queryrefvalue/QueryRefValueDAO.cpp" "dao/referencevalue/queryrefvalue/QueryRefValueDAO.h" "dao/referencevalue/queryrefvalue/QueryRefValueMapper.h" "domain/dto/referencevalue/RefValueDTO.h")
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")
