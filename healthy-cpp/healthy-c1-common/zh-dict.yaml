@@ -1,0 +1,10 @@
+#基础数据
+common:
+ reference_value:
+  controller:
+   query:
+    summary: 获取指定项目指定参考值详情
+   add:
+    summary: 新增指定项目参考值
+ 
+  
