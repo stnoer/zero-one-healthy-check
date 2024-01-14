@@ -8,7 +8,7 @@ cmake_minimum_required (VERSION 3.8)
 # option(IS_ARCH_DEMO "mark is arch-demo" ON)
 
 # 设置文件名称
-set (appName healthy-c1)
+set (appName healthy-c1-common)
 
 # 包含库目录
 include_directories ("./")
