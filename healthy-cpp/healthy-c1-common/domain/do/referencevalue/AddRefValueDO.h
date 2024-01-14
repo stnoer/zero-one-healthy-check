@@ -23,6 +23,9 @@
 #define _ADD_REF_VALUE_DO_
 #include "../DoInclude.h"
 
+/**
+ * 示例数据库实体类
+ */
 class AddRefValueDO
 {
 	// 项目id
