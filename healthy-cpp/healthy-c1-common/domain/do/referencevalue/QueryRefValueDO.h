@@ -28,6 +28,8 @@
  */
 class QueryRefValueDO
 {
+	// 主键
+	CC_SYNTHESIZE(string, id, Id);
 	// 项目id
 	CC_SYNTHESIZE(string, base_project_id, BaseProjectId);
 	// 适合性别

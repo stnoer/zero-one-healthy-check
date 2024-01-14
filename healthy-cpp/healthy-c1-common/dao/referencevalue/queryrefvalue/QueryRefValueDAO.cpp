@@ -5,6 +5,10 @@
 #define REFVALUE_TERAM_PARSE(query, sql) \
 SqlParams params; \
 sql<<" WHERE 1=1"; \
+if (query->id) { \
+	sql << " AND `id`= ?"; \
+	SQLPARAMS_PUSH(params, "s", std::string, query->id.getValue("")); \
+} \
 if (query->base_project_id) { \
 	sql << " AND `base_project_id`= ?"; \
 	SQLPARAMS_PUSH(params, "s", std::string, query->base_project_id.getValue("")); \

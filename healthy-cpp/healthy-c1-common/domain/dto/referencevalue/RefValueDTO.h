@@ -28,6 +28,8 @@
 class RefValueDTO : public oatpp::DTO
 {
 	DTO_INIT(RefValueDTO, DTO);
+	// id 主键
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("common.reference_value.field.id"));
 	// base_project_id 项目id
 	API_DTO_FIELD_DEFAULT(String, base_project_id, ZH_WORDS_GETTER("common.reference_value.field.base_project_id"));
 	// allow_sex 适合性别

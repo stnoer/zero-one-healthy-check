@@ -33,8 +33,9 @@ public:
 	QueryRefValueDO mapper(ResultSet* resultSet) const override
 	{
 		QueryRefValueDO data;
-		data.setBaseProjectId(resultSet->getString(1));
-		data.setAllowSex(resultSet->getString(2));
+		data.setId(resultSet->getString(1));
+		data.setBaseProjectId(resultSet->getString(2));
+		data.setAllowSex(resultSet->getString(3));
 		data.getMinAge();
 		data.getMaxAge();
 		data.getHealthyValue();

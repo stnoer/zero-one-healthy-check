@@ -27,9 +27,10 @@ RefValuePageDTO::Wrapper QueryRefValueService::listAll(const RefValuePageQuery::
 	{
 		auto dto = RefValueDTO::createShared();
 		ZO_STAR_DOMAIN_DO_TO_DTO(dto, sub,
-			base_project_id, BaseProjectId, allow_sex, AllowSex, min_age, MinAge, max_age, MaxAge,
-			healthy_value, HealthyValue, occupation_value, OccupationValue,
-			department_id, DepartmentId, create_id, CreateId, create_time, CreateTime)
+			id, Id, base_project_id, BaseProjectId, allow_sex, AllowSex, 
+			min_age, MinAge, max_age, MaxAge, healthy_value, HealthyValue,
+			occupation_value, OccupationValue, department_id, DepartmentId, 
+			create_id, CreateId, create_time, CreateTime)
 			pages->addData(dto);
 	}
 	return pages;

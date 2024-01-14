@@ -28,6 +28,8 @@
  */
 class RefValueDO
 {
+	// 主键
+	CC_SYNTHESIZE(string, id, Id);
 	// 项目id
 	CC_SYNTHESIZE(string, base_project_id, BaseProjectId);
 	// 适合性别
@@ -47,17 +49,6 @@ class RefValueDO
 	// 创建时间
 	CC_SYNTHESIZE(string, create_time, CreateTime);
 public:
-	RefValueDO()
-	{
-		base_project_id = "";
-		allow_sex = "";
-		min_age = 0;
-		max_age = 0;
-		healthy_value = "";
-		occupation_value = "";
-		department_id = "";
-		create_id = "";
-		create_time = "";
-	}
+	
 };
 #endif
