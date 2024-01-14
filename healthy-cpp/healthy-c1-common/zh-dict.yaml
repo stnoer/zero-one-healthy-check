@@ -1,0 +1,17 @@
+critical_value:
+ query:
+  summary: 获取指定项目危机值列表详情
+ post:
+  summary: 新增指定项目危机值
+ filed:
+  id: 主键
+  baseProjectId: 项目id
+  level: 等级
+  type: 类型
+  intervalValue: 区间值
+  allowSex: 适合性别
+  minAge: 年龄最低值
+  maxAge: 年龄最高值
+  departmentId: 所属部门
+  createId: 创建人
+  createTime: 创建时间
