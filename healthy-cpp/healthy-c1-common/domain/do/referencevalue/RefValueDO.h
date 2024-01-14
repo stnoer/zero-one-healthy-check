@@ -22,6 +22,10 @@
 #ifndef _REF_VALUE_DO_
 #define _REF_VALUE_DO_
 #include "../DoInclude.h"
+
+/**
+ * 基础项目配置（参考值）数据库实体类
+ */
 class RefValueDO
 {
 	// 项目id
@@ -43,6 +47,17 @@ class RefValueDO
 	// 创建时间
 	CC_SYNTHESIZE(string, create_time, CreateTime);
 public:
-	
+	RefValueDO()
+	{
+		base_project_id = "";
+		allow_sex = "";
+		min_age = 0;
+		max_age = 0;
+		healthy_value = "";
+		occupation_value = "";
+		department_id = "";
+		create_id = "";
+		create_time = "";
+	}
 };
 #endif

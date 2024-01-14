@@ -23,6 +23,9 @@
 #define _QUERY_REF_VALUE_DO_
 #include "../DoInclude.h"
 
+/**
+ * 示例数据库实体类
+ */
 class QueryRefValueDO
 {
 	// 项目id
@@ -44,5 +47,17 @@ class QueryRefValueDO
 	// 创建时间
 	CC_SYNTHESIZE(string, create_time, CreateTime);
 public:
+	QueryRefValueDO()
+	{
+		base_project_id = "";
+		allow_sex = "";
+		min_age = 0;
+		max_age = 0;
+		healthy_value = "";
+		occupation_value = "";
+		department_id = "";
+		create_id = "";
+		create_time = "";
+	}
 };
 #endif
