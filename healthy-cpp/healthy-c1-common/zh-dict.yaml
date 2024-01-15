@@ -1,0 +1,9 @@
+critical:
+    field:
+        level: 等级
+        type: 类型
+        intervalValue: 区间值
+        allowSex: 适合性别
+        minAge: 年龄最低值
+        maxAge: 年龄最高值
+         
