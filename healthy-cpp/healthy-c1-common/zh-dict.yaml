@@ -1,17 +1,33 @@
-critical_value:
+criticalValue:
  query:
-  summary: »ñÈ¡Ö¸¶¨ÏîÄ¿Î£»úÖµÁĞ±íÏêÇé
+  summary: è·å–æŒ‡å®šé¡¹ç›®å±æœºå€¼åˆ—è¡¨è¯¦æƒ…
  post:
-  summary: ĞÂÔöÖ¸¶¨ÏîÄ¿Î£»úÖµ
- filed:
-  id: Ö÷¼ü
-  baseProjectId: ÏîÄ¿id
-  level: µÈ¼¶
-  type: ÀàĞÍ
-  intervalValue: Çø¼äÖµ
-  allowSex: ÊÊºÏĞÔ±ğ
-  minAge: ÄêÁä×îµÍÖµ
-  maxAge: ÄêÁä×î¸ßÖµ
-  departmentId: ËùÊô²¿ÃÅ
-  createId: ´´½¨ÈË
-  createTime: ´´½¨Ê±¼ä
+  summary: æ–°å¢æŒ‡å®šé¡¹ç›®å±æœºå€¼
+ field:
+  id: ä¸»é”®
+  baseProjectId: é¡¹ç›®id
+  level: ç­‰çº§
+  type: ç±»å‹
+  intervalValue: åŒºé—´å€¼
+  allowSex: é€‚åˆæ€§åˆ«
+  minAge: å¹´é¾„æœ€ä½å€¼
+  maxAge: å¹´é¾„æœ€é«˜å€¼
+  departmentId: æ‰€å±éƒ¨é—¨
+  createId: åˆ›å»ºäºº
+  createTime: åˆ›å»ºæ—¶é—´
+test:
+ get:
+  summary: æµ‹è¯•æŸ¥è¯¢
+ field:
+  succ: æŸ¥è¯¢æˆåŠŸ
+  fail: æŸ¥è¯¢å¤±è´¥
+excel:
+ sheet:
+  s1: æ•°æ®è¡¨1
+  s2: æ•°æ®è¡¨2
+ header:
+  h1: è¡¨å¤´1
+  h2: è¡¨å¤´2
+  h3: è¡¨å¤´3
+  h4: è¡¨å¤´4
+  h5: è¡¨å¤´5
