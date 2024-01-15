@@ -40,9 +40,9 @@ class CritValueJsonVO : public JsonVO<CritValueDTO::Wrapper>
 /*
  * 获取指定项目危机值列表（分页）JsonVO实体
  */
-class CritValueJsonPageVO : public JsonVO<CritValuePageDTO::Wrapper>
+class CritValuePageJsonVO : public JsonVO<CritValuePageDTO::Wrapper>
 {
-	DTO_INIT(CritValueJsonPageVO, JsonVO<CritValuePageDTO::Wrapper>);
+	DTO_INIT(CritValuePageJsonVO, JsonVO<CritValuePageDTO::Wrapper>);
 
 };
 
