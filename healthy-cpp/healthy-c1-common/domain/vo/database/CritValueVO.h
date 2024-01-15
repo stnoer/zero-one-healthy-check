@@ -23,18 +23,27 @@
 #define _CRITVALUEVO_H_
 
 #include "../../GlobalInclude.h"
-#include "../../dto/database/CritValueDTO.h"
 #include "domain/query/PageQuery.h"
+#include "../../dto/database/CritValueDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
 /*
  * 获取指定项目指定危机值详情JsonVO
  */
-class CritValueVO : public JsonVO<CritValueDTO::Wrapper>
+class CritValueJsonVO : public JsonVO<CritValueDTO::Wrapper>
 {
-	DTO_INIT(CritValueVO, JsonVO<CritValueDTO::Wrapper>);
+	DTO_INIT(CritValueJsonVO, JsonVO<CritValueDTO::Wrapper>);
 	
+};
+
+/*
+ * 获取指定项目危机值列表（分页）JsonVO实体
+ */
+class CritValueJsonPageVO : public JsonVO<CritValuePageDTO::Wrapper>
+{
+	DTO_INIT(CritValueJsonPageVO, JsonVO<CritValuePageDTO::Wrapper>);
+
 };
 
 #include OATPP_CODEGEN_END(DTO)
