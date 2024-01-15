@@ -1,4 +1,4 @@
-﻿# CMakeList.txt: healthy-c1-sample) 的 CMake 项目，在此处包括源代码并定义
+﻿# CMakeList.txt: healthy-c1-baseProject) 的 CMake 项目，在此处包括源代码并定义
 # 项目特定的逻辑。
 #
 cmake_minimum_required (VERSION 3.8)
@@ -66,7 +66,7 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES})
+add_executable (${appName} ${SC_FILES} "domain/dto/baseProject/BaseProjectDTO.h" "domain/query/baseProject/BaseProjectQuery.h")
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")
