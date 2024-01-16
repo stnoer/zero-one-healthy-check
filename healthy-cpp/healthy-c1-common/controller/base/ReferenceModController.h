@@ -24,6 +24,7 @@
 #include "../../domain/vo/base/ReferenceModVO.h"
 #include "../../domain/dto/base/ReferenceModDTO.h"
 
+
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
 class ReferenceModController : public oatpp::web::server::api::ApiController
@@ -32,7 +33,7 @@ class ReferenceModController : public oatpp::web::server::api::ApiController
 	API_ACCESS_DECLARE(ReferenceModController);
 public://定义接口
 	//定义参考值修改接口描述
-	API_DEF_ENDPOINT_INFO_AUTH(ZH_WORDS_GETTER("base.referenceMod.put.summary"), modifyReference, Uint64JsonVO::Wrapper);
+	API_DEF_ENDPOINT_INFO_AUTH(ZH_WORDS_GETTER("base.referenceMod.put.summary"), modifyReference, ReferenceModJsonVO::Wrapper);
 	//定义参考值修改接口处理
 	API_HANDLER_ENDPOINT_AUTH(API_M_PUT, "/base/modifyReference", modifyReference, BODY_DTO(ReferenceModDTO::Wrapper, dto), execModifyReference(dto));
 		

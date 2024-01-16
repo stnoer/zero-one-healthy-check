@@ -4,7 +4,7 @@
 
 
 
-ReferenceModJsonVO::Wrapper ReferenceModController::execModifyReference(ReferenceModDTO::Wrapper& modDto)
+ReferenceModJsonVO::Wrapper ReferenceModController::execModifyReference(const ReferenceModDTO::Wrapper& modDto)
 {
 	return {};
 }
