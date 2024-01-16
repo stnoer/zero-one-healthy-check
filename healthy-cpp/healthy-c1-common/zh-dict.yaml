@@ -1,9 +1,9 @@
 critical:
     field:
-        level: µÈ¼¶
-        type: ÀàĞÍ
-        intervalValue: Çø¼äÖµ
-        allowSex: ÊÊºÏĞÔ±ğ
-        minAge: ÄêÁä×îµÍÖµ
-        maxAge: ÄêÁä×î¸ßÖµ
+        level: ç­‰çº§
+        type: ç±»å‹
+        intervalValue: åŒºé—´å€¼
+        allowSex: é€‚åˆæ€§åˆ«
+        minAge: å¹´é¾„æœ€ä½å€¼
+        maxAge: å¹´é¾„æœ€é«˜å€¼
          

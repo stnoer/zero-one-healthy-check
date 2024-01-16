@@ -1,20 +1,20 @@
 #pragma once
-#ifndef _CRITICALCONTROLLER_H_
-#define _CRITICALCONTROLLER_H_
+#ifndef _CRITICALMODIFYCONTROLLER_H_
+#define _CRITICALMODIFYCONTROLLER_H_
 
 
 #include "domain/vo/BaseJsonVO.h"
-#include "../../domain/vo/critical/criticalVO.h"
+#include "../../domain/vo/critical/CriticalModifyVO.h"
 #include "../../domain/query/critical/CriticalQuery.h"
 
 
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class CriticalController : public oatpp::web::server::api::ApiController
+class CriticalModifyController : public oatpp::web::server::api::ApiController
 {
 	//定义控制器访问入口
-	API_ACCESS_DECLARE(CriticalController);
+	API_ACCESS_DECLARE(CriticalModifyController);
 public:
 
 	// 定义危险值列表查询接口描述
@@ -24,7 +24,7 @@ public:
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
-		API_DEF_ADD_RSP_JSON_WRAPPER(CriticalListJsonVO);
+		API_DEF_ADD_RSP_JSON_WRAPPER(CriticalModifyListJsonVO);
 		// 定义分页查询参数描述
 		API_DEF_ADD_PAGE_PARAMS();
 		// 定义其他查询参数描述
@@ -36,7 +36,7 @@ public:
 		API_DEF_ADD_QUERY_PARAMS(UInt32, "maxAge", ZH_WORDS_GETTER("critical.field.maxAge"), 1, true);
 	}
 	//定义危机值查询列表接口
-	ENDPOINT(API_M_GET, "/critical/query-critical", queryCritical, QUERIES(QueryParams, params), API_HANDLER_AUTH_PARAME) 
+	ENDPOINT(API_M_PUT, "/critical/query-modify-critical", queryCritical, QUERIES(QueryParams, params), API_HANDLER_AUTH_PARAME) 
 	{
 		// 解析查询参数为Query领域模型
 		API_HANDLER_QUERY_PARAM(cq, CriticalQuery, params);
@@ -45,7 +45,7 @@ public:
 	}
 private:
 	//定义接口执行函数
-	CriticalListJsonVO::Wrapper execQueryCritical(const CriticalQuery::Wrapper& query);
+	CriticalModifyListJsonVO::Wrapper execQueryCritical(const CriticalQuery::Wrapper& query);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

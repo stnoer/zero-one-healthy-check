@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _CRITICALLISTDTO_H_
-#define _CRITICALLISTDTO_H_
+#ifndef _CRITICALMODIFYDTO_H_
+#define _CRITICALMODIFYDTO_H_
 
 #include "../../GlobalInclude.h"
 
