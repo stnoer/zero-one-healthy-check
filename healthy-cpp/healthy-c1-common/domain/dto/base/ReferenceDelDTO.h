@@ -30,6 +30,8 @@ class ReferenceDelDTO : public oatpp::DTO
 {
 	DTO_INIT(ReferenceDelDTO, DTO);
 	
+	//Î¨Ò»±àºÅ
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("base.referenceDel.id"));
 };
 
 
