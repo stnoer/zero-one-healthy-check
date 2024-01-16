@@ -36,9 +36,9 @@ public://定义接口
 	// 3.1 定义删除接口描述
 	ENDPOINT_INFO(removeReference) {
 		// 定义标题和返回类型以及授权支持
-		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("base.reference.delete.summary"), ReferenceDelJsonVO::Wrapper);
+		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("base.referenceDel.delete.summary"), ReferenceDelJsonVO::Wrapper);
 		// 定义其他路径参数说明//有待商榷*
-		API_DEF_ADD_PATH_PARAMS(UInt64, "id", ZH_WORDS_GETTER("base.reference.id"), 1, true);
+		API_DEF_ADD_PATH_PARAMS(UInt64, "id", ZH_WORDS_GETTER("base.referenceDel.id"), 1, true);
 	}
 	// 3.2 定义删除接口处理
 	API_HANDLER_ENDPOINT_AUTH(API_M_DEL, "/base/removeReference", removeReference, PATH(UInt64, id), execRemoveReference(id));

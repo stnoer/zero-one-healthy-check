@@ -1,0 +1,14 @@
+base:
+ referenceMod:
+  id: 主键
+  allowSex: 适合性别
+  minAge: 年龄最低值
+  maxAge: 年龄最高值
+  healthyValue: 健康参考值
+  occupationValue: 职业参考值
+  put:
+   summary: 修改基础数据中指定项目的指定参考值
+ referenceDel:
+  id: 主键
+  delete:
+   summary: 删除基础项目中指定项目的指定参考值
