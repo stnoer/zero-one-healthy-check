@@ -52,7 +52,7 @@ class BaseProjectDTO : public oatpp::DTO
 	//orderNum
 	DTO_FIELD(Int32, orderNum);
 	DTO_FIELD_INFO(orderNum) {
-		info->description = ZH_WORDS_GETTER("sample.field.orderNum");
+		info->description = ZH_WORDS_GETTER("BaseProject.field.orderNum");
 	}
 	//officeId
 	DTO_FIELD(String, officeId);
