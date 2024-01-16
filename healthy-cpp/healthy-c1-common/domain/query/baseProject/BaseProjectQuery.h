@@ -30,10 +30,72 @@
  */
 class BaseProjectQuery : public PageQuery
 {
-	// 定义初始化
 	DTO_INIT(BaseProjectQuery, PageQuery);
-	// 昵称
-	API_DTO_FIELD_DEFAULT(String, nickname, ZH_WORDS_GETTER("use.field.nickname"));
+	//id
+	DTO_FIELD(String, id);
+	DTO_FIELD_INFO(id) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.id");
+	}
+	//项目代码
+	DTO_FIELD(String, code);
+	DTO_FIELD_INFO(code) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.code");
+	}
+	//项目名称
+	DTO_FIELD(String, name);
+	DTO_FIELD_INFO(name) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.name");
+	}
+	//简称
+	DTO_FIELD(String, shortName);
+	DTO_FIELD_INFO(shortName) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.shortName");
+	}
+	//orderNum
+	DTO_FIELD(Int32, orderNum);
+	DTO_FIELD_INFO(orderNum) {
+		info->description = ZH_WORDS_GETTER("sample.field.orderNum");
+	}
+	//officeId
+	DTO_FIELD(String, officeId);
+	DTO_FIELD_INFO(officeId) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.officeId");
+	}
+	//officeName
+	DTO_FIELD(String, officeName);
+	DTO_FIELD_INFO(officeName) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.officeId");
+	}
+	//项目单位
+	DTO_FIELD(String, unitName);
+	DTO_FIELD_INFO(unitName) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.unitName");
+	}
+	//默认值
+	DTO_FIELD(String, defaultValue);
+	DTO_FIELD_INFO(defaultValue) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.defaultValue");
+	}
+	//结果类型
+	DTO_FIELD(String, resultType);
+	DTO_FIELD_INFO(resultType) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.resultType");
+	}
+	//是否进入小结
+	DTO_FIELD(String, inConclusion);
+	DTO_FIELD_INFO(inConclusion) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.inConclusion");
+	}
+	//是否进入报告
+	DTO_FIELD(String, inReport);
+	DTO_FIELD_INFO(inReport) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.inReport");
+	}
+	//LIS关联码
+	DTO_FIELD(String, relationCode);
+	DTO_FIELD_INFO(relationCode) {
+		info->description = ZH_WORDS_GETTER("BaseProject.field.relationCode");
+	}
 };
 
 #include OATPP_CODEGEN_END(DTO)
