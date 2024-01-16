@@ -19,7 +19,7 @@
 #include "stdafx.h"
 #include "Router.h"
 #include "ApiHelper.h"
-#include "base/ReferenceModController.h"
+
 
 #ifdef HTTP_SERVER_DEMO
 #include "user/UserController.h"
@@ -27,6 +27,8 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
+#include "base/ReferenceModController.h"
+#include "base/ReferenceDelController.h"
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
@@ -53,6 +55,7 @@ void Router::initRouter()
 
 	//#TIP :系统扩展路由定义，写在这个后面
 	ROUTER_SIMPLE_BIND(ReferenceModController);
+	ROUTER_SIMPLE_BIND(ReferenceDelController);
 }
 
 #ifdef HTTP_SERVER_DEMO

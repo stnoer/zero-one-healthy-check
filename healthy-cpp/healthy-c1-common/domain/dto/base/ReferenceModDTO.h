@@ -17,8 +17,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _REfERENCEMODDTO_H_
-#define _REfERENCEMODDTO_H_
+#ifndef _REFERENCEMODDTO_H_
+#define _REFERENCEMODDTO_H_
 #include "../../GlobalInclude.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
@@ -46,4 +46,4 @@ class ReferenceModDTO : public oatpp::DTO
 
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_REfERENCEMODDTO_H_
+#endif // !_REFERENCEMODDTO_H_
