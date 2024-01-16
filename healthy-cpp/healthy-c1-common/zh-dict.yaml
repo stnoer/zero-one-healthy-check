@@ -1,0 +1,20 @@
+common:
+ reference_value:
+  controller:
+   query: 
+    summary: 获取指定项目指定参考值详情
+   add:
+    summary: 新增指定项目参考值
+  field:
+   id: 主键
+   base_project_id: 项目id
+   allow_sex: 适合性别
+   min_age: 年龄最低值
+   max_age: 年龄最高值
+   healthy_value: 健康参考值
+   occupation_value: 职业参考值
+   department_id: 所属部门
+   create_id: 创建人
+   create_time: 创建时间
+ 
+  
