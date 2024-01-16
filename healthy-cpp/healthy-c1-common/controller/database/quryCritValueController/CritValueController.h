@@ -21,9 +21,9 @@
 #define _CRITVALUECONTROLLER_H_
 
 #include "domain/vo/BaseJsonVO.h"
-#include "../../domain/vo/database/CritValueVO.h"
-#include "../../domain/query/database/CritValueQuery.h"
-#include "../../domain/query/database/CritValuePageQuery.h"
+#include "../../../domain/vo/database/CritValueVO.h"
+#include "../../../domain/query/database/CritValuePageQuery.h"
+
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
@@ -35,7 +35,7 @@ public://定义接口
 	// 定义分页查询危急值接口描述
 	ENDPOINT_INFO(queryCriticalValuePage) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("CritValue.query.summary"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("criticalValue.query.summary"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -77,7 +77,7 @@ public://定义接口
 
 private:
 	// 定义接口执行函数
-	CritValuePageJsonVO::Wrapper execQueryPageCritValue(const CritValuePageQuery::Wrapper& quary);
+	CritValuePageJsonVO::Wrapper execQueryPageCritValue(const CritValuePageQuery::Wrapper& query);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

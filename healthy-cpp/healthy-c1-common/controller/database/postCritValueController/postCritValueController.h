@@ -21,7 +21,8 @@
 #define _POSTCRITVALUECONTROLLER_H_
 
 #include "domain/vo/BaseJsonVO.h"
-#include "../../domain/dto/database/CritValueDTO.h"
+#include "../../../domain/dto/database/CritValueDTO.h"
+
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
@@ -31,7 +32,7 @@ class postCritValueController : public oatpp::web::server::api::ApiController
 	API_ACCESS_DECLARE(postCritValueController);
 public:
 	// 定义接口
-	// 3.1 定义新增接口描述
+	// 定义新增接口描述
 	ENDPOINT_INFO(addCriticalValue) {
 		// 定义接口标题
 		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("criticalValue.post.summary"));

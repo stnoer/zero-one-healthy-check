@@ -26,8 +26,9 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
-#include "database/CritValueController.h"
-#include "database/postCritValueController.h"
+#include "database/quryCritValueController/CritValueController.h"
+#include "database/postCritValueController/postCritValueController.h"
+
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
