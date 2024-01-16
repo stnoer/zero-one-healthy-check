@@ -17,8 +17,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _POSTCRITVALUECONTROLLER_H_
-#define _POSTCRITVALUECONTROLLER_H_
+#ifndef _ADDCRITVALUECONTROLLER_H_
+#define _ADDCRITVALUECONTROLLER_H_
 
 #include "domain/vo/BaseJsonVO.h"
 #include "../../../domain/dto/database/CritValueDTO.h"
@@ -26,10 +26,10 @@
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class postCritValueController : public oatpp::web::server::api::ApiController
+class addCritValueController : public oatpp::web::server::api::ApiController
 {
 	// 添加访问定义
-	API_ACCESS_DECLARE(postCritValueController);
+	API_ACCESS_DECLARE(addCritValueController);
 public:
 	// 定义接口
 	// 定义新增接口描述

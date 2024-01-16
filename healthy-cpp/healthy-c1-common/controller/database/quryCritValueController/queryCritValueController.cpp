@@ -1,10 +1,9 @@
-#include "CritValueController.h"
+#include "queryCritValueController.h"
 #include "../../../domain/vo/database/CritValueVO.h"
 #include "../../../domain/query/database/CritValuePageQuery.h"
 #include "../../../service/database/CritValueService.h"
 
-
-CritValuePageJsonVO::Wrapper CritValueController::execQueryPageCritValue(const CritValuePageQuery::Wrapper& query)
+CritValuePageJsonVO::Wrapper queryCritValueController::execQueryCritValue(const CritValuePageQuery::Wrapper& query)
 {
 	//// 定义一个Service
 	//CriValueService service;

@@ -17,8 +17,8 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _CRITVALUECONTROLLER_H_
-#define _CRITVALUECONTROLLER_H_
+#ifndef _QUERYCRITVALUECONTROLLER_H_
+#define _QUERYCRITVALUECONTROLLER_H_
 
 #include "domain/vo/BaseJsonVO.h"
 #include "../../../domain/vo/database/CritValueVO.h"
@@ -27,10 +27,10 @@
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class CritValueController : public oatpp::web::server::api::ApiController
+class queryCritValueController : public oatpp::web::server::api::ApiController
 {
 	// 添加访问定义
-	API_ACCESS_DECLARE(CritValueController);
+	API_ACCESS_DECLARE(queryCritValueController);
 public://定义接口
 	// 定义分页查询危急值接口描述
 	ENDPOINT_INFO(queryCriticalValuePage) {
@@ -72,12 +72,12 @@ public://定义接口
 		// 解析查询参数为Query领域模型
 		API_HANDLER_QUERY_PARAM(cvPageQuery,CritValuePageQuery, queryParams);
 		// 呼叫执行函数响应结果
-		API_HANDLER_RESP_VO(execQueryPageCritValue(cvPageQuery));
+		API_HANDLER_RESP_VO(execQueryCritValue(cvPageQuery));
 	}
 
 private:
 	// 定义接口执行函数
-	CritValuePageJsonVO::Wrapper execQueryPageCritValue(const CritValuePageQuery::Wrapper& query);
+	CritValuePageJsonVO::Wrapper execQueryCritValue(const CritValuePageQuery::Wrapper& query);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

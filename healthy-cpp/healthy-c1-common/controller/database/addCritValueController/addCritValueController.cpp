@@ -1,11 +1,11 @@
 
-#include "postCritValueController.h"
+#include "addCritValueController.h"
 #include "../../../domain/dto/database/CritValueDTO.h"
 #include "../../../service/database/CritValueService.h"
 
 
 
-Uint64JsonVO::Wrapper postCritValueController::execCriticalValue(const CritValueDTO::Wrapper & dto)
+Uint64JsonVO::Wrapper addCritValueController::execCriticalValue(const CritValueDTO::Wrapper & dto)
 {
 	//// 定义返回数据对象
 	//auto jvo = Uint64JsonVO::createShared();

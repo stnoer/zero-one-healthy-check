@@ -26,8 +26,8 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
-#include "database/quryCritValueController/CritValueController.h"
-#include "database/postCritValueController/postCritValueController.h"
+#include "database/quryCritValueController/queryCritValueController.h"
+#include "database/addCritValueController/addCritValueController.h"
 
 
 // 如果定义了关闭Swagger文档宏
@@ -54,8 +54,8 @@ void Router::initRouter()
 #endif
 
 	//#TIP :系统扩展路由定义，写在这个后面
-	ROUTER_SIMPLE_BIND(CritValueController);
-	ROUTER_SIMPLE_BIND(postCritValueController);
+	ROUTER_SIMPLE_BIND(queryCritValueController);
+	ROUTER_SIMPLE_BIND(addCritValueController);
 
 }
 
