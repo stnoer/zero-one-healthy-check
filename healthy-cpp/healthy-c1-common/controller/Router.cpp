@@ -19,6 +19,8 @@
 #include "stdafx.h"
 #include "Router.h"
 #include "ApiHelper.h"
+#include "baseproject/BaseProjectController.h"
+
 #include "./combo/ComboController.h"
 #ifdef HTTP_SERVER_DEMO
 #include "user/UserController.h"
@@ -51,8 +53,8 @@ void Router::initRouter()
 #ifdef HTTP_SERVER_DEMO
 	createSampleRouter();
 #endif
-
 	//#TIP :系统扩展路由定义，写在这个后面
+	ROUTER_SIMPLE_BIND(BaseProjectController);
 	// 基础数据-基础项目-配置指定项目-新增指定项目危急值 负责人：超能
 	ROUTER_SIMPLE_BIND(AddRefValueController);
 	// 基础数据-基础项目-配置指定项目-获取指定项目参考值列表（分页） 负责人：超能
