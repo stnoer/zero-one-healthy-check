@@ -17,7 +17,11 @@
  limitations under the License.
 */
 #include "stdafx.h"
+#include "ApiHelper.h"
 #include "Router.h"
+#include "basis/ContraindicationsController.h"
+#include "basis/PackageController.h"
+
 #include "ApiHelper.h"
 #include "baseproject/BaseProjectController.h"
 
@@ -60,6 +64,9 @@ void Router::initRouter()
 	// 基础数据-基础项目-配置指定项目-获取指定项目参考值列表（分页） 负责人：超能
 	ROUTER_SIMPLE_BIND(QueryRefValueController);
 	ROUTER_SIMPLE_BIND(ComboController);
+	ROUTER_SIMPLE_BIND(ContraindicationsController);
+	ROUTER_SIMPLE_BIND(PackageController);
+
 }
 
 #ifdef HTTP_SERVER_DEMO
