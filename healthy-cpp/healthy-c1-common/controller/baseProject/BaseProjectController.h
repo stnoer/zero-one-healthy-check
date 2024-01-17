@@ -46,13 +46,27 @@ public:// 定义接口
 		API_HANDLER_RESP_VO(execSelectBaseProject(dto));
 	}
 
+	ENDPOINT_INFO(selectBaseProjectList) {
+		// 定义接口标题
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("baseproject.post.selectBaseProjectList"));
+		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
+		API_DEF_ADD_AUTH();
+		// 定义响应参数格式
+		API_DEF_ADD_RSP_JSON_WRAPPER(Uint64JsonVO);
+	}
+	// 3.2 定义新增接口处理
+	ENDPOINT(API_M_POST, "/baseproject/select-baseprojectlist", selectBaseProjectList, BODY_DTO(SelectBaseProjectListDTO::Wrapper, dto), API_HANDLER_AUTH_PARAME) {
+		// 呼叫执行函数响应结果
+		API_HANDLER_RESP_VO(execSelectBaseProjectList(dto));
+	}
+
 private:// 定义接口执行函数
 	//新增数据
 	Uint64JsonVO::Wrapper execAddBaseProject(const AddBaseProjectDTO::Wrapper& dto);
 	//删除数据
 	Uint64JsonVO::Wrapper execSelectBaseProject(const SelectBaseProjectDTO::Wrapper& dto);
 	//修改数据
-	//Uint64JsonVO::Wrapper execSelectBaseProjectList(const SelectBaseProjectListDTO::Wrapper& dto);
+	Uint64JsonVO::Wrapper execSelectBaseProjectList(const SelectBaseProjectListDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

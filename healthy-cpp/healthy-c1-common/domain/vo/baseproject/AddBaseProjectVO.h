@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef _ADD_BASEPROJECTLIST_VO_
-#define _ADD_BASEPROJECTLIST_VO_
+#ifndef _ADD_BASEPROJECTLISTVO_H_
+#define _ADD_BASEPROJECTLISTVO_H_
 
 #include "../../GlobalInclude.h"
-#include "../../dto/baseProject/AddBaseProjectDTO.h"
+#include "../../dto/baseproject/AddBaseProjectDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
@@ -20,4 +20,4 @@ class AddBaseProjectJsonPageVO : public JsonVO<AddBaseProjectPageDTO::Wrapper>
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif // !_ADD_BASEPROJECTLIST_VO_
+#endif // !_ADD_BASEPROJECTLISTVO_H_

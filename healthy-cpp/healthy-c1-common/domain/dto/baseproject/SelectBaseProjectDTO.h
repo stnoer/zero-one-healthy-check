@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _SELECT_BASEPROJECT_DTO_
-#define _SELECT_BASEPROJECT_DTO_
+#ifndef _SELECT_BASEPROJECTDTO_H_
+#define _SELECT_BASEPROJECTDTO_H_
 #include "../../GlobalInclude.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
@@ -61,4 +61,4 @@ class SelectBaseProjectPageDTO :public PageDTO<SelectBaseProjectDTO::Wrapper>
 };
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_SELECT_BASEPROJECT_DTO_
+#endif // !_SELECT_BASEPROJECTDTO_H_

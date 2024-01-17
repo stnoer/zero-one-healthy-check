@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _SELECT_BASEPROJECT_QUERY_
-#define _SELECT_BASEPROJECT_QUERY_
+#ifndef _SELECT_BASEPROJECTQUERY_H_
+#define _SELECT_BASEPROJECTQUERY_H_
 #include "../../GlobalInclude.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
@@ -57,4 +57,4 @@ class SelectBaseProjectQuery : public oatpp::DTO
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif // !_SELECT_BASEPROJECT_QUERY_
+#endif // !_SELECT_BASEPROJECTQUERY_H_

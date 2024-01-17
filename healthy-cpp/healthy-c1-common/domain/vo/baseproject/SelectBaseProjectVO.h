@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef _SELECT_BASEPROJECT_VO_
-#define _SELECT_BASEPROJECT_VO_
+#ifndef _SELECT_BASEPROJECTVO_H_
+#define _SELECT_BASEPROJECTVO_H_
 
 #include "../../GlobalInclude.h"
-#include "../../dto/baseProject/SelectBaseProjectDTO.h"
+#include "../../dto/baseproject/SelectBaseProjectDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
@@ -20,4 +20,4 @@ class SelectBaseProjectJsonPageVO : public JsonVO<SelectBaseProjectPageDTO::Wrap
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif // !_SELECT_BASEPROJECT_VO_
+#endif // !_SELECT_BASEPROJECTVO_H_

@@ -1,32 +1,11 @@
 #pragma once
 
-#ifndef _ADD_BASEPROJECT_DTO_
-#define _ADD_BASEPROJECT_DTO_
+#ifndef _ADD_BASEPROJECT_DTOH_
+#define _ADD_BASEPROJECT_DTOH_
 #include "../../GlobalInclude.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
-	// id 主键
-	// code 项目代码
-	// name 名称
-	// short_name 简称
-	// order_num 排序
-	// office_id 科室id
-	// office_name 科室名称
-	// unit_code 单位编码
-	// unit_name 单位名称
-	// default_value 默认值
-	// result_type 结果类型
-	// in_conclusion 是否进入小结
-	// in_report 是否进入报告
-	// relation_code LIS关联码
-	// del_flag 是否删除(0-未删除，1-已删除)
-	// create_id 创建人
-	// create_time 创建时间
-	// update_id 修改人
-	// update_time 修改时间
-	// delete_id 删除人
-	// delete_time 删除时间
-	// department_id 所属部门
+
 class AddBaseProjectDTO :public oatpp::DTO
 {
 	DTO_INIT(AddBaseProjectDTO, DTO);
@@ -82,4 +61,4 @@ class AddBaseProjectPageDTO :public PageDTO<AddBaseProjectDTO::Wrapper>
 };
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_ADD_BASEPROJECT_DTO_
+#endif // !_ADD_BASEPROJECTDTO_H_
