@@ -6,4 +6,5 @@ critical:
         allowSex: 适合性别
         minAge: 年龄最低值
         maxAge: 年龄最高值
+        id: 表id
          
