@@ -2,7 +2,7 @@
 #ifndef _UpdateTBPVO_H_
 #define _UpdateTBPVO_H_
 #include"../../GlobalInclude.h"
-#include "../../dto/user/UpdateTBPDTO.h"
+#include"../../dto/xiebao/UpdateTBPDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 

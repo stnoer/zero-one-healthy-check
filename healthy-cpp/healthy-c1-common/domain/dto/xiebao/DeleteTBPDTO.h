@@ -16,12 +16,8 @@ class DeleteTBPDTO : public oatpp::DTO,public TreeNode
     // 项目代码
     API_DTO_FIELD_DEFAULT(String, code, ZH_WORDS_GETTER("code"));
     // 是否已删除
-    API_DTO_FIELD_DEFAULT(int, del_flag, ZH_WORDS_GETTER("del_flag"));
-public:
-    void addChild(shared_ptr<TreeNode> child) override
-    {
-        children->push_back(Wrapper(dynamic_pointer_cast<DeleteTBPDTO>(child), Wrapper::Class::getType()));
-    }
+    API_DTO_FIELD_DEFAULT(UInt32, del_flag, ZH_WORDS_GETTER("del_flag"));
+
 };
 
 

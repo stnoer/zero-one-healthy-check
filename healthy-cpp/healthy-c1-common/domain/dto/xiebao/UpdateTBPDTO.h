@@ -9,9 +9,9 @@
 /**
  * 定义一个示例菜单显示JsonVO对象，用于响应给前端
  */
-class UpdateTBPDTOVO : public oatpp::DTO,public TreeNode
+class UpdateTBPDTO : public oatpp::DTO
 {
-    DTO_INIT(UpdateTBPDTOVO, DTO);
+    DTO_INIT(UpdateTBPDTO, DTO);
 
     // 所属科室
     API_DTO_FIELD_DEFAULT(String, office_id, ZH_WORDS_GETTER("office_id"));
@@ -38,11 +38,7 @@ class UpdateTBPDTOVO : public oatpp::DTO,public TreeNode
     // 计量单位
     API_DTO_FIELD_DEFAULT(String, _xx, ZH_WORDS_GETTER("_xx"));
 
-public:
-    void addChild(shared_ptr<TreeNode> child) override
-    {
-        children->push_back(Wrapper(dynamic_pointer_cast<UpdateTBPDTO>(child), Wrapper::Class::getType()));
-    }
+
 };
 
 

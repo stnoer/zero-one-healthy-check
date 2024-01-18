@@ -2,10 +2,10 @@
 #include "Controller.h"
 #include "../ApiDeclarativeServicesHelper.h"
 
-Uint64JsonVO::Wrapper ComboController::execDelTBP(const DelTBPDTO::Wrapper& dto)
+DeleteTBPJsonVO::Wrapper XiebaoController::execDelTBP(const DeleteTBPDTO::Wrapper& dto)
 {
     // 定义返回数据对象
-    auto jvo = Uint64JsonVO::createShared();
+    auto jvo = DeleteTBPJsonVO::createShared();
     // 参数校验
     // 非空校验
 
@@ -16,10 +16,10 @@ Uint64JsonVO::Wrapper ComboController::execDelTBP(const DelTBPDTO::Wrapper& dto)
     return jvo;
 }
 
-Uint64JsonVO::Wrapper ComboController::execUpdateTBP(const UpdateTBPDTO::Wrapper& dto)
+UpdateTBPJsonVO::Wrapper XiebaoController::execUpdateTBP(const UpdateTBPDTO::Wrapper& dto)
 {
     // 定义返回数据对象
-    auto jvo = Uint64JsonVO::createShared();
+    auto jvo = UpdateTBPJsonVO::createShared();
     // 参数校验
     // 非空校验
 
