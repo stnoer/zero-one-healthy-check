@@ -26,6 +26,7 @@
 #include "baseproject/BaseProjectController.h"
 
 #include "./combo/ComboController.h"
+#include "xiebao/Controller.h"
 #ifdef HTTP_SERVER_DEMO
 #include "user/UserController.h"
 #include "sample/SampleController.h"
@@ -57,6 +58,7 @@ void Router::initRouter()
 #ifdef HTTP_SERVER_DEMO
 	createSampleRouter();
 #endif
+
 	//#TIP :系统扩展路由定义，写在这个后面
 	ROUTER_SIMPLE_BIND(BaseProjectController);
 	// 基础数据-基础项目-配置指定项目-新增指定项目危急值 负责人：超能
@@ -66,6 +68,7 @@ void Router::initRouter()
 	ROUTER_SIMPLE_BIND(ComboController);
 	ROUTER_SIMPLE_BIND(ContraindicationsController);
 	ROUTER_SIMPLE_BIND(PackageController);
+	ROUTER_SIMPLE_BIND(XiebaoController);
 
 }
 
