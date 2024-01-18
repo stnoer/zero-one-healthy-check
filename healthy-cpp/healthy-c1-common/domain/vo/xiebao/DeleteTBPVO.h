@@ -2,7 +2,7 @@
 #ifndef _DeleteTBPVO_H_
 #define _DeleteTBPVO_H_
 #include"../../GlobalInclude.h"
-#include "../../dto/user/DeleteTBPDTO.h"
+#include "../../dto/xiebao/DeleteTBPDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 

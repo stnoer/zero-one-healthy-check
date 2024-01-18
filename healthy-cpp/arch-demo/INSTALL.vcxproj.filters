@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\CMakeFiles\74a68b4fa5507aaec669cd68897ab2cf\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{40475041-18E8-35B1-ACA2-02D8462CA743}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

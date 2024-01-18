@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\CharsetConvertHepler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\EmailSender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\ExcelComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\FastDfsClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\MongoClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\NacosClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\PdfComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\RedisClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\RocketClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\SimpleDateTimeFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\SnowFlake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\StringUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\YamlHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\src\sms\aliyun\AliSmsSender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\zero-study\zero-one-healthy-check\healthy-cpp\lib-common\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{95867CA6-3CD4-3202-98EC-9C5BE74C36C9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

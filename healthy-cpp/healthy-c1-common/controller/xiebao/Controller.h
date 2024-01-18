@@ -5,15 +5,15 @@
 #include "oatpp-swagger/Types.hpp"
 #include "domain/vo/BaseJsonVO.h"
 #include "domain/vo/xiebao/DeleteTBPVO.h"
-#include "domain/vo/combo/UpdateTBPVO.h"
+#include "domain/vo/xiebao/UpdateTBPVO.h"
 using namespace oatpp;
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class ComboController : public oatpp::web::server::api::ApiController
+class XiebaoController : public oatpp::web::server::api::ApiController
 {
     // 定义控制器访问入口
-    API_ACCESS_DECLARE(ComboController);
+    API_ACCESS_DECLARE(XiebaoController);
 public:// 定义接口
 
     // 3.1 定义新增接口描述
@@ -28,7 +28,7 @@ public:// 定义接口
     // 3.2 定义新增接口处理
     ENDPOINT(API_M_DEL, "/combo/del-TBP", delTBP, BODY_DTO(DeleteTBPDTO::Wrapper, dto), API_HANDLER_AUTH_PARAME) {
         // 呼叫执行函数响应结果
-        API_HANDLER_RESP_VO(execdelTBP(dto));
+        API_HANDLER_RESP_VO(execDelTBP(dto));
     }
 
     // 3.1 定义新增接口描述
@@ -47,9 +47,9 @@ public:// 定义接口
     }
 private:// 定义接口执行函数
     //删除数据
-    Uint64JsonVO::Wrapper execdelTBP(const DeleteTBPDTO::Wrapper& dto);
+    DeleteTBPJsonVO::Wrapper execDelTBP(const DeleteTBPDTO::Wrapper& dto);
     //修改数据
-    Uint64JsonVO::Wrapper execUpdateTBP(const UpdateTBPDTO::Wrapper& dto);
+    UpdateTBPJsonVO::Wrapper execUpdateTBP(const UpdateTBPDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen
