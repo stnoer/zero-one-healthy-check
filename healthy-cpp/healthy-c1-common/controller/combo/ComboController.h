@@ -63,11 +63,11 @@ public:// 定义接口
 	}
 private:// 定义接口执行函数
 	//新增数据
-	Uint64JsonVO::Wrapper execAddPack(const AddPackDTO::Wrapper& dto);
+	AddPackJsonVO::Wrapper execAddPack(const AddPackDTO::Wrapper& dto);
 	//删除数据
-	Uint64JsonVO::Wrapper execDelPack(const DelPackDTO::Wrapper& dto);
+	DelPackJsonVO::Wrapper execDelPack(const DelPackDTO::Wrapper& dto);
 	//修改数据
-	Uint64JsonVO::Wrapper execUpdatePack(const UpdatePackDTO::Wrapper& dto);
+	UpdatePackJsonVO::Wrapper execUpdatePack(const UpdatePackDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

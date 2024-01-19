@@ -3,10 +3,10 @@
 //#include "../../service/sample/SampleService.h"
 #include "../ApiDeclarativeServicesHelper.h"
 
-Uint64JsonVO::Wrapper ComboController::execAddPack(const AddPackDTO::Wrapper& dto)
+AddPackJsonVO::Wrapper ComboController::execAddPack(const AddPackDTO::Wrapper& dto)
 {
 	// 定义返回数据对象
-	auto jvo = Uint64JsonVO::createShared();
+	auto jvo = AddPackJsonVO::createShared();
 	// 参数校验
 	// 非空校验
 
@@ -17,10 +17,10 @@ Uint64JsonVO::Wrapper ComboController::execAddPack(const AddPackDTO::Wrapper& dt
 	return jvo;
 }
 
-Uint64JsonVO::Wrapper ComboController::execDelPack(const DelPackDTO::Wrapper& dto)
+DelPackJsonVO::Wrapper ComboController::execDelPack(const DelPackDTO::Wrapper& dto)
 {
 	// 定义返回数据对象
-	auto jvo = Uint64JsonVO::createShared();
+	auto jvo = DelPackJsonVO::createShared();
 	// 参数校验
 	// 非空校验
 
@@ -31,10 +31,10 @@ Uint64JsonVO::Wrapper ComboController::execDelPack(const DelPackDTO::Wrapper& dt
 	return jvo;
 }
 
-Uint64JsonVO::Wrapper ComboController::execUpdatePack(const UpdatePackDTO::Wrapper& dto)
+UpdatePackJsonVO::Wrapper ComboController::execUpdatePack(const UpdatePackDTO::Wrapper& dto)
 {
 	// 定义返回数据对象
-	auto jvo = Uint64JsonVO::createShared();
+	auto jvo = UpdatePackJsonVO::createShared();
 	// 参数校验
 	// 非空校验
 
