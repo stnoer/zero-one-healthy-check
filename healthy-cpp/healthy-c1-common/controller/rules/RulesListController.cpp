@@ -79,3 +79,8 @@ StringJsonVO::Wrapper RulesListController::executeModifyRules(const String& file
 	vo->success(String(ss.str().c_str()));
 	return vo;
 }
+
+RulesListJsonVO::Wrapper RulesListController::executeQueryRules(const PayloadDTO& payload)
+{
+	return RulesListJsonVO::Wrapper();
+}

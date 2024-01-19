@@ -51,7 +51,7 @@ public:
 		// 定义接口通用信息
 		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("rules.modify-rules.summary"), StringJsonVO::Wrapper);
 		// 定义修改查询参数描述
-		API_DEF_ADD_QUERY_PARAMS(Int32, "age", ZH_WORDS_GETTER("rules.field.age"), 100, false);
+		API_DEF_ADD_QUERY_PARAMS(Int32, "min_age", ZH_WORDS_GETTER("rules.field.min_age"), 100, false);
 		API_DEF_ADD_QUERY_PARAMS(String, "shortname", ZH_WORDS_GETTER("rules.field.shortname"), "feifei", false);
 		// 定义二进制流请求方式，用于选择上传文件
 		info->addConsumes<oatpp::swagger::Binary>("application/octet-stream");

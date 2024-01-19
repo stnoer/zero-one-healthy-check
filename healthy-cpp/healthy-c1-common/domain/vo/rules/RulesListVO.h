@@ -27,9 +27,9 @@
 /**
  * 定义一个示例菜单显示JsonVO对象，用于响应给前端
  */
-class RulesListJsonVO : public JsonVO<List<RulesListDTO::Wrapper>>
+class RulesListJsonVO : public JsonVO<RulesListDTO::Wrapper>
 {
-	DTO_INIT(RulesListJsonVO, JsonVO<List<RulesListDTO::Wrapper>>);
+	DTO_INIT(RulesListJsonVO, JsonVO<RulesListDTO::Wrapper>);
 public:
 	// 在构造函数中实例化data列表
 	RulesListJsonVO() {

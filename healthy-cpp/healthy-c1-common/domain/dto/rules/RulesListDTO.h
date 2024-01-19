@@ -53,7 +53,6 @@ class RulesListDTO : public oatpp::DTO
 	API_DTO_FIELD_DEFAULT(String, dietary_guidance, ZH_WORDS_GETTER("rules.field.dietary_guidance"));
 	// healthAdvice健康建议
 	API_DTO_FIELD_DEFAULT(String, health_advice, ZH_WORDS_GETTER("rules.field.health_advice"));
-
 	// healthKnowledge健康知识
 	API_DTO_FIELD_DEFAULT(String, health_knowledge, ZH_WORDS_GETTER("rules.field.health_knowledge"));
 	// inConclusion是否进入小结
@@ -61,9 +60,9 @@ class RulesListDTO : public oatpp::DTO
 	// intervalValue区间值
 	API_DTO_FIELD_DEFAULT(String, interval_value, ZH_WORDS_GETTER("rules.field.interval_value"));
 	// maxAge年龄最低值
-	API_DTO_FIELD_DEFAULT(Int32, max_Age, ZH_WORDS_GETTER("rules.field.max_Age"));
+	API_DTO_FIELD_DEFAULT(UInt64, max_Age, ZH_WORDS_GETTER("rules.field.max_Age"));
 	// minAge年龄最高值
-	API_DTO_FIELD_DEFAULT(Int32, min_Age, ZH_WORDS_GETTER("rules.field.min_Age"));
+	API_DTO_FIELD_DEFAULT(UInt64, min_Age, ZH_WORDS_GETTER("rules.field.min_Age"));
 	// positive是否阳性
 	API_DTO_FIELD_DEFAULT(String, positive, ZH_WORDS_GETTER("rules.field.positive"));
 	// reminder温馨提示
