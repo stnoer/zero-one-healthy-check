@@ -3,12 +3,13 @@
 #ifndef _SELECT_BASEPROJECTQUERY_H_
 #define _SELECT_BASEPROJECTQUERY_H_
 #include "../../GlobalInclude.h"
+#include "domain/query/PageQuery.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class SelectBaseProjectQuery : public oatpp::DTO
+class SelectBaseProjectQuery : public PageQuery
 {
-	DTO_INIT(SelectBaseProjectQuery, DTO);
+	DTO_INIT(SelectBaseProjectQuery, PageQuery);
 	// id 主键
 	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("common.baseproject.field.id"));
 	// code 项目代码

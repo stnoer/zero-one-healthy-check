@@ -27,6 +27,7 @@
 #include "uselib/ws/WSController.h"
 #endif
 #include "test/TestController.h"
+#include "sales/UnitController.h"
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
@@ -53,6 +54,7 @@ void Router::initRouter()
 
 	//#TIP :系统扩展路由定义，写在这个后面
 	ROUTER_SIMPLE_BIND(TestController);
+	ROUTER_SIMPLE_BIND(UnitController);
 }
 
 #ifdef HTTP_SERVER_DEMO

@@ -8,9 +8,9 @@
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class SelectBaseProjectListQuery : public oatpp::DTO
+class SelectBaseProjectListQuery : public PageQuery
 {
-	DTO_INIT(SelectBaseProjectListQuery, DTO);
+	DTO_INIT(SelectBaseProjectListQuery, PageQuery);
 
 	// records
 	API_DTO_FIELD_DEFAULT(List<Object<SelectBaseProjectDTO>>, records, ZH_WORDS_GETTER("common.baseproject.field.records"));

@@ -36,6 +36,15 @@
 #include "ExcelComponent.h"
 #include "uselib/rocketmq/TestRocket.h"
 
+#include "MongoClient.h"
+#include <iostream>
+#include <bsoncxx/json.hpp>
+
+#include "RedisClient.h"
+#include "uselib/sms/TestAliSms.h"
+#include "EmailSender.h"
+#include "uselib/pdf/TestPdf.h"
+
 // 是否是发布Swagger文档包
 #ifndef _RELEASE_DOC_
 // 查看Swagger文档的时候不需要连接数据库，解开下面的注释关闭启动连接数据库
@@ -53,9 +62,9 @@ bool getStartArg(int argc, char* argv[]) {
 	std::string serverPort = "8090";
 	// 数据库连接信息
 	std::string dbUsername = "root";
-	std::string dbPassword = "123456";
+	std::string dbPassword = "388099";
 	std::string dbName = "test";
-	std::string dbHost = "192.168.220.128";
+	std::string dbHost = "192.168.57.133";
 	int dbPort = 3306;
 	int dbMax = 5;
 #ifdef LINUX
@@ -228,6 +237,84 @@ void testExcel()
 	excel.writeVectorToFile(fileName, sheetName, data);
 }
 
+void testUseMongo()
+{
+	//创建连接对象
+	ZO_CREATE_MONGO_CLIENT(mc);
+	//添加单条数据
+	auto docBuilder = bsoncxx::builder::stream::document{};
+	bsoncxx::document::value doc = docBuilder
+		<< "name" << "MongoDB"
+		<< "type" << "database"
+		<< "count" << 1
+		<< "versions" << open_array
+		<< "v3.2" << "v3.0" << "v2.6"
+		<< close_array
+		<< "info" << open_document
+		<< "x" << 203
+		<< "y" << 102
+		<< close_document
+		<< finalize;
+	auto res = mc.addOne("t1", doc.view());
+	if (res.type() != bsoncxx::type::k_null)
+	{
+		std::cout << res.get_oid().value.to_string() << std::endl;
+	}
+
+	//添加多条数据
+	std::vector<bsoncxx::document::value> documents;
+	for (int i = 0; i < 10; i++) {
+		documents.push_back(bsoncxx::builder::stream::document{} << "i" << i << finalize);
+	}
+	int32_t addNum = mc.addMultiple("t2", documents);
+	cout << "add data:" << addNum << endl;
+
+	//执行查询调用
+	mc.execute("t2",
+		[](mongocxx::collection* collection) {
+			auto cursor = collection->find({});
+			for (auto doc : cursor) {
+				cout << bsoncxx::to_json(doc) << endl;
+			}
+		});
+}
+
+void testUseRedis()
+{
+	// 定义Redis客户端对象
+	ZO_CREATE_REDIS_CLIENT(rc);
+	// 添加值
+	bool res = rc.execute<bool>(
+		[](Redis* r) {
+			return r->set("01", "star");
+		});
+	std::cout << res << std::endl;
+	// 获取值
+	string val = rc.execute<string>(
+		[](Redis* r) {
+			return r->get("01").value();
+		});
+	std::cout << val << std::endl;
+}
+
+void testMail()
+{
+	std::string topic = ZH_WORDS_GETTER("mail.topic");
+	std::string body1 = ZH_WORDS_GETTER("mail.body1");
+	std::string body2 = ZH_WORDS_GETTER("mail.body2");
+	// 创建邮件发送对象
+	ZO_CREATE_MAIL_SENDER(emailSender);
+	emailSender.setCharset("utf8");
+	emailSender.addRecvEmailAddr("2069682479@qq.com", "awei");
+	emailSender.addCcEmailAddr("2949543550@qq.com", ZH_WORDS_GETTER("mail.revname"));
+	emailSender.setEmailContent(topic, body1);
+	emailSender.addAttachment("/home/file/1.zip");
+	if (emailSender.send())
+		std::cout << "mail send ok" << std::endl;
+	else
+		std::cout << "mail send fail" << std::endl;
+}
+
 int main(int argc, char* argv[]) {
 #ifdef HTTP_SERVER_DEMO
 	// 测试生成 JWT Token
@@ -238,8 +325,14 @@ int main(int argc, char* argv[]) {
 	bool isSetDb = getStartArg(argc, argv);
 	//testDfs("E:\\Images\\20141011112404344.jpg.source.jpg");
 	//testExcel();
-	TestRocket tr;
-	tr.testRocket();
+	//TestRocket tr;
+	//tr.testRocket();
+	//testUseMongo();
+	//testUseRedis();
+	//TestAliSms::test();
+	//testMail();
+	TestPdf::testText();
+	TestPdf::testTpl();
 #ifdef LINUX
 	// 创建Nacos客户端对象
 	NacosClient nacosClient(

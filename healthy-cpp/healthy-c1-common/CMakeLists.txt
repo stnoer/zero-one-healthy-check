@@ -66,7 +66,7 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES} "domain/dto/baseproject/SelectBaseProjectDTO.h" "domain/dto/baseproject/SelectBaseProjectListDTO.h" "domain/query/baseproject/SelectBaseProjectListQuery.h" "domain/vo/baseproject/SelectBaseProjectListVO.h" "domain/vo/baseproject/SelectBaseProjectVO.h" "domain/query/baseproject/SelectBaseProjectQuery.h" "domain/dto/baseproject/AddBaseProjectDTO.h" "domain/vo/baseproject/AddBaseProjectVO.h")
+add_executable (${appName} ${SC_FILES} "domain/dto/baseproject/SelectBaseProjectDTO.h" "domain/dto/baseproject/SelectBaseProjectListDTO.h" "domain/query/baseproject/SelectBaseProjectListQuery.h" "domain/vo/baseproject/SelectBaseProjectListVO.h" "domain/vo/baseproject/SelectBaseProjectVO.h" "domain/query/baseproject/SelectBaseProjectQuery.h" "domain/dto/baseproject/AddBaseProjectDTO.h" "domain/vo/baseproject/AddBaseProjectVO.h" "domain/do/baseproject/SelectBaseProjectDO.h" "dao/baseproject/SelectBaseProjectDAO.h" "dao/baseproject/SelectBaseProjectDAO.cpp" "dao/baseproject/SelectBaseProjectMapper.h" "service/baseproject/SelectBaseProjectService.h" "service/baseproject/SelectBaseProjectService.cpp")
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")
