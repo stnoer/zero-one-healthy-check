@@ -17,9 +17,18 @@
  limitations under the License.
 */
 #include "stdafx.h"
-#include "ContraindicationsController.h"
+#include "PackageController.h"
+#include "service/basis/package/PackageService.h"
 
-ContraindicationsPageJsonVO::Wrapper ContraindicationsController::execQueryContraindications(const ContraindicationsQuery::Wrapper& query)
+
+PackagePageJsonVO::Wrapper PackageController::execQueryPackage(const PackageQuery::Wrapper& query, const PayloadDTO& payload)
 {
-	return {};
+	// 定义一个Service
+	PackageService service;
+	// 查询数据
+	auto result = service.listAll(query);
+	// 响应结果
+	auto jvo = PackagePageJsonVO::createShared();
+	jvo->success(result);
+	return jvo;
 }

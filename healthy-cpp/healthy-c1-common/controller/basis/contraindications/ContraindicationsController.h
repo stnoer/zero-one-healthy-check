@@ -61,11 +61,11 @@ public:		// 定义接口
 		// 解析查询参数为Query领域模型
 		API_HANDLER_QUERY_PARAM(cq, ContraindicationsQuery, param);
 		// 呼叫执行函数响应结果
-		API_HANDLER_RESP_VO(execQueryContraindications(cq));
+		API_HANDLER_RESP_VO(execQueryContraindications(cq, authObject->getPayload()));
 	}
 
 private:	// 定义接口执行函数
-	ContraindicationsPageJsonVO::Wrapper execQueryContraindications(const ContraindicationsQuery::Wrapper& query);
+	ContraindicationsPageJsonVO::Wrapper execQueryContraindications(const ContraindicationsQuery::Wrapper& query, const PayloadDTO& payload);
 };
 
 // 0 取消API控制器使用宏

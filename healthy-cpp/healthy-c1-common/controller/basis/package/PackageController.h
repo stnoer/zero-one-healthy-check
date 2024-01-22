@@ -62,11 +62,11 @@ public:		// 定义接口
 		// 解析查询参数为Query领域模型
 		API_HANDLER_QUERY_PARAM(pq, PackageQuery, param);
 		// 呼叫执行函数响应结果
-		API_HANDLER_RESP_VO(execQueryPackage(pq));
+		API_HANDLER_RESP_VO(execQueryPackage(pq, authObject->getPayload()));
 	}
 
 private:	// 定义接口执行函数
-	PackagePageJsonVO::Wrapper execQueryPackage(const PackageQuery::Wrapper& query);
+	PackagePageJsonVO::Wrapper execQueryPackage(const PackageQuery::Wrapper& query, const PayloadDTO& payload);
 };
 
 // 0 取消API控制器使用宏
