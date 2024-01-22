@@ -44,6 +44,8 @@
  * 前缀与真实值之间使用=分隔
  */
 bool getStartArg(int argc, char* argv[]) {
+	
+	/*
 	// 服务器端口
 	std::string serverPort = "8090";
 	// 数据库连接信息
@@ -53,6 +55,8 @@ bool getStartArg(int argc, char* argv[]) {
 	std::string dbHost = "localhost";
 	int dbPort = 3306;
 	int dbMax = 5;
+	
+	
 #ifdef LINUX
 	// Nacos配置参数
 	std::string nacosAddr = "8.137.107.43:8848";
