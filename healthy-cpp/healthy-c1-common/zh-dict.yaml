@@ -1,3 +1,36 @@
+criticalValue:
+ query:
+  summary: 获取指定项目危机值列表详情
+ post:
+  summary: 新增指定项目危机值
+ field:
+  id: 主键
+  baseProjectId: 项目id
+  level: 等级
+  type: 类型
+  intervalValue: 区间值
+  allowSex: 适合性别
+  minAge: 年龄最低值
+  maxAge: 年龄最高值
+  departmentId: 所属部门
+  createId: 创建人
+  createTime: 创建时间
+test:
+ get:
+  summary: 测试查询
+ field:
+  succ: 查询成功
+  fail: 查询失败
+excel:
+ sheet:
+  s1: 数据表1
+  s2: 数据表2
+ header:
+  h1: 表头1
+  h2: 表头2
+  h3: 表头3
+  h4: 表头4
+  h5: 表头5
 critical:
     field:
         level: 等级

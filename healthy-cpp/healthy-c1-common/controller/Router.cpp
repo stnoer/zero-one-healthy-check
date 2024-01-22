@@ -33,6 +33,9 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
+#include "database/quryCritValueController/queryCritValueController.h"
+#include "database/addCritValueController/addCritValueController.h"
+
 #include "controller/referencevalue/addrefvalue/AddRefValueController.h"
 #include "controller/referencevalue/queryrefvalue/QueryRefValueController.h"
 #include "critical/criticalDeleteController.h"
@@ -63,6 +66,8 @@ void Router::initRouter()
 #endif
 
 	//#TIP :系统扩展路由定义，写在这个后面
+	ROUTER_SIMPLE_BIND(queryCritValueController);
+	ROUTER_SIMPLE_BIND(addCritValueController);
 	ROUTER_SIMPLE_BIND(BaseProjectController);
 	// 基础数据-基础项目-配置指定项目-新增指定项目危急值 负责人：超能
 	ROUTER_SIMPLE_BIND(AddRefValueController);
