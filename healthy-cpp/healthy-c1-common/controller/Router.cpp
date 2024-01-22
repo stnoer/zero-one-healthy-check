@@ -35,6 +35,9 @@
 #endif
 #include "controller/referencevalue/addrefvalue/AddRefValueController.h"
 #include "controller/referencevalue/queryrefvalue/QueryRefValueController.h"
+#include "critical/criticalDeleteController.h"
+#include "critical/criticalModifyController.h"
+
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
@@ -69,6 +72,8 @@ void Router::initRouter()
 	ROUTER_SIMPLE_BIND(ContraindicationsController);
 	ROUTER_SIMPLE_BIND(PackageController);
 	ROUTER_SIMPLE_BIND(XiebaoController);
+	ROUTER_SIMPLE_BIND(CriticalDeleteController);
+	ROUTER_SIMPLE_BIND(CriticalModifyController);
 
 }
 
