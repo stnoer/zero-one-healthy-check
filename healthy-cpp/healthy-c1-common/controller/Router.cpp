@@ -33,6 +33,7 @@
 #include "file/FileController.h"
 #include "uselib/ws/WSController.h"
 #endif
+#include"rules/RulesListController.h"
 #include "database/quryCritValueController/queryCritValueController.h"
 #include "database/addCritValueController/addCritValueController.h"
 
@@ -66,6 +67,7 @@ void Router::initRouter()
 #endif
 
 	//#TIP :系统扩展路由定义，写在这个后面
+	ROUTER_SIMPLE_BIND(RulesListController);
 	ROUTER_SIMPLE_BIND(queryCritValueController);
 	ROUTER_SIMPLE_BIND(addCritValueController);
 	ROUTER_SIMPLE_BIND(BaseProjectController);
