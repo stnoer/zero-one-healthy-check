@@ -28,7 +28,7 @@ uint64_t PackageDAO::count(const PackageQuery::Wrapper& query)
 list<PackageDO> PackageDAO::selectWithPage(const PackageQuery::Wrapper& query)
 {
 	stringstream sql;
-	sql << "SELECT name FROM t_combo";
+	sql << "SELECT name,type FROM t_combo";
 	PACKAGE_TERAM_PARSE(query, sql);
 	sql << " LIMIT " << ((query->pageIndex - 1) * query->pageSize) << "," << query->pageSize;
 	PackageMapper mapper;
@@ -38,14 +38,14 @@ list<PackageDO> PackageDAO::selectWithPage(const PackageQuery::Wrapper& query)
 
 list<PackageDO> PackageDAO::selectByName(const string& name)
 {
-	string sql = "SELECT name FROM t_combo WHERE `name` LIKE CONCAT('%',?,'%')";
+	string sql = "SELECT name,type FROM t_combo WHERE `name` LIKE CONCAT('%',?,'%')";
 	PackageMapper mapper;
 	return sqlSession->executeQuery<PackageDO, PackageMapper>(sql, mapper, "%s", name);
 }
 
 list<PackageDO> PackageDAO::selectByType(const string& type)
 {
-	string sql = "SELECT name FROM t_combo WHERE type=?";
+	string sql = "SELECT name,type FROM t_combo WHERE type=?";
 	PackageMapper mapper;
 	return sqlSession->executeQuery<PackageDO, PackageMapper>(sql, mapper, "%s", type);
 }

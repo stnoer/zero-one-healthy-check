@@ -37,6 +37,12 @@ class PackageDTO : public oatpp::DTO
 	{
 		info->description = ZH_WORDS_GETTER("basis.field.name");
 	}
+	// Ì×²ÍÀàÐÍ
+	DTO_FIELD(String, type);
+	DTO_FIELD_INFO(type)
+	{
+		info->description = ZH_WORDS_GETTER("basis.field.type");
+	}
 };
 
 /**

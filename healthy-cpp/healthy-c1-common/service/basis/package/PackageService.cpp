@@ -26,7 +26,7 @@ PackagePageDTO::Wrapper PackageService::listAll(const PackageQuery::Wrapper& que
 	for (PackageDO sub : result)
 	{
 		auto dto = PackageDTO::createShared();
-		ZO_STAR_DOMAIN_DO_TO_DTO(dto, sub, name, Name)
+		ZO_STAR_DOMAIN_DO_TO_DTO(dto, sub, name, Name, type, Type)
 		pages->addData(dto);
 	}
 	return pages;

@@ -35,6 +35,7 @@ public:
 	{
 		PackageDO data;
 		data.setName(resultSet->getString(1));
+		data.setType(resultSet->getString(2));
 		return data;
 	}
 };

@@ -52,8 +52,8 @@ public:		// 定义接口
 		// 定义分页查询参数描述
 		API_DEF_ADD_PAGE_PARAMS();
 		// 定义其他查询参数描述
-		API_DEF_ADD_QUERY_PARAMS(String, "name", ZH_WORDS_GETTER("basis.field.name"), "defaultName", false);
-		API_DEF_ADD_QUERY_PARAMS(String, "type", ZH_WORDS_GETTER("basis.field.type"), "defaultType", true);
+		API_DEF_ADD_QUERY_PARAMS(String, "name", ZH_WORDS_GETTER("basis.field.name"), "", false);
+		API_DEF_ADD_QUERY_PARAMS(String, "type", ZH_WORDS_GETTER("basis.field.type"), "", false);
 	}
 
 	// 定义获取职业禁忌证术语列表接口

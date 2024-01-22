@@ -30,6 +30,8 @@ class PackageDO
 {
 	// Ì×²ÍÃû³Æ
 	CC_SYNTHESIZE(string, name, Name);
+	// Ì×²ÍÀàĞÍ
+	CC_SYNTHESIZE(string, type, Type);
 public:
 	PackageDO() = default;
 };
