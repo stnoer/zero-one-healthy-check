@@ -14,9 +14,9 @@ class SelectBaseProjectListJsonVO : public JsonVO<SelectBaseProjectListDTO::Wrap
 	DTO_INIT(SelectBaseProjectListJsonVO, JsonVO<SelectBaseProjectListDTO::Wrapper>);
 };
 
-class SelectBaseProjectListJsonPageVO : public JsonVO<SelectBaseProjectListPageDTO::Wrapper>
+class SelectBaseProjectListPageJsonVO : public JsonVO<SelectBaseProjectListPageDTO::Wrapper>
 {
-	DTO_INIT(SelectBaseProjectListJsonPageVO, JsonVO<SelectBaseProjectListPageDTO::Wrapper>);
+	DTO_INIT(SelectBaseProjectListPageJsonVO, JsonVO<SelectBaseProjectListPageDTO::Wrapper>);
 };
 
 

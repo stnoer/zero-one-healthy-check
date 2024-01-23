@@ -17,21 +17,14 @@ Uint64JsonVO::Wrapper BaseProjectController::execAddBaseProject(const AddBasePro
 	return jvo;
 }
 
-Uint64JsonVO::Wrapper BaseProjectController::execSelectBaseProject(const SelectBaseProjectDTO::Wrapper& dto)
+Uint64JsonVO::Wrapper BaseProjectController::execSelectBaseProject(const SelectBaseProjectQuery::Wrapper& query)
 {
-	// 定义返回数据对象
 	auto jvo = Uint64JsonVO::createShared();
-	// 参数校验
-	// 非空校验
-
-	// 定义一个Service
-	// 执行数据新增
-
-	//响应结果
+	/*jvo->success(result);*/
 	return jvo;
 }
 
-Uint64JsonVO::Wrapper BaseProjectController::execSelectBaseProjectList(const SelectBaseProjectListDTO::Wrapper& dto)
+Uint64JsonVO::Wrapper BaseProjectController::execSelectBaseProjectList(const SelectBaseProjectListQuery::Wrapper& query)
 {
 	// 定义返回数据对象
 	auto jvo = Uint64JsonVO::createShared();
