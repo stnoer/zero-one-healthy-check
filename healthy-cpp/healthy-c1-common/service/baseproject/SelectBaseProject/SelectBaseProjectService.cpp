@@ -1,7 +1,7 @@
 
 #include "stdafx.h"
 #include "SelectBaseProjectService.h"
-#include "../../dao/baseproject/SelectBaseProjectDAO.h"
+#include "../../../dao/baseproject/SelectBaseProject/SelectBaseProjectDAO.h"
 
 SelectBaseProjectPageDTO::Wrapper SelectBaseProjectService::listAll(const SelectBaseProjectQuery::Wrapper& query)
 {
@@ -26,29 +26,6 @@ SelectBaseProjectPageDTO::Wrapper SelectBaseProjectService::listAll(const Select
 	for (SelectBaseProjectDO sub : result)
 	{
 		auto dto = SelectBaseProjectDTO::createShared();
-		dto->id = sub.getId();
-		dto->code = sub.getCode();
-		dto->name = sub.getName();
-		dto->short_name = sub.getShortName();
-		dto->order_num = sub.getOrderNum();
-		dto->office_id = sub.getOfficeId();
-		dto->office_name = sub.getOfficeName();
-		dto->unit_code = sub.getUnitCode();
-		dto->unit_name = sub.getUnitName();
-		dto->default_value = sub.getDefaultValue();
-		dto->result_type = sub.getResultType();
-		dto->in_conclusion = sub.getInConclusion();
-		dto->in_report = sub.getInReport();
-		dto->relation_code = sub.getRelationCode();
-		dto->del_flag = sub.getDelFlag();
-		dto->create_id = sub.getCreateId();
-		dto->create_time = sub.getCreateTime();
-		dto->update_id = sub.getUpdateId();
-		dto->update_time = sub.getUpdateTime();
-		dto->delete_id = sub.getDeleteId();
-		dto->delete_time = sub.getDeleteTime();
-		dto->department_id = sub.getDepartmentId();
-
 		ZO_STAR_DOMAIN_DO_TO_DTO(dto, sub,
 			id, Id,
 			code, Code,
@@ -72,7 +49,8 @@ SelectBaseProjectPageDTO::Wrapper SelectBaseProjectService::listAll(const Select
 			delete_id, DeleteId,
 			delete_time, DeleteTime,
 			department_id, DepartmentId)
-			pages->addData(dto);
+
+		pages->addData(dto);
 
 	}
 	return pages;
@@ -82,9 +60,6 @@ uint64_t SelectBaseProjectService::saveData(const SelectBaseProjectDTO::Wrapper&
 {
 	// 组装DO数据
 	SelectBaseProjectDO data;
-	// 	data.setName(dto->name.getValue(""));
-	// 	data.setSex(dto->sex.getValue(""));
-	// 	data.setAge(dto->age.getValue(1));
 	ZO_STAR_DOMAIN_DTO_TO_DO(data, dto,
 		Id, id,
 		Code, code,
@@ -118,10 +93,6 @@ bool SelectBaseProjectService::updateData(const SelectBaseProjectDTO::Wrapper& d
 {
 	// 组装DO数据
 	SelectBaseProjectDO data;
-	// 	data.setId(dto->id.getValue(0));
-	// 	data.setName(dto->name.getValue(""));
-	// 	data.setSex(dto->sex.getValue(""));
-	// 	data.setAge(dto->age.getValue(1));
 	ZO_STAR_DOMAIN_DTO_TO_DO(data, dto,
 		Id, id,
 		Code, code,

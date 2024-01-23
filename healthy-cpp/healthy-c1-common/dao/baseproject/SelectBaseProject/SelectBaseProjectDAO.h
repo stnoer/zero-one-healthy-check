@@ -3,8 +3,8 @@
 #ifndef _SELECTBASEPROJECTDAO_H_
 #define _SELECTBASEPROJECTDAO_H_
 #include "BaseDAO.h"
-#include "../../domain/do/baseproject/SelectBaseProjectDO.h"
-#include "../../domain/query/baseproject/SelectBaseProjectQuery.h"
+#include "../../../domain/do/baseproject/SelectBaseProjectDO.h"
+#include "../../../domain/query/baseproject/SelectBaseProjectQuery.h"
 
 /**
  * 示例表数据库操作实现

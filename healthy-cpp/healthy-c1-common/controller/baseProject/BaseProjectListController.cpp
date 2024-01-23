@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "BaseProjectController.h"
 #include "../ApiDeclarativeServicesHelper.h"
-#include "../../service/baseproject/SelectBaseProjectService.h"
+#include "service/baseproject/SelectBaseProject/SelectBaseProjectService.h"
 
 Uint64JsonVO::Wrapper BaseProjectController::execAddBaseProject(const AddBaseProjectDTO::Wrapper& dto)
 {
@@ -20,7 +20,6 @@ Uint64JsonVO::Wrapper BaseProjectController::execAddBaseProject(const AddBasePro
 Uint64JsonVO::Wrapper BaseProjectController::execSelectBaseProject(const SelectBaseProjectQuery::Wrapper& query)
 {
 	auto jvo = Uint64JsonVO::createShared();
-	/*jvo->success(result);*/
 	return jvo;
 }
 

@@ -20,6 +20,7 @@
 #include "Router.h"
 #include "ApiHelper.h"
 #include "baseproject/BaseProjectController.h"
+#include "baseproject/AddBaseProjectController.h/AddBaseProjectController.h"
 
 #ifdef HTTP_SERVER_DEMO
 #include "user/UserController.h"
@@ -51,7 +52,7 @@ void Router::initRouter()
 	createSampleRouter();
 #endif
 	//#TIP :系统扩展路由定义，写在这个后面
-	ROUTER_SIMPLE_BIND(BaseProjectController);
+	ROUTER_SIMPLE_BIND(AddBaseProjectController);
 }
 
 #ifdef HTTP_SERVER_DEMO
