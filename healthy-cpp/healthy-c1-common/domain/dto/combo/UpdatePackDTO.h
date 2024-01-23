@@ -12,6 +12,8 @@ class UpdatePackDTO : public oatpp::DTO
 {
 	DTO_INIT(AddPackDTO, DTO);
 
+	// ID
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("combo.field.id"));
 	// 套餐名称
 	API_DTO_FIELD_DEFAULT(String, name, ZH_WORDS_GETTER("combo.field.name"));
 	// 封面图片地址
@@ -44,10 +46,6 @@ class UpdatePackDTO : public oatpp::DTO
 	API_DTO_FIELD_DEFAULT(String, diagnosticCriteria, ZH_WORDS_GETTER("combo.field.diagnosticCriteria"));
 	// 症状询问
 	API_DTO_FIELD_DEFAULT(String, symptomInquiry, ZH_WORDS_GETTER("combo.field.symptomInquiry"));
-	// 组合项目列表，注意这个字段可能需要根据你具体的DTO对象列表来定义
-	API_DTO_FIELD_DEFAULT(List<Object<DTO>>, comboItemList, ZH_WORDS_GETTER("combo.field.comboItemList"));
-	// 健康分类，这个字段在提供的JSON中是空的，我们这里为其提供一个空字符串作为默认值
-	API_DTO_FIELD_DEFAULT(String, healthClassification, ZH_WORDS_GETTER("combo.field.healthClassification"), "");
 
 };
 
