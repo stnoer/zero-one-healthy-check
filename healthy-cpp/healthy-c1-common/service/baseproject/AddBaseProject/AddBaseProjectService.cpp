@@ -26,30 +26,6 @@ uint64_t AddBaseProjectService::saveData(const AddBaseProjectDTO::Wrapper& dto)
 {
 	// 组装DO数据
 	AddBaseProjectDO data;
-
-	data.setId(dto->id.getValue(""));
-	data.setCode(dto->code.getValue(""));
-	data.setName(dto->name.getValue(""));
-	data.setShortName(dto->short_name.getValue(""));
-	data.setOrderNum(dto->order_num.getValue(0.0f));
-	data.setOfficeId(dto->office_id.getValue(""));
-	data.setOfficeName(dto->office_name.getValue(""));
-	data.setUnitCode(dto->unit_code.getValue(""));
-	data.setUnitName(dto->unit_name.getValue(""));
-	data.setDefaultValue(dto->default_value.getValue(""));
-	data.setResultType(dto->result_type.getValue(""));
-	data.setInConclusion(dto->in_conclusion.getValue(""));
-	data.setInReport(dto->in_report.getValue(""));
-	data.setRelationCode(dto->relation_code.getValue(""));
-	data.setDelFlag(dto->del_flag.getValue(0));
-	data.setCreateId(dto->create_id.getValue(""));
-	data.setCreateTime(dto->create_time.getValue(""));
-	data.setUpdateId(dto->update_id.getValue(""));
-	data.setUpdateTime(dto->update_time.getValue(""));
-	data.setDeleteId(dto->delete_id.getValue(""));
-	data.setDeleteTime(dto->delete_time.getValue(""));
-	data.setDepartmentId(dto->department_id.getValue(""));
-
 	
 	ZO_STAR_DOMAIN_DTO_TO_DO(data, dto,
 		Id, id,

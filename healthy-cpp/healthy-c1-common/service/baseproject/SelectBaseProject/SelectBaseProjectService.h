@@ -1,8 +1,7 @@
 #pragma once
 
-#ifndef _SELECTBASEPROJECT_SERVICE_
-#define _SELECTBASEPROJECT_SERVICE_
-#include <list>
+#ifndef _SELECTBASEPROJECTLIST_SERVICE_H_
+#define _SELECTBASEPROJECTLIST_SERVICE_H_
 #include "domain/vo/baseproject/SelectBaseProjectVO.h"
 #include "domain/query/baseproject/SelectBaseProjectQuery.h"
 #include "domain/dto/baseproject/SelectBaseProjectDTO.h"
@@ -15,13 +14,7 @@ class SelectBaseProjectService
 public:
 	// 分页查询所有数据
 	SelectBaseProjectPageDTO::Wrapper listAll(const SelectBaseProjectQuery::Wrapper& query);
-	// 保存数据
-	uint64_t saveData(const SelectBaseProjectDTO::Wrapper& dto);
-	// 修改数据
-	bool updateData(const SelectBaseProjectDTO::Wrapper& dto);
-	// 通过ID删除数据
-	bool removeData(uint64_t id);
 };
 
-#endif // !_SELECTBASEPROJECT_SERVICE_
+#endif // !_SELECTBASEPROJECTLIST_SERVICE_H_
 

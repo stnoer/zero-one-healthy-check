@@ -14,15 +14,9 @@ class SelectBaseProjectDAO : public BaseDAO
 public:
 	// 统计数据条数
 	uint64_t count(const SelectBaseProjectQuery::Wrapper& query);
-	// 分页查询数据
-	list<SelectBaseProjectDO> selectWithPage(const SelectBaseProjectQuery::Wrapper& query);
-	// 通过姓名查询数据
-	list<SelectBaseProjectDO> selectByName(const string& name);
-	// 插入数据
-	uint64_t insert(const SelectBaseProjectDO& iObj);
-	// 修改数据
-	int update(const SelectBaseProjectDO& uObj);
-	// 通过ID删除数据
-	int deleteById(uint64_t id);
+
+	std::list<SelectBaseProjectDO> selectWithPage(const SelectBaseProjectQuery::Wrapper& query);
+	// 通过id查询数据
+	list<SelectBaseProjectDO> selectById(const string& id);
 };
 #endif // !_SELECTBASEPROJECTDAO_H_

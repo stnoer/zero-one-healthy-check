@@ -66,7 +66,22 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES} "domain/dto/baseproject/SelectBaseProjectDTO.h" "domain/dto/baseproject/SelectBaseProjectListDTO.h" "domain/query/baseproject/SelectBaseProjectListQuery.h" "domain/vo/baseproject/SelectBaseProjectListVO.h" "domain/vo/baseproject/SelectBaseProjectVO.h" "domain/query/baseproject/SelectBaseProjectQuery.h" "domain/dto/baseproject/AddBaseProjectDTO.h" "domain/vo/baseproject/AddBaseProjectVO.h" "domain/do/baseproject/SelectBaseProjectDO.h" "dao/baseproject/SelectBaseProject/SelectBaseProjectDAO.h" "dao/baseproject/SelectBaseProject/SelectBaseProjectDAO.cpp" "dao/baseproject/SelectBaseProject/SelectBaseProjectMapper.h"   "domain/do/baseproject/AddBaseProjectDO.h" "dao/baseproject/AddBaseProject/AddBaseProjectDAO.h" "dao/baseproject/AddBaseProject/AddBaseProjectDAO.cpp"  "service/baseproject/AddBaseProject/AddBaseProjectService.h" "service/baseproject/AddBaseProject/AddBaseProjectService.cpp" "controller/baseproject/AddBaseProjectController.h/AddBaseProjectController.h" "controller/baseproject/AddBaseProjectController.h/AddBaseProjectController.cpp")
+add_executable (${appName} ${SC_FILES} "domain/dto/baseproject/SelectBaseProjectDTO.h" 
+"domain/vo/baseproject/SelectBaseProjectVO.h" 
+"domain/query/baseproject/SelectBaseProjectQuery.h" 
+"domain/dto/baseproject/AddBaseProjectDTO.h" 
+"domain/vo/baseproject/AddBaseProjectVO.h" 
+"domain/do/baseproject/SelectBaseProjectDO.h" 
+"dao/baseproject/SelectBaseProject/SelectBaseProjectDAO.h" 
+"dao/baseproject/SelectBaseProject/SelectBaseProjectDAO.cpp" 
+"dao/baseproject/SelectBaseProject/SelectBaseProjectMapper.h"   
+"domain/do/baseproject/AddBaseProjectDO.h" 
+"dao/baseproject/AddBaseProject/AddBaseProjectDAO.h" 
+"dao/baseproject/AddBaseProject/AddBaseProjectDAO.cpp"  
+"service/baseproject/AddBaseProject/AddBaseProjectService.h" 
+"service/baseproject/AddBaseProject/AddBaseProjectService.cpp" 
+"controller/baseproject/BaseProjectController.h" 
+"controller/baseproject/BaseProjectController.cpp" )
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")

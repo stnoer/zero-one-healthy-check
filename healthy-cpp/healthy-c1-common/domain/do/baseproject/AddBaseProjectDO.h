@@ -29,6 +29,7 @@
 class AddBaseProjectDO
 {
 	// id 主键
+	//CC_SYNTHESIZE(string, id, Id);
 	CC_SYNTHESIZE(string, id, Id);
 	// code 项目代码
 	CC_SYNTHESIZE(string, code, Code);
@@ -74,7 +75,7 @@ class AddBaseProjectDO
 	CC_SYNTHESIZE(string, department_id, DepartmentId);
 
 public:
-	/*AddBaseProjectDO::AddBaseProjectDO() {
+	AddBaseProjectDO::AddBaseProjectDO() {
 		id = "";
 		code = "";
 		name = "";
@@ -98,7 +99,7 @@ public:
 
 		order_num = 0.0f;
 		del_flag = 0;
-	}*/
+	}
 
 };
 

@@ -9,7 +9,7 @@ sql << " WHERE 1=1"; \
 if (query->id) { \
     sql << " AND `id`=?"; \
     SQLPARAMS_PUSH(params, "s", std::string, query->id.getValue("")); \
-} \
+}/* \
 if (query->code) { \
     sql << " AND `code`=?"; \
     SQLPARAMS_PUSH(params, "s", std::string, query->code.getValue("")); \
@@ -93,7 +93,7 @@ if (query->delete_time) { \
 if (query->department_id) { \
     sql << " AND `department_id`=?"; \
     SQLPARAMS_PUSH(params, "s", std::string, query->department_id.getValue("")); \
-}
+}*/
 
 
 uint64_t SelectBaseProjectDAO::count(const SelectBaseProjectQuery::Wrapper& query)
@@ -117,73 +117,9 @@ std::list<SelectBaseProjectDO> SelectBaseProjectDAO::selectWithPage(const Select
     return sqlSession->executeQuery<SelectBaseProjectDO, SelectBaseProjectMapper>(sqlStr, mapper, params);
 }
 
-std::list<SelectBaseProjectDO> SelectBaseProjectDAO::selectByName(const string& name)
+std::list<SelectBaseProjectDO> SelectBaseProjectDAO::selectById(const string& id)
 {
-    string sql = "SELECT id, code, name, short_name, order_num, office_id, office_name, unit_code, unit_name, default_value, result_type, in_conclusion, in_report, relation_code, del_flag, create_id, create_time, update_id, update_time, delete_id, delete_time, department_id FROM t_base_project WHERE `name` LIKE CONCAT('%',?,'%')";
+    string sql = "SELECT id, code, name, short_name, order_num, office_id, office_name, unit_code, unit_name, default_value, result_type, in_conclusion, in_report, relation_code, del_flag, create_id, create_time, update_id, update_time, delete_id, delete_time, department_id FROM t_base_project WHERE id=?";
     SelectBaseProjectMapper mapper;
-    return sqlSession->executeQuery<SelectBaseProjectDO, SelectBaseProjectMapper>(sql, mapper, "%s", name);
-}
-
-uint64_t SelectBaseProjectDAO::insert(const SelectBaseProjectDO& iObj)
-{
-    string sql = "INSERT INTO `t_base_project` (`id`, `code`, `name`, `short_name`, `order_num`, `office_id`, `office_name`, `unit_code`, `unit_name`, `default_value`, `result_type`, `in_conclusion`, `in_report`, `relation_code`, `del_flag`, `create_id`, `create_time`, `update_id`, `update_time`, `delete_id`, `delete_time`, `department_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    return sqlSession->executeInsert(sql, "%s%s%s%s%f%s%s%s%s%s%s%s%s%s%i%s%s%s%s%s%s%s",
-        iObj.getId().c_str(),
-        iObj.getCode().c_str(),
-        iObj.getName().c_str(),
-        iObj.getShortName().c_str(),
-        iObj.getOrderNum(),
-        iObj.getOfficeId().c_str(),
-        iObj.getOfficeName().c_str(),
-        iObj.getUnitCode().c_str(),
-        iObj.getUnitName().c_str(),
-        iObj.getDefaultValue().c_str(),
-        iObj.getResultType().c_str(),
-        iObj.getInConclusion().c_str(),
-        iObj.getInReport().c_str(),
-        iObj.getRelationCode().c_str(),
-        iObj.getDelFlag(),
-        iObj.getCreateId().c_str(),
-        iObj.getCreateTime().c_str(),
-        iObj.getUpdateId().c_str(),
-        iObj.getUpdateTime().c_str(),
-        iObj.getDeleteId().c_str(),
-        iObj.getDeleteTime().c_str(),
-        iObj.getDepartmentId().c_str());
-}
-
-
-int SelectBaseProjectDAO::update(const SelectBaseProjectDO& uObj)
-{
-    string sql = "UPDATE `t_base_project` SET `code`=?, `name`=?, `short_name`=?, `order_num`=?, `office_id`=?, `office_name`=?, `unit_code`=?, `unit_name`=?, `default_value`=?, `result_type`=?, `in_conclusion`=?, `in_report`=?, `relation_code`=?, `del_flag`=?, `create_id`=?, `create_time`=?, `update_id`=?, `update_time`=?, `delete_id`=?, `delete_time`=?, `department_id`=? WHERE `id`=?";
-    return sqlSession->executeUpdate(sql, "%s%s%s%f%s%s%s%s%s%s%s%s%s%i%s%s%s%s%s%s%s%ull",
-        uObj.getCode().c_str(),
-        uObj.getName().c_str(),
-        uObj.getShortName().c_str(),
-        uObj.getOrderNum(),
-        uObj.getOfficeId().c_str(),
-        uObj.getOfficeName().c_str(),
-        uObj.getUnitCode().c_str(),
-        uObj.getUnitName().c_str(),
-        uObj.getDefaultValue().c_str(),
-        uObj.getResultType().c_str(),
-        uObj.getInConclusion().c_str(),
-        uObj.getInReport().c_str(),
-        uObj.getRelationCode().c_str(),
-        uObj.getDelFlag(),
-        uObj.getCreateId().c_str(),
-        uObj.getCreateTime().c_str(),
-        uObj.getUpdateId().c_str(),
-        uObj.getUpdateTime().c_str(),
-        uObj.getDeleteId().c_str(),
-        uObj.getDeleteTime().c_str(),
-        uObj.getDepartmentId().c_str(),
-        uObj.getId());
-}
-
-int SelectBaseProjectDAO::deleteById(uint64_t id)
-{
-    string sql = "DELETE FROM `t_base_project` WHERE `id`=?";
-    return sqlSession->executeUpdate(sql, "%ull", id);
+    return sqlSession->executeQuery<SelectBaseProjectDO, SelectBaseProjectMapper>(sql, mapper, "%s", id);
 }

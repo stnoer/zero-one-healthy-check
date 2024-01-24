@@ -1,9 +1,9 @@
 #pragma once
 
+#include "domain/query/PageQuery.h"
 #ifndef _SELECT_BASEPROJECTQUERY_H_
 #define _SELECT_BASEPROJECTQUERY_H_
 #include "../../GlobalInclude.h"
-#include "domain/query/PageQuery.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 

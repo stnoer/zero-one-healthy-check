@@ -25,29 +25,32 @@ uint64_t AddBaseProjectDAO::insert(const AddBaseProjectDO& iObj)
 
     string sql = "INSERT INTO `t_base_project` (`id`, `code`, `name`, `short_name`, `order_num`, `office_id`, `office_name`, `unit_code`, `unit_name`, `default_value`, `result_type`, `in_conclusion`, `in_report`, `relation_code`, `del_flag`, `create_id`, `create_time`, `update_id`, `update_time`, `delete_id`, `delete_time`, `department_id`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
+
+
+
     return sqlSession->executeInsert(sql, "%s%s%s%s%f%s%s%s%s%s%s%s%s%s%i%s%s%s%s%s%s%s",
-        iObj.getId().c_str(),        // %s - string
-        iObj.getCode().c_str(),      // %s - string
-        iObj.getName().c_str(),      // %s - string
-        iObj.getShortName().c_str(), // %s - string
+        iObj.getId(),        // %s - string
+        iObj.getCode(),      // %s - string
+        iObj.getName(),      // %s - string
+        iObj.getShortName(), // %s - string
         iObj.getOrderNum(),          // %f - float
-        iObj.getOfficeId().c_str(),  // %s - string
-        iObj.getOfficeName().c_str(),// %s - string
-        iObj.getUnitCode().c_str(),  // %s - string
-        iObj.getUnitName().c_str(),  // %s - string
-        iObj.getDefaultValue().c_str(),// %s - string
-        iObj.getResultType().c_str(),// %s - string
-        iObj.getInConclusion().c_str(),// %s - string
-        iObj.getInReport().c_str(),  // %s - string
-        iObj.getRelationCode().c_str(),// %s - string
+        iObj.getOfficeId(),  // %s - string
+        iObj.getOfficeName(),// %s - string
+        iObj.getUnitCode(),  // %s - string
+        iObj.getUnitName(),  // %s - string
+        iObj.getDefaultValue(),// %s - string
+        iObj.getResultType(),// %s - string
+        iObj.getInConclusion(),// %s - string
+        iObj.getInReport(),  // %s - string
+        iObj.getRelationCode(),// %s - string
         iObj.getDelFlag(),           // %i - int
-        iObj.getCreateId().c_str(),  // %s - string
-        iObj.getCreateTime().c_str(),// %s - string
-        iObj.getUpdateId().c_str(),  // %s - string
-        iObj.getUpdateTime().c_str(),// %s - string
-        iObj.getDeleteId().c_str(),  // %s - string
-        iObj.getDeleteTime().c_str(),// %s - string
-        iObj.getDepartmentId().c_str() // %s - string
+        iObj.getCreateId(),  // %s - string
+        iObj.getCreateTime(),// %s - string
+        iObj.getUpdateId(),  // %s - string
+        iObj.getUpdateTime(),// %s - string
+        iObj.getDeleteId(),  // %s - string
+        iObj.getDeleteTime(),// %s - string
+        iObj.getDepartmentId() // %s - string
     );
 
 }
