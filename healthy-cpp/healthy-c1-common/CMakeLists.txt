@@ -66,7 +66,7 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES})
+add_executable (${appName} ${SC_FILES} "dao/critical/CriticalListDAO.h" "domain/do/critical/CriticalListDO.h"  "dao/critical/CriticalListDAO.cpp" "dao/critical/CriticalListMapper.h" "service/critical/CriticalListService.h" "service/critical/CriticalListService.cpp")
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")

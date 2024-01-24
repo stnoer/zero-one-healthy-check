@@ -18,29 +18,18 @@ class CriticalDeleteController : public oatpp::web::server::api::ApiController
 public:
 
 	// 定义危险值列表查询接口描述
-	ENDPOINT_INFO(queryDeleteCritical) {
-		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("critical.query.summary"));
-		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
-		API_DEF_ADD_AUTH();
-		// 定义响应参数格式
-		API_DEF_ADD_RSP_JSON_WRAPPER(CriticalDeleteListJsonVO);
-		// 定义分页查询参数描述
-		API_DEF_ADD_PAGE_PARAMS();
-		// 定义其他查询参数描述
+	ENDPOINT_INFO(deleteCritical) {
+		// 定义标题和返回类型以及授权支持
+		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("crtical.delete.summary"), Uint64JsonVO::Wrapper);
+		// 定义其他路径参数说明
+		API_DEF_ADD_PATH_PARAMS(UInt64, "id", ZH_WORDS_GETTER("critical.field.id"), 1, true);
 	}
-	//定义危机值查询列表接口
-	ENDPOINT(API_M_DEL, "/critical/query-delete-critical", queryDeleteCritical, QUERIES(QueryParams, params), API_HANDLER_AUTH_PARAME)
-	{
-		// 解析查询参数为Query领域模型
-		API_HANDLER_QUERY_PARAM(cq, CriticalQuery, params);
-		// 呼叫执行函数响应结果
-		API_HANDLER_RESP_VO(execDeleteCritical(cq));
-		return createResponse(Status::CODE_200, "OK");
-	}
+	//定义危机值删除列表接口
+	API_HANDLER_ENDPOINT_AUTH(API_M_DEL, "/critical/query-delete-critical", deleteCritical, PATH(UInt64, id), execDeleteCritical(id));
+	
 private:
 	//定义接口执行函数
-	CriticalDeleteListJsonVO::Wrapper execDeleteCritical(const CriticalQuery::Wrapper& query);
+	CriticalDeleteListJsonVO::Wrapper execDeleteCritical(const UInt64& id);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen
