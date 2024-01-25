@@ -47,9 +47,9 @@ public:// 定义接口
     }
 private:// 定义接口执行函数
     //删除数据
-    DeleteTBPJsonVO::Wrapper execDelTBP(const DeleteTBPDTO::Wrapper& dto);
+    Uint64JsonVO::Wrapper execDelTBP(const DeleteTBPDTO::Wrapper& dto);
     //修改数据
-    UpdateTBPJsonVO::Wrapper execUpdateTBP(const UpdateTBPDTO::Wrapper& dto);
+    Uint64JsonVO::Wrapper execUpdateTBP(const UpdateTBPDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

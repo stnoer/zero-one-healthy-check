@@ -9,9 +9,9 @@
 /**
  * 定义一个示例菜单显示JsonVO对象，用于响应给前端
  */
-class DeleteTBPJsonVO : public JsonVO<List<DeleteTBPDTO::Wrapper>>
+class DeleteTBPJsonVO : public JsonVO<DeleteTBPDTO::Wrapper>
 {
-    DTO_INIT(DeleteTBPJsonVO, JsonVO<List<DeleteTBPDTO::Wrapper>>);
+    DTO_INIT(DeleteTBPJsonVO, JsonVO<DeleteTBPDTO::Wrapper>);
 public:
     // 在构造函数中实例化data列表
     DeleteTBPJsonVO() {

@@ -10,9 +10,9 @@
 * 
  * 定义一个示例菜单显示JsonVO对象，用于响应给前端
  */
-class UpdateTBPJsonVO : public JsonVO<List<UpdateTBPDTO::Wrapper>>
+class UpdateTBPJsonVO : public JsonVO<UpdateTBPDTO::Wrapper>
 {
-    DTO_INIT(UpdateTBPJsonVO, JsonVO<List<UpdateTBPDTO::Wrapper>>);
+    DTO_INIT(UpdateTBPJsonVO, JsonVO<UpdateTBPDTO::Wrapper>);
 public:
     // 在构造函数中实例化data列表
     UpdateTBPJsonVO() {

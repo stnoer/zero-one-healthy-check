@@ -14,7 +14,7 @@ class DeleteTBPDTO : public oatpp::DTO,public TreeNode
     DTO_INIT(DeleteTBPDTO, DTO);
 
     // 项目代码
-    API_DTO_FIELD_DEFAULT(String, code, ZH_WORDS_GETTER("code"));
+    API_DTO_FIELD_DEFAULT(UInt64, code, ZH_WORDS_GETTER("code"));
     // 是否已删除
     API_DTO_FIELD_DEFAULT(UInt32, del_flag, ZH_WORDS_GETTER("del_flag"));
 
