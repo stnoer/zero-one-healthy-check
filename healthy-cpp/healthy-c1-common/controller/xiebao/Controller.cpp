@@ -4,10 +4,10 @@
 #include "../../service/xiebao/DeleteTBPService.h"
 #include "../../service/xiebao/UpdateTBPService.h"
 
-DeleteTBPJsonVO::Wrapper XiebaoController::execDelTBP(const DeleteTBPDTO::Wrapper& dto)
+Uint64JsonVO::Wrapper XiebaoController::execDelTBP(const DeleteTBPDTO::Wrapper& dto)
 {
     // 定义返回数据对象
-    auto jvo = DeleteTBPJsonVO::createShared();
+    auto jvo = Uint64JsonVO::createShared();
     // 参数校验
     if (!dto->code)
     {
@@ -17,7 +17,7 @@ DeleteTBPJsonVO::Wrapper XiebaoController::execDelTBP(const DeleteTBPDTO::Wrappe
     // 定义一个Service
     DeleteTBPService service;
     // 执行数据删除
-    if (service.DeleteTBP(dto){
+    if (service.DeleteTBP(dto)){
         jvo->success(dto->code);
     }
     else
@@ -28,7 +28,7 @@ DeleteTBPJsonVO::Wrapper XiebaoController::execDelTBP(const DeleteTBPDTO::Wrappe
     return jvo;
 }
 
-UpdateTBPJsonVO::Wrapper XiebaoController::execUpdateTBP(const UpdateTBPDTO::Wrapper& dto)
+Uint64JsonVO::Wrapper XiebaoController::execUpdateTBP(const UpdateTBPDTO::Wrapper& dto)
 {
     // 定义返回数据对象
     auto jvo = Uint64JsonVO::createShared();
