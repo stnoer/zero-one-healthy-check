@@ -16,7 +16,7 @@ class UpdateTBPDTO : public oatpp::DTO
     // 所属科室
     API_DTO_FIELD_DEFAULT(String, office_id, ZH_WORDS_GETTER("office_id"));
     // 项目代码
-    API_DTO_FIELD_DEFAULT(String, code, ZH_WORDS_GETTER("code"));
+    API_DTO_FIELD_DEFAULT(UInt64, code, ZH_WORDS_GETTER("code"));
     // 项目名称
     API_DTO_FIELD_DEFAULT(String, name, ZH_WORDS_GETTER("name"));
     // 项目简称
@@ -37,10 +37,7 @@ class UpdateTBPDTO : public oatpp::DTO
     API_DTO_FIELD_DEFAULT(String, relation_code, ZH_WORDS_GETTER("relation_code"));
     // 计量单位
     API_DTO_FIELD_DEFAULT(String, _xx, ZH_WORDS_GETTER("_xx"));
-
-
 };
-
 
 #include OATPP_CODEGEN_END(DTO)
 
