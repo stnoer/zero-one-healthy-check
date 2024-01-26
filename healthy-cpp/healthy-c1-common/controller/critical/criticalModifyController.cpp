@@ -7,12 +7,12 @@ Uint64JsonVO::Wrapper CriticalModifyController::execModifyCritical(const Critica
 {
 	// 定义返回数据对象
 	auto jvo = Uint64JsonVO::createShared();
-	// 参数校验
-	if (!dto->id)
-	{
-		jvo->init(UInt64(-1), RS_PARAMS_INVALID);
-		return jvo;
-	}
+	//// 参数校验
+	//if (!dto->id)
+	//{
+	//	jvo->init(UInt64(-1), RS_PARAMS_INVALID);
+	//	return jvo;
+	//}
 	// 定义一个Service
 	CriticalListService service;
 	// 执行数据修改

@@ -23,7 +23,7 @@ public:
 	API_HANDLER_ENDPOINT_AUTH(API_M_PUT, "/critcal", modifySample, BODY_DTO(CriticalListDTO::Wrapper, dto), execModifyCritical(dto));
 private:
 	//定义接口执行函数
-	Uint64JsonVO::Wrapper execModifyCritical(const CriticalListDTO::Wrapper& query);
+	Uint64JsonVO::Wrapper execModifyCritical(const CriticalListDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

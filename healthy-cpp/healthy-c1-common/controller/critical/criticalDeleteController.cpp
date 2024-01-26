@@ -16,7 +16,7 @@ Uint64JsonVO::Wrapper CriticalDeleteController::execDeleteCritical(const Critica
 	// 定义一个Service
 	CriticalListService service;
 	// 执行数据删除
-	int id = service.removeData(dto->id);
+	int id = service.removeData(dto);
 	if (id>0) {
 		jvo->success(id);
 	}
