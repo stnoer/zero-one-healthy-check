@@ -6,6 +6,7 @@
 #include "domain/vo/BaseJsonVO.h"
 #include "../../domain/vo/critical/CriticalDeleteVO.h"
 #include "../../domain/query/critical/CriticalQuery.h"
+#include "../../domain/dto/critical/CriticalDeleteDTO.h"
 
 
 
@@ -25,11 +26,11 @@ public:
 		API_DEF_ADD_PATH_PARAMS(UInt64, "id", ZH_WORDS_GETTER("critical.field.id"), 1, true);
 	}
 	//定义危机值删除列表接口
-	API_HANDLER_ENDPOINT_AUTH(API_M_DEL, "/critical/query-delete-critical", deleteCritical, PATH(UInt64, id), execDeleteCritical(id));
+	API_HANDLER_ENDPOINT_AUTH(API_M_DEL, "/critical/query-delete-critical", deleteCritical, PATH(String, id), execDeleteCritical(id));
 	
 private:
 	//定义接口执行函数
-	CriticalDeleteListJsonVO::Wrapper execDeleteCritical(const UInt64& id);
+	Uint64JsonVO::Wrapper execDeleteCritical(const CriticalDeleteListDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

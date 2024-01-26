@@ -12,8 +12,11 @@ bool CriticalListService::updateData(const CriticalListDTO::Wrapper& dto)
     return dao.update(data) == 1;
 }
 
-bool CriticalListService::removeData(uint64_t id)
+bool CriticalListService::removeData(const CriticalDeleteListDTO::Wrapper& dto)
 {
+    CriticalListDO data;
+    ZO_STAR_DOMAIN_DTO_TO_DO(data, dto, Id, id)
+
     CriticalListDAO dao;
-    return dao.deleteById(id) == 1;
+    return dao.deleteById(data) == 1;
 }

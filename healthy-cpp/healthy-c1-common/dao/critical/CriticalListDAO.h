@@ -40,6 +40,6 @@ public:
 	//// 修改数据
 	int update(const CriticalListDO& uObj);
 	// 通过ID删除数据
-	int deleteById(uint64_t id);
+	int deleteById(const CriticalListDO& uObj);
 };
 #endif // !_SAMPLE_DAO_

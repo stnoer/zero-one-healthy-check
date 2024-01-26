@@ -3,12 +3,12 @@
 #include "../../service/critical/CriticalListService.h"
 #include "../ApiDeclarativeServicesHelper.h"
 
-CriticalDeleteListJsonVO::Wrapper CriticalDeleteController::execDeleteCritical(const UInt64& id)
+Uint64JsonVO::Wrapper CriticalDeleteController::execDeleteCritical(const CriticalDeleteListDTO::Wrapper& dto)
 {
 	// 定义返回数据对象
 	auto jvo = Uint64JsonVO::createShared();
 	// 参数校验
-	if (!id || id <= 0)
+	if (!dto->id)
 	{
 		jvo->init(UInt64(-1), RS_PARAMS_INVALID);
 		return jvo;
@@ -16,7 +16,8 @@ CriticalDeleteListJsonVO::Wrapper CriticalDeleteController::execDeleteCritical(c
 	// 定义一个Service
 	CriticalListService service;
 	// 执行数据删除
-	if (service.removeData(id.getValue(0))) {
+	int id = service.removeData(dto->id);
+	if (id>0) {
 		jvo->success(id);
 	}
 	else

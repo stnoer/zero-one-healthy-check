@@ -3,12 +3,12 @@
 #include "../../service/critical/CriticalListService.h"
 #include "../ApiDeclarativeServicesHelper.h"
 
-CriticalModifyListJsonVO::Wrapper CriticalModifyController::execModifyCritical(const CriticalListDTO::Wrapper& dto)
+Uint64JsonVO::Wrapper CriticalModifyController::execModifyCritical(const CriticalListDTO::Wrapper& dto)
 {
 	// 定义返回数据对象
 	auto jvo = Uint64JsonVO::createShared();
 	// 参数校验
-	if (!dto->id || dto->id <= 0)
+	if (!dto->id)
 	{
 		jvo->init(UInt64(-1), RS_PARAMS_INVALID);
 		return jvo;
@@ -16,12 +16,13 @@ CriticalModifyListJsonVO::Wrapper CriticalModifyController::execModifyCritical(c
 	// 定义一个Service
 	CriticalListService service;
 	// 执行数据修改
-	if (service.updateData(dto)) {
-		jvo->success(dto->id);
+	int id = service.updateData(dto);
+	if (id > 0) {
+		jvo->success(id);
 	}
 	else
 	{
-		jvo->fail(dto->id);
+		jvo->fail(id);
 	}
 	// 响应结果
 	return jvo;

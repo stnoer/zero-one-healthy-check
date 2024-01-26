@@ -53,11 +53,11 @@ if (query->maxAge) { \
 int CriticalListDAO::update(const CriticalListDO& uObj)
 {
 	string sql = "UPDATE `relation_project_critical` SET `level`=?, `type`=?, `interval_value`=?, `allow_sex`=?, `min_age`=?, `max_age`=? WHERE `id`=?";
-	return sqlSession->executeUpdate(sql, "%s%s%s%s%i%i%ull", uObj.getLevel(), uObj.getType(), uObj.getIntervalValue(), uObj.getAllowSex(), uObj.getMinAge(), uObj.getMaxAge(), uObj.getId());
+	return sqlSession->executeUpdate(sql, "%s%s%s%s%i%i%s", uObj.getLevel(), uObj.getType(), uObj.getIntervalValue(), uObj.getAllowSex(), uObj.getMinAge(), uObj.getMaxAge(), uObj.getId());
 }
 
-int CriticalListDAO::deleteById(uint64_t id)
+int CriticalListDAO::deleteById(const CriticalListDO& uObj)
 {
 	string sql = "DELETE FROM `relation_project_critical` WHERE `id`=?";
-	return sqlSession->executeUpdate(sql, "%ull", id);
+	return sqlSession->executeUpdate(sql, "%s", uObj.getId());
 }

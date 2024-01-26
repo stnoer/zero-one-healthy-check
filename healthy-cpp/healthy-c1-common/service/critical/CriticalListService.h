@@ -18,7 +18,7 @@ public:
 	// 修改数据
 	bool updateData(const CriticalListDTO::Wrapper& dto);
 	// 通过ID删除数据
-	bool removeData(uint64_t id);
+	bool removeData(const CriticalDeleteListDTO::Wrapper& dto);
 };
 
 #endif 

@@ -27,7 +27,7 @@
 class CriticalListDO
 {
 	// ±àºÅ
-	CC_SYNTHESIZE(uint64_t, id, Id);
+	CC_SYNTHESIZE(string, id, Id);
 	CC_SYNTHESIZE(string, level, Level);
 	CC_SYNTHESIZE(string, type, Type);
 	CC_SYNTHESIZE(string, intervalValue, IntervalValue);
@@ -37,7 +37,7 @@ class CriticalListDO
 public:
 	CriticalListDO() 
 	{
-		id = 0;
+		id = "";
 		level = "";
 		type = "";
 		intervalValue = "";
