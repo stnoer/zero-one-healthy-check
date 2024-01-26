@@ -5,10 +5,10 @@
 #include "../ApiDeclarativeServicesHelper.h"
 
 
-ReferenceModJsonVO::Wrapper ReferenceModController::execModifyReference(const ReferenceModDTO::Wrapper& modDto)
+Uint64JsonVO::Wrapper ReferenceModController::execModifyReference(const ReferenceModDTO::Wrapper& modDto)
 {
 	// 定义返回数据对象
-	auto jvo = ReferenceModJsonVO::createShared();
+	auto jvo = Uint64JsonVO::createShared();
 	//test
 	UInt64 ID = std::atoi(((string)(modDto->id)).c_str());
 	
