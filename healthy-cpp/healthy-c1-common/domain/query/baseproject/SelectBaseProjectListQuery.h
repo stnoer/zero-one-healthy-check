@@ -4,7 +4,7 @@
 
  @Author: firmiana
  @Date: 2024/01/23
- @FileName: SelectBaseProjectVO.h
+ @FileName: SelectBaseProjectListQuery.h
  @version: 1.0
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,25 +19,21 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SELECT_BASEPROJECTVO_H_
-#define _SELECT_BASEPROJECTVO_H_
-
+#include "domain/query/PageQuery.h"
+#ifndef _SELECT_BASEPROJECTLIST_QUERY_H_
+#define _SELECT_BASEPROJECTLIST_QUERY_H_
 #include "../../GlobalInclude.h"
-#include "../../dto/baseproject/SelectBaseProjectDTO.h"
-#include "../../query/baseproject/SelectBaseProjectQuery.h"
+#include "SelectBaseProjectQuery.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class SelectBaseProjectJsonVO : public JsonVO<SelectBaseProjectDTO::Wrapper>
+class SelectBaseProjectListQuery : public PageQuery
 {
-	DTO_INIT(SelectBaseProjectJsonVO, JsonVO<SelectBaseProjectDTO::Wrapper>);
-};
-
-class SelectBaseProjectPageJsonVO : public JsonVO<SelectBaseProjectPageDTO::Wrapper>
-{
-	DTO_INIT(SelectBaseProjectPageJsonVO, JsonVO<SelectBaseProjectPageDTO::Wrapper>);
+	DTO_INIT(SelectBaseProjectListQuery, PageQuery);
+	// id Ö÷¼ü
+	API_DTO_FIELD_DEFAULT(List<Object<SelectBaseProjectQuery>>, records, ZH_WORDS_GETTER("common.baseproject.field.id"));
 };
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif // !_SELECT_BASEPROJECTVO_H_
+#endif // !_SELECT_BASEPROJECTLIST_QUERY_H_

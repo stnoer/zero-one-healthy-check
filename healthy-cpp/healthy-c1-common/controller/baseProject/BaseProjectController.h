@@ -27,8 +27,10 @@
 #include "domain/vo/BaseJsonVO.h"
 #include "../../domain/dto/baseproject/AddBaseProjectDTO.h"
 #include "../../domain/query/baseproject/SelectBaseProjectQuery.h"
+#include "../../domain/query/baseproject/SelectBaseProjectListQuery.h"
 #include "../../domain/vo/baseproject/AddBaseProjectVO.h"
 #include "../../domain/vo/baseproject/SelectBaseProjectVO.h"
+#include "../../domain/vo/baseproject/SelectBaseProjectListVO.h"
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
 
@@ -95,11 +97,35 @@ public: // 定义接口
 		API_HANDLER_RESP_VO(execSelectBaseProject(query, authObject->getPayload()));
 	}
 
+	// 获取数据列表（分页+条件
+	ENDPOINT_INFO(selectBaseProjectList) {
+		// 该端点的描述信息
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("common.baseprojectlist.controller.query.summary"));
+		// 添加安全验证
+		API_DEF_ADD_AUTH();
+		// 定义分页查询参数描述(请求)
+		API_DEF_ADD_PAGE_PARAMS();
+		// 定义响应参数格式
+		API_DEF_ADD_RSP_JSON_WRAPPER(SelectBaseProjectListPageJsonVO);
+		// 定义其他查询参数描述 API_DEF_ADD_QUERY_PARAMS(oatpp::List<Object<SelectBaseProjectDTO>>, "records", ZH_WORDS_GETTER("common.baseproject.field.records"), "", false);
+		info->queryParams.add<oatpp::List<Object<SelectBaseProjectDTO>>>("records").description = YamlHelper().getString(&(ServerInfo::getInstance().getZhDictNode()), "common.baseproject.field.records"); 
+		info->queryParams["records"].addExample("default", oatpp::List<Object<SelectBaseProjectDTO>>(0)); 
+		info->queryParams["records"].required = false;
+	}
+	ENDPOINT(API_M_GET, "/common/baseproject/select-baseprojectlist", selectBaseProjectList, QUERIES(QueryParams, params), API_HANDLER_AUTH_PARAME) {
+		// 解析查询参数为Query领域模型
+		API_HANDLER_QUERY_PARAM(query, SelectBaseProjectListQuery, params);
+		// 呼叫执行函数响应结果
+		API_HANDLER_RESP_VO(execSelectBaseProjectList(query, authObject->getPayload()));
+	}
+
 private: // 定义接口执行函数
 
 	Uint64JsonVO::Wrapper execAddBaseProject(const AddBaseProjectDTO::Wrapper& dto);
 
 	SelectBaseProjectPageJsonVO::Wrapper execSelectBaseProject(const SelectBaseProjectQuery::Wrapper& query, const PayloadDTO& payload);
+
+	SelectBaseProjectListPageJsonVO::Wrapper execSelectBaseProjectList(const SelectBaseProjectListQuery::Wrapper& query, const PayloadDTO& payload);
 
 };
 

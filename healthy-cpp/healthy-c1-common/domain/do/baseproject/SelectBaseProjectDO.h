@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef _SELECTBASEPROJECTLISTDO_H_
-#define _SELECTBASEPROJECTLISTDO_H_
+#ifndef _SELECTBASEPROJECT_DO_H_
+#define _SELECTBASEPROJECT_DO_H_
 #include "../DoInclude.h"
 
 /**
@@ -85,4 +85,4 @@ public:
 
 };
 
-#endif // !_SELECTBASEPROJECTLISTDO_DO_
+#endif // !_SELECTBASEPROJECT_DO_H_

@@ -4,7 +4,7 @@
 
  @Author: firmiana
  @Date: 2024/01/23
- @FileName: SelectBaseProjectVO.h
+ @FileName: SelectBaseProjectListVO.h
  @version: 1.0
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,25 +19,25 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SELECT_BASEPROJECTVO_H_
-#define _SELECT_BASEPROJECTVO_H_
+#ifndef _SELECT_BASEPROJECTLIST_VO_H_
+#define _SELECT_BASEPROJECTLIST_VO_H_
 
 #include "../../GlobalInclude.h"
-#include "../../dto/baseproject/SelectBaseProjectDTO.h"
-#include "../../query/baseproject/SelectBaseProjectQuery.h"
+#include "../../dto/baseproject/SelectBaseProjectListDTO.h"
+#include "../../query/baseproject/SelectBaseProjectListQuery.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class SelectBaseProjectJsonVO : public JsonVO<SelectBaseProjectDTO::Wrapper>
+class SelectBaseProjectListJsonVO : public JsonVO<SelectBaseProjectListDTO::Wrapper>
 {
-	DTO_INIT(SelectBaseProjectJsonVO, JsonVO<SelectBaseProjectDTO::Wrapper>);
+	DTO_INIT(SelectBaseProjectListJsonVO, JsonVO<SelectBaseProjectListDTO::Wrapper>);
 };
 
-class SelectBaseProjectPageJsonVO : public JsonVO<SelectBaseProjectPageDTO::Wrapper>
+class SelectBaseProjectListPageJsonVO : public JsonVO<SelectBaseProjectListPageDTO::Wrapper>
 {
-	DTO_INIT(SelectBaseProjectPageJsonVO, JsonVO<SelectBaseProjectPageDTO::Wrapper>);
+	DTO_INIT(SelectBaseProjectListPageJsonVO, JsonVO<SelectBaseProjectListPageDTO::Wrapper>);
 };
 
 #include OATPP_CODEGEN_END(DTO)
 
-#endif // !_SELECT_BASEPROJECTVO_H_
+#endif // !_SELECT_BASEPROJECTLIST_VO_H_

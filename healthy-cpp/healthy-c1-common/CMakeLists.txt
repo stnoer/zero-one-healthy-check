@@ -81,7 +81,7 @@ add_executable (${appName} ${SC_FILES} "domain/dto/baseproject/SelectBaseProject
 "service/baseproject/AddBaseProject/AddBaseProjectService.h" 
 "service/baseproject/AddBaseProject/AddBaseProjectService.cpp" 
 "controller/baseproject/BaseProjectController.h" 
-"controller/baseproject/BaseProjectController.cpp" )
+"controller/baseproject/BaseProjectController.cpp"  "domain/dto/baseproject/SelectBaseProjectListDTO.h" "domain/query/baseproject/SelectBaseProjectListQuery.h" "domain/vo/baseproject/SelectBaseProjectListVO.h" "service/baseproject/SelectBaseProjectList/SelectBaseProjectListService.h" "service/baseproject/SelectBaseProjectList/SelectBaseProjectListService.cpp"    )
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")

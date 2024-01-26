@@ -4,7 +4,7 @@
 
  @Author: firmiana
  @Date: 2024/01/23
- @FileName: SelectBaseProjectService.h
+ @FileName: SelectBaseProjectListService.h
  @version: 1.0
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,21 +19,21 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SELECTBASEPROJECT_SERVICE_H_
-#define _SELECTBASEPROJECT_SERVICE_H_
-#include "domain/vo/baseproject/SelectBaseProjectVO.h"
-#include "domain/query/baseproject/SelectBaseProjectQuery.h"
-#include "domain/dto/baseproject/SelectBaseProjectDTO.h"
+#ifndef _SELECTBASEPROJECTLIST_SERVICE_H_
+#define _SELECTBASEPROJECTLIST_SERVICE_H_
+#include "domain/vo/baseproject/SelectBaseProjectListVO.h"
+#include "domain/query/baseproject/SelectBaseProjectListQuery.h"
+#include "domain/dto/baseproject/SelectBaseProjectListDTO.h"
 
-/**
- * 示例服务实现，演示基础的示例服务实现
- */
-class SelectBaseProjectService
+ /**
+  * 示例服务实现，演示基础的示例服务实现
+  */
+class SelectBaseProjectListService
 {
 public:
 	// 分页查询所有数据
-	SelectBaseProjectPageDTO::Wrapper listAll(const SelectBaseProjectQuery::Wrapper& query);
+	SelectBaseProjectListPageDTO::Wrapper listAll(const SelectBaseProjectListQuery::Wrapper& query);
 };
 
-#endif // !_SELECTBASEPROJECT_SERVICE_H_
+#endif // !_SELECTBASEPROJECTLIST_SERVICE_H_
 

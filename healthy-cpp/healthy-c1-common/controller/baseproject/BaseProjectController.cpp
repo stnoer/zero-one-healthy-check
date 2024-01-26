@@ -1,6 +1,7 @@
 #include "BaseProjectController.h"
 #include "../../service/baseproject/AddBaseProject/AddBaseProjectService.h"
 #include "../../service/baseproject/SelectBaseProject/SelectBaseProjectService.h"
+#include "../../service/baseproject/SelectBaseProjectList/SelectBaseProjectListService.h"
 
 Uint64JsonVO::Wrapper BaseProjectController::execAddBaseProject(const AddBaseProjectDTO::Wrapper& dto)
 {
@@ -31,6 +32,15 @@ SelectBaseProjectPageJsonVO::Wrapper BaseProjectController::execSelectBaseProjec
 	auto result = service.listAll(query);
 	// ÏìÓ¦½á¹û
 	auto jvo = SelectBaseProjectPageJsonVO::createShared();
+	jvo->success(result);
+	return jvo;
+}
+
+SelectBaseProjectListPageJsonVO::Wrapper BaseProjectController::execSelectBaseProjectList(const SelectBaseProjectListQuery::Wrapper& query, const PayloadDTO& payload)
+{
+	SelectBaseProjectListService service;
+	auto result = service.listAll(query);
+	auto jvo = SelectBaseProjectListPageJsonVO::createShared();
 	jvo->success(result);
 	return jvo;
 }

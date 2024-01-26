@@ -27,30 +27,30 @@ uint64_t AddBaseProjectDAO::insert(const AddBaseProjectDO& iObj)
 
 
 
-
-    return sqlSession->executeInsert(sql, "%s%s%s%s%f%s%s%s%s%s%s%s%s%s%i%s%s%s%s%s%s%s",
-        iObj.getId(),        // %s - string
-        iObj.getCode(),      // %s - string
-        iObj.getName(),      // %s - string
-        iObj.getShortName(), // %s - string
-        iObj.getOrderNum(),          // %f - float
-        iObj.getOfficeId(),  // %s - string
-        iObj.getOfficeName(),// %s - string
-        iObj.getUnitCode(),  // %s - string
-        iObj.getUnitName(),  // %s - string
-        iObj.getDefaultValue(),// %s - string
-        iObj.getResultType(),// %s - string
-        iObj.getInConclusion(),// %s - string
-        iObj.getInReport(),  // %s - string
-        iObj.getRelationCode(),// %s - string
-        iObj.getDelFlag(),           // %i - int
-        iObj.getCreateId(),  // %s - string
-        iObj.getCreateTime(),// %s - string
-        iObj.getUpdateId(),  // %s - string
-        iObj.getUpdateTime(),// %s - string
-        iObj.getDeleteId(),  // %s - string
-        iObj.getDeleteTime(),// %s - string
-        iObj.getDepartmentId() // %s - string
+    //"%s%s%s%s%f%s%s%s%s%s%s%s%s%s%i%s%s%s%s%s%s%s"
+    return sqlSession->executeInsert(sql, "%s%s%s%s%i%s%s%s%s%s%s%s%s%s%i%s%dt%s%dt%s%dt%s",
+        iObj.getId(),        
+        iObj.getCode(),      
+        iObj.getName(),      
+        iObj.getShortName(), 
+        iObj.getOrderNum(), 
+        iObj.getOfficeId(),  
+        iObj.getOfficeName(),
+        iObj.getUnitCode(),  
+        iObj.getUnitName(),  
+        iObj.getDefaultValue(),
+        iObj.getResultType(),
+        iObj.getInConclusion(),
+        iObj.getInReport(),  
+        iObj.getRelationCode(),
+        iObj.getDelFlag(), 
+        iObj.getCreateId(),  
+        iObj.getCreateTime(),
+        iObj.getUpdateId(),  
+        iObj.getUpdateTime(),
+        iObj.getDeleteId(),  
+        iObj.getDeleteTime(),
+        iObj.getDepartmentId() 
     );
 
 }

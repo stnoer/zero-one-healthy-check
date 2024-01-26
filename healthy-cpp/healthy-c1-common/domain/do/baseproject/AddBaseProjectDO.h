@@ -97,7 +97,7 @@ public:
 		delete_time = "";
 		department_id = "";
 
-		order_num = 0.0f;
+		order_num = 1;
 		del_flag = 0;
 	}
 
