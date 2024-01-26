@@ -8,7 +8,6 @@ SelectBaseProjectListPageDTO::Wrapper SelectBaseProjectListService::listAll(cons
 
 	auto& records = query->records;//SelectBaseProjectQuery的List
 
-	SelectBaseProjectListDTO::Wrapper baseprojectlist_wrapper = SelectBaseProjectListDTO::createShared();
 
 	auto& baseproject_list = oatpp::List<oatpp::Object<SelectBaseProjectDTO>>::createShared();
 
@@ -49,12 +48,12 @@ SelectBaseProjectListPageDTO::Wrapper SelectBaseProjectListService::listAll(cons
 			delete_time, DeleteTime,
 			department_id, DepartmentId)
 
-			baseproject_list->push_back(dto);
+			baseproject_list->push_back(std::move(dto));
 	}
 
-	
-	baseprojectlist_wrapper->records = baseproject_list;
-
+	//转交查询好的列表
+	SelectBaseProjectListDTO::Wrapper baseprojectlist_wrapper = SelectBaseProjectListDTO::createShared();
+	baseprojectlist_wrapper->records = std::move(baseproject_list);
 	//返回
 	pages->addData(baseprojectlist_wrapper);
 	return pages;
