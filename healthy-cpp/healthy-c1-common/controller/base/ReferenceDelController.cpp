@@ -4,7 +4,7 @@
 
 
 
-ReferenceDelJsonVO::Wrapper ReferenceDelController::execRemoveReference(UInt64 id)
+ReferenceDelJsonVO::Wrapper ReferenceDelController::execRemoveReference(String id)
 {
 	return {};
 }
