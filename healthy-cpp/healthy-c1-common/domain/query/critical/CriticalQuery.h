@@ -13,6 +13,8 @@ class CriticalQuery : public oatpp::DTO
 {
 	// 定义初始化
 	DTO_INIT(CriticalQuery, DTO);
+	//Id
+	API_DTO_FIELD_DEFAULT(UInt64, id, ZH_WORDS_GETTER("critical.field.id"));
 	//等级
 	API_DTO_FIELD_DEFAULT(String, level, ZH_WORDS_GETTER("critical.field.level"));
 	//类型

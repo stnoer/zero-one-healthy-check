@@ -15,6 +15,9 @@ class CriticalDeleteListDTO : public oatpp::DTO
 {
 	// 定义初始化
 	DTO_INIT(CriticalDeleteListDTO, DTO);
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("critical.field.id"));
+
+
 };
 
 #include OATPP_CODEGEN_END(DTO)

@@ -65,3 +65,9 @@ basis:
   title: 术语内容
   type:	 套餐类型
   name:  套餐名称
+        id: 表id
+    delete:
+        summary: 执行删除操作
+    put:
+        summary: 执行修改操作
+         
