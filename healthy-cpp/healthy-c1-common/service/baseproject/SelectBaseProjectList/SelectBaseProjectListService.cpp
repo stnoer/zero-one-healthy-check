@@ -12,7 +12,7 @@ SelectBaseProjectListPageDTO::Wrapper SelectBaseProjectListService::listAll(cons
 	auto& baseproject_list = oatpp::List<oatpp::Object<SelectBaseProjectDTO>>::createShared();
 
 
-	//转换为处理SelectBaseProjectQuery
+	//转换为处理SelectBaseProjectQuery, 利用它的dao与do完成查询.
 	auto list_query = SelectBaseProjectQuery::createShared();
 
 	list_query->pageIndex = query->pageIndex;
