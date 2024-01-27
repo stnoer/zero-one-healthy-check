@@ -46,4 +46,4 @@ class ContraindicationsPageDTO : public PageDTO<ContraindicationsDTO::Wrapper>
 };
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_SAMPLE_DTO_
+#endif // !_CONTRAINDICATIONS_DTO_

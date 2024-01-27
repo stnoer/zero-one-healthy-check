@@ -19,8 +19,8 @@
 #include "stdafx.h"
 #include "ApiHelper.h"
 #include "Router.h"
-#include "basis/ContraindicationsController.h"
-#include "basis/PackageController.h"
+#include "basis/contraindications/ContraindicationsController.h"
+#include "basis/package/PackageController.h"
 
 #include "ApiHelper.h"
 #include "baseproject/BaseProjectController.h"
