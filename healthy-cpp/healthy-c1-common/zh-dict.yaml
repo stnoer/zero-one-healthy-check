@@ -1,0 +1,28 @@
+rules:
+    field:
+        short_name: 简称
+        type: 类型
+        interval_Value: 区间值
+        allow_Sex: 适合性别
+        min_Age: 年龄最低值
+        max_Age: 年龄最高值
+        id: id
+        name: 名称
+        base_project_id: 项目id
+        career_advice: 职业建议
+        create_id: 创建人
+        create_time: 创建时间
+        department_id: 所属部门
+        dietary_guidancce: 饮食指导
+        health_advice: 健康建议
+        health_knowledge: 健康知识
+        in_conclusion: 是否进入小结
+        positive: 是否阳性
+        reminder: 温馨提示
+        sports_guidance: 运动指导
+    delete:
+        summary: 执行删除操作
+    put:
+        summary: 执行修改操作
+    query-all:
+        summary: 查询多条数据
