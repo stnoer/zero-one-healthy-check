@@ -1,16 +1,10 @@
 #pragma once
-
-#ifndef _ADD_BASEPROJECTLISTVO_H_
-#define _ADD_BASEPROJECTLISTVO_H_
-
-#include "../../GlobalInclude.h"
-#include "../../dto/baseproject/AddBaseProjectDTO.h"
 /*
  Copyright Zero One Star. All rights reserved.
 
  @Author: firmiana
  @Date: 2024/01/23
- @FileName: AddBaseProjectVO.h
+ @FileName: SelectBaseProjectListService.h
  @version: 1.0
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,19 +19,21 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
+#ifndef _SELECTBASEPROJECTLIST_SERVICE_H_
+#define _SELECTBASEPROJECTLIST_SERVICE_H_
+#include "domain/vo/baseproject/SelectBaseProjectListVO.h"
+#include "domain/query/baseproject/SelectBaseProjectListQuery.h"
+#include "domain/dto/baseproject/SelectBaseProjectListDTO.h"
 
-#include OATPP_CODEGEN_BEGIN(DTO)
-
-class AddBaseProjectJsonVO : public JsonVO<AddBaseProjectDTO::Wrapper>
+ /**
+  * 示例服务实现，演示基础的示例服务实现
+  */
+class SelectBaseProjectListService
 {
-	DTO_INIT(AddBaseProjectJsonVO, JsonVO<AddBaseProjectDTO::Wrapper>);
+public:
+	// 分页查询所有数据
+	SelectBaseProjectListPageDTO::Wrapper listAll(const SelectBaseProjectListQuery::Wrapper& query);
 };
 
-class AddBaseProjectJsonPageVO : public JsonVO<AddBaseProjectPageDTO::Wrapper>
-{
-	DTO_INIT(AddBaseProjectJsonPageVO, JsonVO<AddBaseProjectPageDTO::Wrapper>);
-};
+#endif // !_SELECTBASEPROJECTLIST_SERVICE_H_
 
-#include OATPP_CODEGEN_END(DTO)
-
-#endif // !_ADD_BASEPROJECTLISTVO_H_

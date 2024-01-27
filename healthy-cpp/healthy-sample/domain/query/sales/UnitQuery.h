@@ -2,10 +2,8 @@
 /*
  Copyright Zero One Star. All rights reserved.
 
- @Author: firmiana
- @Date: 2024/01/23
- @FileName: SelectBaseProjectListDTO.h
- @version: 1.0
+ @Author: awei
+ @Date: 2024/01/13 19:06:21
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -19,25 +17,31 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SELECT_BASEPROJECTLIST_DTO_H_
-#define _SELECT_BASEPROJECTLIST_DTO_H_
+#ifndef _UNITQUERY_H_
+#define _UNITQUERY_H_
+
 #include "../../GlobalInclude.h"
-#include "SelectBaseProjectDTO.h"
+#include "domain/query/PageQuery.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
-
-class SelectBaseProjectListDTO :public oatpp::DTO
+/**
+ * 单位分页查询实体
+ */
+class UnitQuery : public PageQuery
 {
-	DTO_INIT(SelectBaseProjectListDTO, DTO);
-	// records
-	API_DTO_FIELD_DEFAULT(List<Object<SelectBaseProjectDTO>>, records, ZH_WORDS_GETTER("common.baseproject.field.records"));
-	
-};
-
-class SelectBaseProjectListPageDTO :public PageDTO<SelectBaseProjectListDTO::Wrapper>
-{
-	DTO_INIT(SelectBaseProjectListPageDTO, PageDTO<SelectBaseProjectListDTO::Wrapper>);
+	DTO_INIT(UnitQuery, DTO);
+	// 查询类型
+	API_DTO_FIELD_DEFAULT(UInt32, type, ZH_WORDS_GETTER("unit.field.type"));
+	// 单位名称
+	API_DTO_FIELD_DEFAULT(String, name, ZH_WORDS_GETTER("unit.field.name"));
+	// 信用代码
+	API_DTO_FIELD_DEFAULT(String, uscc, ZH_WORDS_GETTER("unit.field.uscc"));
+	// 联系人
+	API_DTO_FIELD_DEFAULT(String, linkMan, ZH_WORDS_GETTER("unit.field.linkMan"));
+	// 联系电话
+	API_DTO_FIELD_DEFAULT(String, linkPhone, ZH_WORDS_GETTER("unit.field.linkPhone"));
 };
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_SELECT_BASEPROJECTLIST_DTO_H_
+
+#endif // !_UNITQUERY_H_

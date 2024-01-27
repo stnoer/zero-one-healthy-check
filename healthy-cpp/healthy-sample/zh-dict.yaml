@@ -14,3 +14,20 @@ excel:
   h3: 表头3
   h4: 表头4
   h5: 表头5
+unit:
+ field:
+  type: 体检类型
+  name: 单位名称
+sms:
+ sign: 零壹CRM
+ targs: "{\"name\":\"李四\",\"time\":\"2025-01-23 12:00\"}"
+mail:
+ topic: 测试主题
+ body1: <html><meta charset=\"UTF-8\"><body><p>我是<b>中文</b></p><p><font color=red>我是红色的中文</font></p></body></html>
+ body2: 我是中文，文字消息内容。
+ revname: 少年
+pdf:
+ title: 测试标题1
+ content: 测试内容1
+ foot: 测试底部1
+  h5: 表头5

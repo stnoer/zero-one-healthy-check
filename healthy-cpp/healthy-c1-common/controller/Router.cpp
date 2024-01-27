@@ -23,7 +23,6 @@
 #include "basis/PackageController.h"
 
 #include "ApiHelper.h"
-#include "baseproject/BaseProjectController.h"
 
 
 #include "./combo/ComboController.h"
@@ -45,6 +44,8 @@
 #include "critical/criticalDeleteController.h"
 #include "critical/criticalModifyController.h"
 
+
+#include "baseproject/BaseProjectController.h"
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
