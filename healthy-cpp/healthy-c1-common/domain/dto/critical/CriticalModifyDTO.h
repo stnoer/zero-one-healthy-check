@@ -14,6 +14,8 @@ class CriticalListDTO : public oatpp::DTO
 {
 	// 定义初始化
 	DTO_INIT(CriticalListDTO, DTO);
+	//Id
+	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("critical.field.id"));
 	//等级
 	API_DTO_FIELD_DEFAULT(String, level, ZH_WORDS_GETTER("critical.field.level"));
 	//类型
