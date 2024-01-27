@@ -1,16 +1,10 @@
 #pragma once
-
-#ifndef _ADD_BASEPROJECTLISTVO_H_
-#define _ADD_BASEPROJECTLISTVO_H_
-
-#include "../../GlobalInclude.h"
-#include "../../dto/baseproject/AddBaseProjectDTO.h"
 /*
  Copyright Zero One Star. All rights reserved.
 
  @Author: firmiana
  @Date: 2024/01/23
- @FileName: AddBaseProjectVO.h
+ @FileName: AddBaseProjectDAO.h
  @version: 1.0
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,19 +19,17 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
+#ifndef _ADDBASEPROJECT_DAO_
+#define _ADDBASEPROJECT_DAO_
+#include "BaseDAO.h"
+#include "../../../domain/do/baseproject/AddBaseProjectDO.h"
 
-#include OATPP_CODEGEN_BEGIN(DTO)
-
-class AddBaseProjectJsonVO : public JsonVO<AddBaseProjectDTO::Wrapper>
+/**
+ * 示例表数据库操作实现
+ */
+class AddBaseProjectDAO : public BaseDAO
 {
-	DTO_INIT(AddBaseProjectJsonVO, JsonVO<AddBaseProjectDTO::Wrapper>);
+public:
+	uint64_t insert(const AddBaseProjectDO& iObj);
 };
-
-class AddBaseProjectJsonPageVO : public JsonVO<AddBaseProjectPageDTO::Wrapper>
-{
-	DTO_INIT(AddBaseProjectJsonPageVO, JsonVO<AddBaseProjectPageDTO::Wrapper>);
-};
-
-#include OATPP_CODEGEN_END(DTO)
-
-#endif // !_ADD_BASEPROJECTLISTVO_H_
+#endif // !_ADDBASEPROJECT_DAO_

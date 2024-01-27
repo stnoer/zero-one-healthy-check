@@ -2,10 +2,8 @@
 /*
  Copyright Zero One Star. All rights reserved.
 
- @Author: firmiana
- @Date: 2024/01/23
- @FileName: SelectBaseProjectListDTO.h
- @version: 1.0
+ @Author: awei
+ @Date: 2024/01/13 19:28:34
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -19,25 +17,29 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SELECT_BASEPROJECTLIST_DTO_H_
-#define _SELECT_BASEPROJECTLIST_DTO_H_
+#ifndef _UNITVO_H_
+#define _UNITVO_H_
+
 #include "../../GlobalInclude.h"
-#include "SelectBaseProjectDTO.h"
+#include "../../dto/sales/UnitListDTO.h"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
-class SelectBaseProjectListDTO :public oatpp::DTO
+/**
+ * 单位列表显示JsonVO实体
+ */
+class UnitListJsonVO : public JsonVO<UnitListDTO::Wrapper>
 {
-	DTO_INIT(SelectBaseProjectListDTO, DTO);
-	// records
-	API_DTO_FIELD_DEFAULT(List<Object<SelectBaseProjectDTO>>, records, ZH_WORDS_GETTER("common.baseproject.field.records"));
-	
+	DTO_INIT(UnitListJsonVO, JsonVO<UnitListDTO::Wrapper>);
 };
 
-class SelectBaseProjectListPageDTO :public PageDTO<SelectBaseProjectListDTO::Wrapper>
-{
-	DTO_INIT(SelectBaseProjectListPageDTO, PageDTO<SelectBaseProjectListDTO::Wrapper>);
+/**
+ * 单位列表显示分页JsonVO实体
+ */
+class UnitListPageJsonVO : public JsonVO<UnitListPageDTO::Wrapper> {
+	DTO_INIT(UnitListPageJsonVO, JsonVO<UnitListPageDTO::Wrapper>);
 };
 
 #include OATPP_CODEGEN_END(DTO)
-#endif // !_SELECT_BASEPROJECTLIST_DTO_H_
+
+#endif // !_UNITVO_H_
