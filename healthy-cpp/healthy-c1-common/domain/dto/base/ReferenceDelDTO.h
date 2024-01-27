@@ -21,6 +21,7 @@
 #define _REFERENCEDELDTO_H_
 #include "../../GlobalInclude.h"
 
+
 #include OATPP_CODEGEN_BEGIN(DTO)
 
 /*

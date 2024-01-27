@@ -7,6 +7,7 @@
 #include "domain/vo/base/ReferenceDelVO.h"
 //#include "domain/query/sample/SampleQuery.h"
 #include "domain/dto/base/ReferenceDelDTO.h"
+#include "../../domain/dto/base/ReferenceModDTO.h"
 
 /**
  * 删除服务实现
@@ -19,7 +20,7 @@ public:
 	//uint64_t saveData(const ReferenceDelDTO::Wrapper& dto);
 	
 	// 通过ID删除数据
-	bool removeData(string id);
+	bool removeData(const ReferenceDelDTO::Wrapper& dto);
 };
 
 #endif // !_REFERENCEDELSERVICE_H_

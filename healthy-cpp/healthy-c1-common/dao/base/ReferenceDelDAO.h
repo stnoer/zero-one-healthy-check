@@ -32,7 +32,7 @@ class ReferenceDelDAO : public BaseDAO
 public:
 
 	// 通过ID删除数据
-	int deleteById(string id);
+	int deleteById(const ReferenceDelDO& uObj);
 
 };
 #endif // !_REFERENCEDELDAO_H_
