@@ -66,7 +66,7 @@ if(WIN32)
 endif()
 
 # 编译可执行文件
-add_executable (${appName} ${SC_FILES} "domain/do/database/CritValueDO.h" "domain/do/database/QueryCritValueDO.h" "domain/do/database/AddCritValueDO.h" "dao/addcritvaluedao/AddCritValueDAO.h")
+add_executable (${appName} ${SC_FILES} "domain/do/database/CritValueDO.h" "domain/do/database/QueryCritValueDO.h" "domain/do/database/AddCritValueDO.h" "dao/addcritvaluedao/AddCritValueDAO.h" "service/database/querycritvalue/QueryCritValueService.cpp" "service/database/querycritvalue/QueryCritValueService.h")
 
 # 链接库
 target_link_libraries (${appName} "lib-common" "lib-oatpp" "lib-mysql")

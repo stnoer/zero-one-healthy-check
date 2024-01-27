@@ -1,3 +1,4 @@
+#pragma once
 /*
  Copyright Zero One Star. All rights reserved.
 
@@ -16,31 +17,24 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#include "stdafx.h"
-#include "../../domain/dto/database/CritValueDTO.h"
-#include "CritValueService.h"
-#include "../../domain/query/database/CritValueQuery.h"
+#ifndef _ADD_CRIT_VALUE_SERVICE_
+#define _ADD_CRIT_VALUE_SERVICE_
+#include <list>
+#include "../../../domain/dto/database/CritValueDTO.h"
 
-CritValuePageDTO::Wrapper CriValueService::listAll(const CritValueQuery::Wrapper& query)
+
+
+/**
+ * 示例服务实现，演示基础的示例服务实现
+ */
+class AddCritValueService
 {
-	return{};
-}
+public:
+	
+	// 保存数据
+	uint64_t saveData(const CritValueDTO::Wrapper& dto);
+	
+};
 
-uint64_t CriValueService::saveData(const CritValuePageDTO::Wrapper& dto)
-{
-	return{};
-
-}
-
-bool CriValueService::updateData(const CritValuePageDTO::Wrapper& dto)
-{
-	return{};
-
-}
-
-bool CriValueService::removeData(uint64_t id)
-{
-	return{};
-
-}
+#endif // !_SAMPLE_SERVICE_
 

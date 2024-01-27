@@ -27,10 +27,10 @@
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class queryCritValueController : public oatpp::web::server::api::ApiController
+class QueryCritValueController : public oatpp::web::server::api::ApiController
 {
 	// 添加访问定义
-	API_ACCESS_DECLARE(queryCritValueController);
+	API_ACCESS_DECLARE(QueryCritValueController);
 public://定义接口
 	// 定义分页查询危急值接口描述
 	ENDPOINT_INFO(queryCriticalValuePage) {

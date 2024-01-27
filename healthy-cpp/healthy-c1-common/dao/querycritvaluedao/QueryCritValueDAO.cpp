@@ -30,7 +30,7 @@ if (query->id) { \
 	SQLPARAMS_PUSH(params, "s", std::string, query->id.getValue("")); \
 } \
 if (query->baseProjectId) { \
-	sql << " AND `baseProjectId`= ?"; \
+	sql << " AND `base_project_id`= ?"; \
 	SQLPARAMS_PUSH(params, "s", std::string, query->baseProjectId.getValue("")); \
 } \
 if (query->level) { \
@@ -42,27 +42,27 @@ if (query->type) { \
 	SQLPARAMS_PUSH(params, "s", std::string, query->type.getValue("")); \
 } \
 if (query->intervalValue) { \
-	sql << " AND `intervalValue` = ?"; \
+	sql << " AND `interval_value` = ?"; \
 	SQLPARAMS_PUSH(params, "s", std::string, query->intervalValue.getValue("")); \
 } \
 if (query->allowSex) { \
-	sql << " AND `allowSex` LIKE ?"; \
-	SQLPARAMS_PUSH(params, "s", std::string, "%" + query->allowSex.getValue("") ); \
+	sql << " AND `allow_sex` LIKE ?"; \
+	SQLPARAMS_PUSH(params, "s", std::string,  query->allowSex.getValue("") ); \
 } \
 if (query->minAge) { \
-	sql << " AND `minAge` = ?"; \
+	sql << " AND `min_age` = ?"; \
 	SQLPARAMS_PUSH(params, "i", int, query->minAge.getValue(0)); \
 } \
 if (query->maxAge) { \
-	sql << " AND `maxAge` = ?"; \
+	sql << " AND `max_age` = ?"; \
 	SQLPARAMS_PUSH(params, "i", int, query->maxAge.getValue(0)); \
 } \
 if (query->departmentId) { \
-	sql << " AND departmentId LIKE ?"; \
+	sql << " AND department_id LIKE ?"; \
 	SQLPARAMS_PUSH(params, "s", std::string, "%" + query->departmentId.getValue("") + "%"); \
 } \
 if(query->createId){\
-	sql<<" AND `createId` = ?";\
+	sql<<" AND `create_id` = ?";\
 	SQLPARAMS_PUSH(params,"s", std::string, query->createId.getValue(""));\
 }\
 if(query->createTime){\
@@ -74,19 +74,21 @@ if(query->createTime){\
 uint64_t QueryCritValueDAO::count(const CritValuePageQuery::Wrapper & query)
 {
 	stringstream sql;
-	sql << "SELECT COUNT(*) FROM relation_project_critical";
+	sql << "SELECT COUNT(*) FROM relation_project_critical As rpr";
 	CRITVALUE_TERAM_PARSE(query, sql);
 	std::string sqlStr = sql.str();
+	std::cout << "Query_sql:" << sqlStr << std::endl;
 	return sqlSession->executeQueryNumerical(sqlStr, params);
 }
 
 std::list<QueryCritValueDO> QueryCritValueDAO::selectWithPage(const CritValuePageQuery::Wrapper & query)
 {
 	stringstream sql;
-	sql << "SELECT * FROM relation_project_critical";
+	sql << "SELECT * FROM relation_project_critical As rpr";
 	CRITVALUE_TERAM_PARSE(query, sql);
 	sql << " LIMIT " << ((query->pageIndex - 1) * query->pageSize) << "," << query->pageSize;
 	QueryCritValueMapper mapper;
 	string sqlStr = sql.str();
+	std:cout << "selectWithPage_sql:" << sqlStr << std::endl;
 	return sqlSession->executeQuery<QueryCritValueDO, QueryCritValueMapper>(sqlStr, mapper, params);
 }

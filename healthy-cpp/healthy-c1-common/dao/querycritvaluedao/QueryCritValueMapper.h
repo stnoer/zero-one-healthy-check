@@ -21,32 +21,31 @@
 #define _QUERY_CRIT_VALUE_MAPPER_
 
 #include "Mapper.h"
-#include "../../domain/do/database/CritValueDO.h"
+#include "../../domain/do/database/QueryCritValueDO.h"
 
 
 /**
  * Ê¾Àý±í×Ö¶ÎÆ¥ÅäÓ³Éä
  */
-class QueryCritValueMapper : public Mapper<CritValueDO>
+class QueryCritValueMapper : public Mapper<QueryCritValueDO>
 {
 public:
-	CritValueDO mapper(ResultSet* resultSet) const override
+	QueryCritValueDO mapper(ResultSet* resultSet) const override
 	{
-		CritValueDO data;
+		QueryCritValueDO data;
 		data.setId(resultSet->getString(1));
 		data.setBaseProjectId(resultSet->getString(2));
-		data.setAllowSex(resultSet->getString(3));
-		data.setLevel(resultSet->getString(4));
-		data.setType(resultSet->getString(5));
-		data.setIntervalValue(resultSet->getString(6));
-		data.getMinAge();
-		data.getMaxAge();
-		data.getDepartmentId();
-		data.getCreateId();
-		data.getCreateTime();
+		data.setLevel(resultSet->getString(3));
+		data.setType(resultSet->getString(4));
+		data.setIntervalValue(resultSet->getString(5));
+		data.setAllowSex(resultSet->getString(6));
+		data.setMinAge(resultSet->getInt64(7));
+		data.setMaxAge(resultSet->getInt64(8));
+		data.setDepartmentId(resultSet->getString(9));
+		data.setCreateId(resultSet->getString(10));
+		data.setCreateTime(resultSet->getString(11));
 		return data;
 	}
-private:
 };
 
 #endif // !_SAMPLE_MAPPER_

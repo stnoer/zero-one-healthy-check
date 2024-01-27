@@ -18,7 +18,6 @@
 */
 #include "stdafx.h"
 #include "AddCritValueDAO.h"
-#include "AddCritValueMapper.h"
 #include <sstream>
 
 //定义条件解析宏，减少重复代码
@@ -35,7 +34,7 @@ uint64_t AddCritValueDAO::insert(const AddCritValueDO& iObj)
 	std::string createTime = ss.str(); // 从字符串流中获取字符串
 
 
-	string sql = "INSERT INTO `relation_project_critical` (`id`, `baseProjectId`, `level`, `type`, `intervalValue`, `allowSex`, `minAge`, `maxAge`, `departmentId`, `createId`, `createTime`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	string sql = "INSERT INTO `relation_project_critical` (`id`, `base_project_id`, `level`, `type`, `interval_value`, `allow_sex`, `min_age`, `max_age`, `department_id`, `create_id`, `create_time`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	return sqlSession->executeInsert(sql, "%s%s%s%s%s%s%i%i%s%s%dt",
 		iObj.getId(),
 		iObj.getBaseProjectId(),
@@ -47,6 +46,7 @@ uint64_t AddCritValueDAO::insert(const AddCritValueDO& iObj)
 		iObj.getMaxAge(),
 		iObj.getDepartmentId(),
 		iObj.getCreateId(),
-		createTime);
+		iObj.getCreateTime()
+		);
 }
 

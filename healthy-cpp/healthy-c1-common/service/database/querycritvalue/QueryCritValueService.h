@@ -1,9 +1,12 @@
 #pragma once
+#include "../../../domain/dto/database/CritValueDTO.h"
+#include "../../../domain/query/database/CritValuePageQuery.h"
 /*
  Copyright Zero One Star. All rights reserved.
 
  @Author: stoner
- @Date: 2024/1/15 
+ @Date: 2024/01/25
+
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -17,28 +20,14 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _SAMPLE_SERVICE_
-#define _SAMPLE_SERVICE_
-#include <list>
-#include "../../domain/query/database/CritValueQuery.h"
-#include "../../domain/dto/database/CritValueDTO.h"
+#ifndef _QUERY_REF_VALUE_SERVICE_H_
+#define _QUERY_REF_VALUE_SERVICE_H_
 
 
-/**
- * 示例服务实现，演示基础的示例服务实现
- */
-class CriValueService
+class QueryCritValueService
 {
 public:
 	// 分页查询所有数据
-	CritValuePageDTO::Wrapper listAll(const CritValueQuery::Wrapper& query);
-	// 保存数据
-	uint64_t saveData(const CritValuePageDTO::Wrapper& dto);
-	// 修改数据
-	bool updateData(const CritValuePageDTO::Wrapper& dto);
-	// 通过ID删除数据
-	bool removeData(uint64_t id);
+	CritValuePageDTO::Wrapper listAll(const CritValuePageQuery::Wrapper& query);
 };
-
-#endif // !_SAMPLE_SERVICE_
-
+#endif

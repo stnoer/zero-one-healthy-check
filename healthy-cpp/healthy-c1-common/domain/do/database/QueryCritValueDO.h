@@ -51,6 +51,7 @@ class QueryCritValueDO
 public:
 	QueryCritValueDO()
 	{
+		id = "";
 		baseProjectId = "";
 		level = "";
 		type = "";

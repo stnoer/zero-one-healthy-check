@@ -58,9 +58,9 @@ class CritValueDTO : public oatpp::DTO
 
 };
 
-class CritValuePageDTO : public PageDTO<CritValueDTO::Wrapper>{
-	DTO_INIT(CritValueDTO, PageDTO<CritValueDTO::Wrapper>);
-
+class CritValuePageDTO : public PageDTO<CritValueDTO::Wrapper>
+{
+	DTO_INIT(CritValuePageDTO, PageDTO<CritValueDTO::Wrapper>);
 };
 
 #include OATPP_CODEGEN_END(DTO)

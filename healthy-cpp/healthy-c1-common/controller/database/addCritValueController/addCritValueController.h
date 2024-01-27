@@ -26,10 +26,10 @@
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class addCritValueController : public oatpp::web::server::api::ApiController
+class AddCritValueController : public oatpp::web::server::api::ApiController
 {
 	// 添加访问定义
-	API_ACCESS_DECLARE(addCritValueController);
+	API_ACCESS_DECLARE(AddCritValueController);
 public:
 	// 定义接口
 	// 定义新增接口描述
