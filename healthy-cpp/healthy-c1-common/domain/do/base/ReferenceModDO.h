@@ -3,7 +3,7 @@
  Copyright Zero One Star. All rights reserved.
 
  @Author: awei
- @Date: 2024/01/15 18:22:06
+ @Date: 2022/10/25 11:52:32
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -17,25 +17,33 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#ifndef _REFERENCEDELDTO_H_
-#define _REFERENCEDELDTO_H_
-#include "../../GlobalInclude.h"
+#ifndef _REFERENCEMODDO_H_
+#define _REFERENCEMODDO_H_
+#include "../DoInclude.h"
 
-
-#include OATPP_CODEGEN_BEGIN(DTO)
-
-/*
-* 基础项目删除指定项目指定参考值DTO
-*/
-class ReferenceDelDTO : public oatpp::DTO
+/**
+ * 示例数据库实体类
+ */
+class ReferenceModDO
 {
-	DTO_INIT(ReferenceDelDTO, DTO);
-	
-	//唯一编号
-	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("base.referenceDel.id"));
+	// 编号
+	CC_SYNTHESIZE(string, id, Id);
+	// 适合性别
+	CC_SYNTHESIZE(string, allowSex, AllowSex);
+	// 年龄最低值
+	CC_SYNTHESIZE(unsigned int, minAge, MinAge);
+	// 年龄最高值
+	CC_SYNTHESIZE(unsigned int, maxAge, MaxAge);
+	// 健康参考值
+	CC_SYNTHESIZE(string, healthyValue, HealthyValue);
+	// 职业参考值
+	CC_SYNTHESIZE(string, occupationValue, OccupationValue);
+public:
+	ReferenceModDO() {
+		id = "";
+		allowSex = "";
+		
+	}
 };
 
-
-
-#include OATPP_CODEGEN_END(DTO)
-#endif // !_REFERENCEDELDTO_H_
+#endif // !_REFERENCEMODDO_H_
