@@ -7,18 +7,11 @@
 #define RULESLIST_TERAM_PARSE(query, sql) \
 SqlParams params; \
 sql<<" WHERE 1=1"; \
-if (query->name) { \
-	sql << " AND `name`=?"; \
-	SQLPARAMS_PUSH(params, "s", std::string, query->name.getValue("")); \
-} \
-if (query->short_name) { \
-	sql << " AND short_name=?"; \
-	SQLPARAMS_PUSH(params, "s", std::string, query->short_name.getValue("")); \
-} \
 if (query->id) { \
 	sql << " AND id=?"; \
-	SQLPARAMS_PUSH(params, "i", std::string, query->id.getValue("")); \
-}
+	SQLPARAMS_PUSH(params, "s", std::string, query->id.getValue("")); \
+} 
+
 
 uint64_t RulesListDAO::count(const RulesListQuery::Wrapper & query)
 {
@@ -32,7 +25,7 @@ uint64_t RulesListDAO::count(const RulesListQuery::Wrapper & query)
 std::list<RulesListDO> RulesListDAO::selectWithPage(const RulesListQuery::Wrapper& query)
 {
 	stringstream sql;
-	sql << "SELECT id,name,short_name,type FROM relation_project_rules";
+	sql << "SELECT id FROM relation_project_rules";
 	RULESLIST_TERAM_PARSE(query, sql);
 	sql << " LIMIT " << ((query->pageIndex - 1) * query->pageSize) << "," << query->pageSize;
 	RulesListMapper mapper;
@@ -56,7 +49,7 @@ uint64_t RulesListDAO::insert(const RulesListDO& iObj)
 int RulesListDAO::update(const RulesListDO& uObj)
 {
 	string sql = "UPDATE `relation_project_rules` SET `name`=?, `type`=?, `short_name`=? WHERE `id`=?";
-	return sqlSession->executeUpdate(sql, "%s%s%i%ull", uObj.getName(), uObj.getType(), uObj.getShort_name(), uObj.getId());
+	return sqlSession->executeUpdate(sql, "%s%s%s%s", uObj.getName(), uObj.getType(), uObj.getShort_name(), uObj.getId());
 }
 
 int RulesListDAO::deleteById(std::string id)
