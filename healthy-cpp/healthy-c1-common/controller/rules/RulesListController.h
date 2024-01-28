@@ -44,8 +44,6 @@ public:
 		API_DEF_ADD_RSP_JSON_WRAPPER(RulesListJsonVO);
 		// 定义分页查询参数描述
 		API_DEF_ADD_PAGE_PARAMS();
-		// 定义其他查询参数描述
-		API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("rules.field.id"), "123", true);
 	}
 	// 3.2 定义查询接口处理
 	ENDPOINT(API_M_GET, "/rules/query-all", queryAllRules, QUERIES(QueryParams, queryParams), API_HANDLER_AUTH_PARAME) {
@@ -65,7 +63,7 @@ public:
 		API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("rules.field.id"), "123", true);
 	}
 	// 定义查询所有用户信息接口端点处理
-	API_HANDLER_ENDPOINT_QUERY_AUTH(API_M_GET, "/rules/query-rules", queryRules, RulesListQuery, executeQueryRules(query));
+	API_HANDLER_ENDPOINT_QUERY_AUTH(API_M_GET, "/rules/query-rules", queryRules, RulesListQuery, executeQueryAll(query));
 
 
 	// 定义修改用户信息端点描述
@@ -75,18 +73,11 @@ public:
 	}
 	API_HANDLER_ENDPOINT_AUTH(API_M_PUT, "/rules/modify-rules", modifyRules, BODY_DTO(RulesListDTO::Wrapper, dto), executeModifyRules(dto));
 
-
-	//// 定义查询用户菜单接口端点描述
-	//API_DEF_ENDPOINT_INFO_AUTH(ZH_WORDS_GETTER("rules.query-rules.summary"), queryRules, RulesListJsonVO::Wrapper);
-	//// 定义查询用户菜单接口端点处理
-	//API_HANDLER_ENDPOINT_NOPARAM_AUTH(API_M_GET, "/rules/query-rules", queryRules, executeQueryRules(authObject->getPayload()))
 private:
 	// 查询所有
 	RulesListPageJsonVO::Wrapper executeQueryAll(const RulesListQuery::Wrapper& query);
 	// 修改用户信息
 	Uint64JsonVO::Wrapper executeModifyRules(const RulesListDTO::Wrapper& dto);
-	// 测试菜单
-	RulesListJsonVO::Wrapper executeQueryRules(const RulesListQuery::Wrapper& query);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

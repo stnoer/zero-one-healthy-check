@@ -42,15 +42,3 @@ Uint64JsonVO::Wrapper RulesListController::executeModifyRules(const RulesListDTO
 	// 响应结果
 	return jvo;
 }
-
-RulesListJsonVO::Wrapper RulesListController::executeQueryRules(const RulesListQuery::Wrapper& query)
-{
-	// 定义一个Service
-	RulesListService service;
-	// 查询数据
-	//auto result = service.selectById(query);
-	// 响应结果
-	auto jvo = RulesListJsonVO::createShared();
-	//jvo->success(result);
-	return jvo;
-}

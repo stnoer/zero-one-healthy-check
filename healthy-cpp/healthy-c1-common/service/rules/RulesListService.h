@@ -16,9 +16,6 @@ public:
 	// 分页查询所有数据
 	RulesListPageDTO::Wrapper listAll(const RulesListQuery::Wrapper& query);
 
-	// 根据Id查询数据
-	RulesListPageDTO::Wrapper selectById(const RulesListQuery::Wrapper& query);
-
 	// 修改数据
 	bool updateData(const RulesListDTO::Wrapper& dto);
 	// 通过ID删除数据
