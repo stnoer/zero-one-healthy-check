@@ -46,7 +46,7 @@ uint64_t AddCritValueDAO::insert(const AddCritValueDO& iObj)
 		iObj.getMaxAge(),
 		iObj.getDepartmentId(),
 		iObj.getCreateId(),
-		iObj.getCreateTime()
+		createTime
 		);
 }
 

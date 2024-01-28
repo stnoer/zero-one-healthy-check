@@ -27,7 +27,7 @@
 /**
  * 示例服务实现，演示基础的示例服务实现
  */
-class AddCritValueService
+class AddCritValueService 
 {
 public:
 	

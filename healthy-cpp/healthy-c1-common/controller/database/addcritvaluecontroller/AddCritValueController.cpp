@@ -37,5 +37,4 @@ Uint64JsonVO::Wrapper AddCritValueController::execCriticalValue(const CritValueD
 	}
 	//ÏìÓ¦½á¹û
 	return jvo;
-	return {};
 }
