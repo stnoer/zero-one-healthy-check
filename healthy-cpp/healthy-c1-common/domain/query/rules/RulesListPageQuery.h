@@ -34,20 +34,6 @@ class RulesListPageQuery : public PageQuery
 	// 定义初始化
 	DTO_INIT(RulesListPageQuery, PageQuery);
 
-    // ID
-	API_DTO_FIELD_DEFAULT(String, id, ZH_WORDS_GETTER("rules.field.id"));
-	// current
-	API_DTO_FIELD_DEFAULT(String, current, ZH_WORDS_GETTER("rules.field.current"));
-	// hitCount
-	API_DTO_FIELD_DEFAULT(Int32, hitCount, ZH_WORDS_GETTER("rules.field.hitCount"));
-	// maxLimit
-	API_DTO_FIELD_DEFAULT(Int32, maxLimit, ZH_WORDS_GETTER("rules.field.maxList"));
-	// optimizeCountSql
-	API_DTO_FIELD_DEFAULT(String, optimizeCountSql, ZH_WORDS_GETTER("rules.field.optimizeCountSql"));
-	// orders
-	API_DTO_FIELD_DEFAULT(String, orders, ZH_WORDS_GETTER("rules.field.orders"));
-	// pages
-	API_DTO_FIELD_DEFAULT(Int32, pages, ZH_WORDS_GETTER("rules.field.pages"));
 };
 
 #include OATPP_CODEGEN_END(DTO)

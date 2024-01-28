@@ -36,45 +36,48 @@ class RulesListController : public oatpp::web::server::api::ApiController
 public:
 	// 定义查询所有规则信息接口端点描述
 	ENDPOINT_INFO(queryAllRules) {
+		// 定义接口标题
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("rules.query-all.summary"));
+		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
+		API_DEF_ADD_AUTH();
+		// 定义响应参数格式
+		API_DEF_ADD_RSP_JSON_WRAPPER(RulesListJsonVO);
+		// 定义分页查询参数描述
+		API_DEF_ADD_PAGE_PARAMS();
+	}
+	// 3.2 定义查询接口处理
+	ENDPOINT(API_M_GET, "/rules/query-all", queryAllRules, QUERIES(QueryParams, queryParams), API_HANDLER_AUTH_PARAME) {
+		// 解析查询参数为Query领域模型
+		API_HANDLER_QUERY_PARAM(userQuery, RulesListQuery, queryParams);
+		// 呼叫执行函数响应结果
+		API_HANDLER_RESP_VO(executeQueryAll(userQuery));
+	}
+
+	// 定义查询所有规则信息接口端点描述
+	ENDPOINT_INFO(queryRules) {
 		// 定义接口通用信息
-		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("rules.query-all.summary"), RulesListJsonVO::Wrapper);
+		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("rules.query-rules.summary"), RulesListJsonVO::Wrapper);
 		// 定义分页查询参数描述
 		API_DEF_ADD_PAGE_PARAMS();
 		// 定义其他查询参数描述
-		API_DEF_ADD_QUERY_PARAMS(String, "shortname", ZH_WORDS_GETTER("rules.field.shortname"), "li ming", true);
+		API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("rules.field.id"), "123", true);
 	}
 	// 定义查询所有用户信息接口端点处理
-	API_HANDLER_ENDPOINT_QUERY_AUTH(API_M_GET, "/rules/query-all", queryAllRules, RulesListQuery, executeQueryAll(query));
+	API_HANDLER_ENDPOINT_QUERY_AUTH(API_M_GET, "/rules/query-rules", queryRules, RulesListQuery, executeQueryAll(query));
+
 
 	// 定义修改用户信息端点描述
 	ENDPOINT_INFO(modifyRules) {
 		// 定义接口通用信息
-		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("rules.modify-rules.summary"), StringJsonVO::Wrapper);
-		// 定义修改查询参数描述
-		API_DEF_ADD_QUERY_PARAMS(Int32, "min_age", ZH_WORDS_GETTER("rules.field.min_age"), 100, false);
-		API_DEF_ADD_QUERY_PARAMS(String, "shortname", ZH_WORDS_GETTER("rules.field.shortname"), "feifei", false);
-		// 定义二进制流请求方式，用于选择上传文件
-		info->addConsumes<oatpp::swagger::Binary>("application/octet-stream");
+		API_DEF_ADD_COMMON_AUTH(ZH_WORDS_GETTER("rules.modify-rules.summary"), Uint64JsonVO::Wrapper);
 	}
-	// 定义修改用户信息端点处理（注意：此方式只支持单文件上传，并且更新字段不是很多的场景使用）
-	ENDPOINT(API_M_POST, "/rules/modify-rules", modifyRules, BODY_STRING(String, fileBody), QUERIES(QueryParams, qps), API_HANDLER_AUTH_PARAME) {
-		// 解析查询参数
-		API_HANDLER_QUERY_PARAM(dto, RulesListDTO, qps);
-		// 执行文件保存逻辑
-		API_HANDLER_RESP_VO(executeModifyRules(fileBody, dto));
-	}
+	API_HANDLER_ENDPOINT_AUTH(API_M_PUT, "/rules/modify-rules", modifyRules, BODY_DTO(RulesListDTO::Wrapper, dto), executeModifyRules(dto));
 
-	// 定义查询用户菜单接口端点描述
-	API_DEF_ENDPOINT_INFO_AUTH(ZH_WORDS_GETTER("rules.query-rules.summary"), queryRules, RulesListJsonVO::Wrapper);
-	// 定义查询用户菜单接口端点处理
-	API_HANDLER_ENDPOINT_NOPARAM_AUTH(API_M_GET, "/rules/query-rules", queryRules, executeQueryRules(authObject->getPayload()))
 private:
 	// 查询所有
-	RulesListPageJsonVO::Wrapper executeQueryAll(const RulesListQuery::Wrapper& RulesListQuery);
+	RulesListPageJsonVO::Wrapper executeQueryAll(const RulesListQuery::Wrapper& query);
 	// 修改用户信息
-	StringJsonVO::Wrapper executeModifyRules(const String& fileBody, const RulesListDTO::Wrapper& dto);
-	// 测试菜单
-	RulesListJsonVO::Wrapper executeQueryRules(const PayloadDTO& payload);
+	Uint64JsonVO::Wrapper executeModifyRules(const RulesListDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen

@@ -25,29 +25,20 @@ RulesListPageDTO::Wrapper RulesListService::listAll(const RulesListQuery::Wrappe
 	for (RulesListDO sub : result)
 	{
 		auto dto = RulesListDTO::createShared();
-		// 		dto->id = sub.getId();
-		// 		dto->name = sub.getName();
-		// 		dto->sex = sub.getSex();
-		// 		dto->age = sub.getAge();
+
 		ZO_STAR_DOMAIN_DO_TO_DTO(dto, sub, id, Id, name, Name, short_name, Short_name, type,Type)
-			pages->addData(dto);
+		pages->addData(dto);
 
 	}
 	return pages;
 }
 
-uint64_t RulesListService::saveData(const RulesListDTO::Wrapper& dto)
-{
-	// 组装DO数据
-	RulesListDO data;
-	// 	data.setName(dto->name.getValue(""));
-	// 	data.setSex(dto->sex.getValue(""));
-	// 	data.setAge(dto->age.getValue(1));
-	ZO_STAR_DOMAIN_DTO_TO_DO(data, dto, Name, name, Short_name, short_name, Type, type)
-		// 执行数据添加
-		RulesListDAO dao;
-	return dao.insert(data);
-}
+//RulesListPageDTO::Wrapper RulesListService::selectById(const RulesListQuery::Wrapper& query)
+//{
+//
+//	return RulesListPageDTO::Wrapper();
+//}
+
 
 bool RulesListService::updateData(const RulesListDTO::Wrapper& dto)
 {
@@ -61,10 +52,4 @@ bool RulesListService::updateData(const RulesListDTO::Wrapper& dto)
 		// 执行数据修改
 		RulesListDAO dao;
 	return dao.update(data) == 1;
-}
-
-bool RulesListService::removeData(string id)
-{
-	RulesListDAO dao;
-	return dao.deleteById(id) == 1;
 }
