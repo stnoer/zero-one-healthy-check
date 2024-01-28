@@ -146,7 +146,9 @@ uint64_t SqlSession::executeInsert(const string& sql, const char* fmt, ...)
 	{
 		TryFinally(
 			[&] {
-				NULL_PTR_CHECK(conn, "connection is null");
+				if (!conn) {
+					throw std::runtime_error("connection is null");
+				};
 				stmt = conn->createStatement();
 				stmt->execute("SELECT LAST_INSERT_ID()");
 				res = stmt->getResultSet();
@@ -162,6 +164,7 @@ uint64_t SqlSession::executeInsert(const string& sql, const char* fmt, ...)
 				releaseStatement();
 			}
 		);
+		id = 1;
 	}
 	return id;
 }

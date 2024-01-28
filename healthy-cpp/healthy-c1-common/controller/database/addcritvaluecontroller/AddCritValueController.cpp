@@ -28,7 +28,8 @@ Uint64JsonVO::Wrapper AddCritValueController::execCriticalValue(const CritValueD
 	AddCritValueService service;
 	// 执行数据新增
 	uint64_t id = service.saveData(dto);
-	if (id > 0) {
+	cout << id << endl;
+	if (id) {
 		jvo->success(UInt64(id));
 	}
 	else
