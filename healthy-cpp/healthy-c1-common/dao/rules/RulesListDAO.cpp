@@ -8,7 +8,7 @@
 SqlParams params; \
 sql<<" WHERE 1=1"; \
 if (query->id) { \
-	sql << " AND id=?"; \
+	sql << " AND `id`=?"; \
 	SQLPARAMS_PUSH(params, "s", std::string, query->id.getValue("")); \
 } 
 

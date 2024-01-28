@@ -44,6 +44,8 @@ public:
 		API_DEF_ADD_RSP_JSON_WRAPPER(RulesListJsonVO);
 		// 定义分页查询参数描述
 		API_DEF_ADD_PAGE_PARAMS();
+		// 定义其他查询参数描述
+		API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("rules.field.id"), "123", true);
 	}
 	// 3.2 定义查询接口处理
 	ENDPOINT(API_M_GET, "/rules/query-all", queryAllRules, QUERIES(QueryParams, queryParams), API_HANDLER_AUTH_PARAME) {
