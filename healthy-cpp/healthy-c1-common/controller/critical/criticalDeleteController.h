@@ -21,7 +21,7 @@ public:
 	// 定义危险值列表查询接口描述
 	ENDPOINT_INFO(deleteCritical) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.delPack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("critical.delete.summary"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
