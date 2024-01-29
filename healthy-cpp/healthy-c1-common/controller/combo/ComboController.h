@@ -23,7 +23,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(addPack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.addPack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.addPack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -38,7 +38,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(delPack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.delPack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.delPack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -53,7 +53,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(updatePack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.updatePack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.updatePack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
