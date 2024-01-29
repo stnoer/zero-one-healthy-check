@@ -36,8 +36,8 @@
 #include "base/ReferenceModController.h"
 #include "base/ReferenceDelController.h"
 #include"rules/RulesListController.h"
-#include "database/quryCritValueController/queryCritValueController.h"
 #include "database/addCritValueController/addCritValueController.h"
+#include "database/querycritvaluecontroller/queryCritValueController.h"
 
 #include "controller/referencevalue/addrefvalue/AddRefValueController.h"
 #include "controller/referencevalue/queryrefvalue/QueryRefValueController.h"
@@ -74,8 +74,8 @@ void Router::initRouter()
 	ROUTER_SIMPLE_BIND(ReferenceModController);
 	ROUTER_SIMPLE_BIND(ReferenceDelController);
 	ROUTER_SIMPLE_BIND(RulesListController);
-	ROUTER_SIMPLE_BIND(queryCritValueController);
-	ROUTER_SIMPLE_BIND(addCritValueController);
+	ROUTER_SIMPLE_BIND(QueryCritValueController);
+	ROUTER_SIMPLE_BIND(AddCritValueController);
 	ROUTER_SIMPLE_BIND(BaseProjectController);
 	// 基础数据-基础项目-配置指定项目-新增指定项目危急值 负责人：超能
 	ROUTER_SIMPLE_BIND(AddRefValueController);
@@ -87,6 +87,8 @@ void Router::initRouter()
 	ROUTER_SIMPLE_BIND(XiebaoController);
 	ROUTER_SIMPLE_BIND(CriticalDeleteController);
 	ROUTER_SIMPLE_BIND(CriticalModifyController);
+	ROUTER_SIMPLE_BIND(QueryCritValueController);
+	ROUTER_SIMPLE_BIND(AddCritValueController);
 
 }
 

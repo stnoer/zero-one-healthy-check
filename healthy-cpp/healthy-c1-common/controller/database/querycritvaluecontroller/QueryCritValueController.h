@@ -27,10 +27,10 @@
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
-class queryCritValueController : public oatpp::web::server::api::ApiController
+class QueryCritValueController : public oatpp::web::server::api::ApiController
 {
 	// 添加访问定义
-	API_ACCESS_DECLARE(queryCritValueController);
+	API_ACCESS_DECLARE(QueryCritValueController);
 public://定义接口
 	// 定义分页查询危急值接口描述
 	ENDPOINT_INFO(queryCriticalValuePage) {
@@ -44,10 +44,11 @@ public://定义接口
 		API_DEF_ADD_PAGE_PARAMS();
 		// 定义其他查询参数描述
 		
-		// id
-		API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("criticalValue.field.id"), "0686fd1a5e1fa7aead2997d9d3568198",false);
-		// base_project_id 项目id
-		API_DEF_ADD_QUERY_PARAMS(String, "baseProjectId", ZH_WORDS_GETTER("criticalValue.field.baseProjectId"), "721ec226a004670dd85777190ef00cb6", false);
+		//// id
+		//API_DEF_ADD_QUERY_PARAMS(String, "id", ZH_WORDS_GETTER("criticalValue.field.id"), "0686fd1a5e1fa7aead2997d9d3568198",false);
+		//// base_project_id 项目id
+		//API_DEF_ADD_QUERY_PARAMS(String, "baseProjectId", ZH_WORDS_GETTER("criticalValue.field.baseProjectId"), "721ec226a004670dd85777190ef00cb6", false);
+		
 		//level 等级
 		API_DEF_ADD_QUERY_PARAMS(String, "level", ZH_WORDS_GETTER("criticalValue.field.level"), "A",true);
 		//type 类型
@@ -60,12 +61,12 @@ public://定义接口
 		API_DEF_ADD_QUERY_PARAMS(Int64, "minAge", ZH_WORDS_GETTER("criticalValue.field.minAge"), 6,false);
 		// max_age 年龄最高值
 		API_DEF_ADD_QUERY_PARAMS(Int64, "maxAge", ZH_WORDS_GETTER("criticalValue.field.maxAge"), 97,false);
-		// department_id 所属部门
-		API_DEF_ADD_QUERY_PARAMS(String, "departmentId", ZH_WORDS_GETTER("criticalValue.filed.departmentId"),"40322777781112832" ,false);
-		// create_id 创建人
-		API_DEF_ADD_QUERY_PARAMS(String, "createId", ZH_WORDS_GETTER("criticalValue.field.createId"), "1567427468967677952",false);
-		// create_time 创建时间
-		API_DEF_ADD_QUERY_PARAMS(String, "createTime", ZH_WORDS_GETTER("criticalValue.field.createTime"),"2024-01-10 16:32:43" ,false);
+		//// department_id 所属部门
+		//API_DEF_ADD_QUERY_PARAMS(String, "departmentId", ZH_WORDS_GETTER("criticalValue.filed.departmentId"),"40322777781112832" ,false);
+		//// create_id 创建人
+		//API_DEF_ADD_QUERY_PARAMS(String, "createId", ZH_WORDS_GETTER("criticalValue.field.createId"), "1567427468967677952",false);
+		//// create_time 创建时间
+		//API_DEF_ADD_QUERY_PARAMS(String, "createTime", ZH_WORDS_GETTER("criticalValue.field.createTime"),"2024-01-10 16:32:43" ,false);
 	}
 	// 定义分页查询危急值接口处理
 	ENDPOINT(API_M_GET, "/database", queryCriticalValuePage, QUERIES(QueryParams, queryParams), API_HANDLER_AUTH_PARAME) {

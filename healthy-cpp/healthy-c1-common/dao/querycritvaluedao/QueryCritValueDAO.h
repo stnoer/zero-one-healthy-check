@@ -1,8 +1,10 @@
+#pragma once
 /*
  Copyright Zero One Star. All rights reserved.
 
  @Author: stoner
- @Date: 2024/1/15 
+ @Date: 2024/01/25
+
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -16,31 +18,22 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-#include "stdafx.h"
-#include "../../domain/dto/database/CritValueDTO.h"
-#include "CritValueService.h"
-#include "../../domain/query/database/CritValueQuery.h"
+#ifndef _QUERY_CRIT_VALUE_DAO_
+#define _QUERY_CRIT_VALUE_DAO_
+#include "BaseDAO.h"
+#include "../../domain/query/database/CritValuePageQuery.h"
+#include "../../domain/do/database/QueryCritValueDO.h"
+#include "../../domain/do/database/CritValueDO.h"
 
-CritValuePageDTO::Wrapper CriValueService::listAll(const CritValueQuery::Wrapper& query)
+
+class QueryCritValueDAO : public BaseDAO
 {
-	return{};
-}
+public:
+	// 统计数据条数
+	uint64_t count(const CritValuePageQuery::Wrapper& query);
+	// 分页查询数据
+	std::list<QueryCritValueDO> selectWithPage(const CritValuePageQuery::Wrapper& query);
+private:
 
-uint64_t CriValueService::saveData(const CritValuePageDTO::Wrapper& dto)
-{
-	return{};
-
-}
-
-bool CriValueService::updateData(const CritValuePageDTO::Wrapper& dto)
-{
-	return{};
-
-}
-
-bool CriValueService::removeData(uint64_t id)
-{
-	return{};
-
-}
-
+};
+#endif
