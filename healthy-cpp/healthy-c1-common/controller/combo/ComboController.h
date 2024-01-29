@@ -7,6 +7,9 @@
 #include "domain/vo/combo/AddPackVO.h"
 #include "domain/vo/combo/DelPackVO.h"
 #include "domain/vo/combo/UpdatePackVO.h"
+#include "../../service/combo/addPack/AddPackService.h"
+#include "../../service/combo/delPack/DelPackService.h"
+#include "../../service/combo/updatePack/UpdatePackService.h"
 using namespace oatpp;
 
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
@@ -20,7 +23,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(addPack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.addPack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.addPack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -35,7 +38,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(delPack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.delPack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.delPack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -50,7 +53,7 @@ public:// 定义接口
 	// 3.1 定义新增接口描述
 	ENDPOINT_INFO(updatePack) {
 		// 定义接口标题
-		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.post.updatePack"));
+		API_DEF_ADD_TITLE(ZH_WORDS_GETTER("combo.updatePack"));
 		// 定义默认授权参数（可选定义，如果定义了，下面ENDPOINT里面需要加入API_HANDLER_AUTH_PARAME）
 		API_DEF_ADD_AUTH();
 		// 定义响应参数格式
@@ -63,11 +66,11 @@ public:// 定义接口
 	}
 private:// 定义接口执行函数
 	//新增数据
-	AddPackJsonVO::Wrapper execAddPack(const AddPackDTO::Wrapper& dto);
+	Uint64JsonVO::Wrapper execAddPack(const AddPackDTO::Wrapper& dto);
 	//删除数据
-	DelPackJsonVO::Wrapper execDelPack(const DelPackDTO::Wrapper& dto);
+	Uint64JsonVO::Wrapper execDelPack(const DelPackDTO::Wrapper& dto);
 	//修改数据
-	UpdatePackJsonVO::Wrapper execUpdatePack(const UpdatePackDTO::Wrapper& dto);
+	Uint64JsonVO::Wrapper execUpdatePack(const UpdatePackDTO::Wrapper& dto);
 };
 
 #include OATPP_CODEGEN_END(ApiController) //<- End Codegen
