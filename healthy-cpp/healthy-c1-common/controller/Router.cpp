@@ -37,7 +37,7 @@
 #include "base/ReferenceDelController.h"
 #include"rules/RulesListController.h"
 #include "database/addCritValueController/addCritValueController.h"
-#include "database/querycritvaluecontroller/queryCritValueController.h"
+#include "database/querycritvaluecontroller/QueryCritValueController.h"
 
 #include "controller/referencevalue/addrefvalue/AddRefValueController.h"
 #include "controller/referencevalue/queryrefvalue/QueryRefValueController.h"
