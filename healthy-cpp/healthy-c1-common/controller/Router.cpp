@@ -45,7 +45,7 @@
 #include "critical/criticalModifyController.h"
 
 
-#include "baseproject/BaseProjectController.h"
+#include "baseProject/BaseProjectController.h"
 
 // 如果定义了关闭Swagger文档宏
 #ifdef CLOSE_SWAGGER_DOC
