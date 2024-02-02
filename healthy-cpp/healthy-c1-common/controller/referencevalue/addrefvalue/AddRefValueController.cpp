@@ -24,7 +24,6 @@ Uint64JsonVO::Wrapper AddRefValueController::execAddRefValue(const AddRefValueDT
 	AddRefValueService service;
 	// 执行数据新增
 	uint64_t id = service.saveData(dto);
-	std::cout << id << std::endl;
 	if (id > 0) {
 		jvo->success(UInt64(id));
 	}
