@@ -12,7 +12,6 @@ Uint64JsonVO::Wrapper BaseProjectController::execAddBaseProject(const AddBasePro
 	AddBaseProjectService service;
 	// 执行数据新增
 	uint64_t id = service.saveData(dto);
-	std::cout << id << std::endl;
 	if (!id) {
 		jvo->success(UInt64(id));
 	}
