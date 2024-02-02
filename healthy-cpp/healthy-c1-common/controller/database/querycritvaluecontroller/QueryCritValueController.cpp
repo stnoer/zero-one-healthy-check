@@ -1,4 +1,4 @@
-#include "queryCritValueController.h"
+#include "QueryCritValueController.h"
 #include "../../../domain/vo/database/CritValueVO.h"
 #include "../../../domain/query/database/CritValuePageQuery.h"
 #include "../../../service/database/querycritvalue/QueryCritValueService.h"
