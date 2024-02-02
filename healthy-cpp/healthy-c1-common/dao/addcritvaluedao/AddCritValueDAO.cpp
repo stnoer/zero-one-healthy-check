@@ -17,6 +17,7 @@
  limitations under the License.
 */
 #include "stdafx.h"
+#include <iomanip>
 #include "AddCritValueDAO.h"
 #include <sstream>
 
@@ -30,7 +31,7 @@ uint64_t AddCritValueDAO::insert(const AddCritValueDO& iObj)
 	std::time_t now = std::time(0); // 获取日历时间
 	std::tm* timeinfo = localtime(&now); // 转换为本地时间的tm结构体
 	std::stringstream ss; // 创建一个字符串流对象
-	std::ss << std::put_time(timeinfo, "%Y-%m-%d %H:%M:%S"); // 将tm结构体格式化为字符串流
+	ss << std::put_time(timeinfo, "%Y-%m-%d %H:%M:%S"); // 将tm结构体格式化为字符串流
 	std::string createTime = ss.str(); // 从字符串流中获取字符串
 
 
