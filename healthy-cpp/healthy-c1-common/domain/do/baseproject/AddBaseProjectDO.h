@@ -75,7 +75,7 @@ class AddBaseProjectDO
 	CC_SYNTHESIZE(string, department_id, DepartmentId);
 
 public:
-	AddBaseProjectDO::AddBaseProjectDO() {
+	AddBaseProjectDO() {
 		id = "";
 		code = "";
 		name = "";

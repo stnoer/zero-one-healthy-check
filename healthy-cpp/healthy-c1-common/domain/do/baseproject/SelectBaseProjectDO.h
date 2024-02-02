@@ -57,7 +57,7 @@ class SelectBaseProjectDO
 
 
 public:
-	SelectBaseProjectDO::SelectBaseProjectDO() {
+	SelectBaseProjectDO() {
 		id = "";
 		code = "";
 		name = "";
