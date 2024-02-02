@@ -36,7 +36,6 @@ Uint64JsonVO::Wrapper ComboController::execDelPack(const DelPackDTO::Wrapper& dt
 
 	// 执行数据新增
 	uint64_t id = service.removeData(dto);
-	cout << id << endl;
 	if (id > 0) {
 		jvo->success(UInt64(id));
 	}
