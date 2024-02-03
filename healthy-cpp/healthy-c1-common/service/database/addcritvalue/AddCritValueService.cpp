@@ -19,7 +19,7 @@
 #include "AddCritValueService.h"
 #include "../../../domain/dto/database/CritValueDTO.h"
 #include "../../../domain/do/database/AddCritValueDO.h"
-#include "../../../dao/addcritvaluedao/addCritValueDAO.h"
+#include "../../../dao/addcritvaluedao/AddCritValueDAO.h"
 
 uint64_t AddCritValueService::saveData(const CritValueDTO::Wrapper& dto)
 {
