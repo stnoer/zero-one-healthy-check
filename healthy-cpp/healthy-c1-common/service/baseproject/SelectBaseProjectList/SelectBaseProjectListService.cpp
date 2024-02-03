@@ -9,7 +9,7 @@ SelectBaseProjectListPageDTO::Wrapper SelectBaseProjectListService::listAll(cons
 	auto& records = query->records;//SelectBaseProjectQuery的List
 
 
-	auto& baseproject_list = oatpp::List<oatpp::Object<SelectBaseProjectDTO>>::createShared();
+	auto baseproject_list = oatpp::List<oatpp::Object<SelectBaseProjectDTO>>::createShared();
 
 
 	//转换为处理SelectBaseProjectQuery, 利用它的dao与do完成查询.
